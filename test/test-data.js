@@ -1,8 +1,9 @@
-const userData = [{
+const userData = [
+  {
     "id": 1,
     "name": "Markus Rossio",
     "address": "123 Main St Wisconsin",
-    "email": "Markus@email.com",
+    "email": "markus@email.com",
     "strideLength": 5.1,
     "dailyStepGoal": 10000,
     "friends": [
@@ -15,7 +16,7 @@ const userData = [{
     "id": 2,
     "name": "Kyra Bergsund",
     "address": "234 Some Street Los Angeles",
-    "email": "Kyra@email.com",
+    "email": "kyra@email.com",
     "strideLength": 4.5,
     "dailyStepGoal": 10000,
     "friends": [

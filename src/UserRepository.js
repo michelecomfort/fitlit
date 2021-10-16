@@ -1,5 +1,7 @@
-class UserRepository {
+class User {
+  constructor() {
 
+  }
 }
 
-export default UserRepository;
+export default User;

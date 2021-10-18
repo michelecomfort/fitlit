@@ -12,7 +12,7 @@ export default class User {
     this.activityData = null
   }
 
-  initializeUser(userData, ) {
+  initializeUser(userData) {
     this.id = userData.id;
     this.name = userData.name;
     this.address = userData.address;
@@ -21,15 +21,16 @@ export default class User {
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
 
-    this.sleepData = new Sleep();
-    this.activityData = new Activity();
+    // this.sleepData = new Sleep();
+    // this.activityData = new Activity();
+  }
+
+  returnFirstName() {
+    return this.name.split(' ')[0];
   }
 
   retrieveHydrationData(id) {
     this.hydrationData = new Hydration();
     
   }
-
-
-
 }

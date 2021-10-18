@@ -1,33 +1,43 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body, html {
   height: 100%;
   border: 1px solid yellow;
-  margin: auto;
+  margin: 0;
+  font-size: 25px;
 }
 
 body {
   border: 2px solid green;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 2%;
-  font-size: 25px;
+  /* font-size: 25px; */
 }
 
-section {
+section,
+h1,
+h2 {
   border: 1px solid red;
 }
 
 .sidebar {
-  width: 15%;
+  width: 7%;
 }
 
 .dashboard-main {
   width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
 }
 
-.dashboard-main section {
+.widgets {
   border: 1px solid blue;
+  height: 60%;
+  display: flex;
 }

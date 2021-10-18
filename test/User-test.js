@@ -16,7 +16,8 @@ describe('User Repository', function() {
     user3 = new User()
     user4 = new User()
     // hydration1 = new Hydration()
-  })
+  });
+  
   it('should be a function', function() {
     assert.isFunction(User);
   });

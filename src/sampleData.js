@@ -5,7 +5,7 @@ const userData = [
     "address": "123 Main St Wisconsin",
     "email": "markus@email.com",
     "strideLength": 5.1,
-    "dailyStepGoal": 10000,
+    "dailyStepGoal": 9500,
     "friends": [
       2,
       3,
@@ -31,7 +31,7 @@ const userData = [
     "address": "345 Another Street Denver",
     "email": "michele@email.com",
     "strideLength": 4.4,
-    "dailyStepGoal": 10000,
+    "dailyStepGoal": 2000,
     "friends": [
       1,
       2,
@@ -44,7 +44,7 @@ const userData = [
     "address": "456 This Street Denver",
     "email": "cass@email.com",
     "strideLength": 4.8,
-    "dailyStepGoal": 10000,
+    "dailyStepGoal": 8500,
     "friends": [
       1,
       2,

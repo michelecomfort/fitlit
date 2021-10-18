@@ -23,7 +23,7 @@ describe('User Repository', function() {
     user3.initializeUser(userData[2]);
     user4.initializeUser(userData[3]);
 
-    userRepo = new UserRepository([userData[0], userData[1], userData[2], userData[3]]);
+    userRepo = new UserRepository();
   });
 
   it('should be a function', function() {
@@ -35,7 +35,15 @@ describe('User Repository', function() {
   });
 
   it('should have a method that creates instances of user', function() {
-    userRepo.buildUserRepo();
+    userRepo.buildUserRepo([userData[0], userData[1], userData[2], userData[3]]);
     assert.deepEqual(userRepo.createdUsers, [user1, user2, user3, user4]);
+  });
+
+  it('should return specific user data given an id', function() {
+    assert.deepEqual(userRepo.retrieveUser(1), user1);
+  });
+
+  it('should calculate the average step goal amongst all users', function() {
+    assert.equal(userRepo.calculateAverageStepGoal(), 7500);
   });
 });

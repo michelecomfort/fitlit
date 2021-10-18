@@ -1,5 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-  background-repeat: no-repeat;
   height: 100%;
+  border: 1px solid yellow;
+  margin: auto;
+}
+
+body {
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  font-size: 25px;
+}
+
+section {
+  border: 1px solid red;
+}
+
+.sidebar {
+  width: 15%;
+}
+
+.dashboard-main {
+  width: 85%;
+}
+
+.dashboard-main section {
+  border: 1px solid blue;
 }

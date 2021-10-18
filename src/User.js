@@ -1,18 +1,5 @@
 export default class User {
-  constructor() {
-    this.id = null;
-    this.name = null;
-    this.address = null;
-    this.email = null;
-    this.strideLength = null;
-    this.dailyStepGoal = null;
-    this.friends = null;
-    this.hydrationData = null
-    this.sleepData = null
-    this.activityData = null
-  }
-
-  initializeUser(userData) {
+  constructor(userData) {
     this.id = userData.id;
     this.name = userData.name;
     this.address = userData.address;
@@ -20,9 +7,9 @@ export default class User {
     this.strideLength = userData.strideLength;
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
-
-    // this.sleepData = new Sleep();
-    // this.activityData = new Activity();
+    this.hydrationData = null;
+    this.sleepData = null;
+    this.activityData = null;
   }
 
   returnFirstName() {

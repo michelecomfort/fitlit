@@ -14,16 +14,13 @@ describe('User Repository', function() {
   let userRepo;
 
   beforeEach(function() {
-    user1 = new User();
-    user2 = new User();
-    user3 = new User();
-    user4 = new User();
-    user1.initializeUser(userData[0]);
-    user2.initializeUser(userData[1]);
-    user3.initializeUser(userData[2]);
-    user4.initializeUser(userData[3]);
+    user1 = new User(userData[0]);
+    user2 = new User(userData[1]);
+    user3 = new User(userData[2]);
+    user4 = new User(userData[3]);
 
     userRepo = new UserRepository();
+    userRepo.buildUserRepo([userData[0], userData[1], userData[2], userData[3]]);
   });
 
   it('should be a function', function() {
@@ -35,8 +32,7 @@ describe('User Repository', function() {
   });
 
   it('should have a method that creates instances of user', function() {
-    userRepo.buildUserRepo([userData[0], userData[1], userData[2], userData[3]]);
-    assert.deepEqual(userRepo.createdUsers, [user1, user2, user3, user4]);
+    assert.deepEqual(userRepo.users, [user1, user2, user3, user4]);
   });
 
   it('should return specific user data given an id', function() {
@@ -47,3 +43,5 @@ describe('User Repository', function() {
     assert.equal(userRepo.calculateAverageStepGoal(), 7500);
   });
 });
+
+//Will need tests for class instances creating in the future

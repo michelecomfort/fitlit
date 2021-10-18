@@ -27,7 +27,7 @@ export default class User {
 
   retrieveHydrationData(id) {
     this.hydrationData = new Hydration();
-    
+
   }
 
 

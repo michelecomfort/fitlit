@@ -8,4 +8,12 @@ describe('Activity', function() {
   beforeEach(function() {
     activity = new Activity();
   });
+
+  it('should be a function', function() {
+    assert.isFunction(Activity);
+  });
+
+  it('should be an instance of activity', function() {
+    assert.instanceOf(activity, Activity);
+  });
 });

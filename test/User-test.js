@@ -32,7 +32,8 @@ describe('User Repository', function() {
     assert.equal(user1.email, null)
   })
 
-  it('shoudl initialize a new user', function() {
+
+  it('should initialize a new user', function() {
     user1.initializeUser(userData[0])
     assert.equal(user1.id, 1)
     assert.equal(user1.name, 'Markus Rossio')
@@ -44,11 +45,16 @@ describe('User Repository', function() {
     assert.equal(user1.friends.length, 3)
   })
 
-  it('should retrieve hydration data', function() {
-    user1.retrieveHydrationData()
-    assert.equal(user1.hydrationData, )
-  })
 
+  it('should return the users first name', () => {
+    user1.initializeUser(userData[0]);
+    assert.equal(user1.returnFirstName(), 'Markus');
+  });
+
+  // it('should retrieve hydration data', () => {
+  //   user1.retrieveHydrationData()
+  //   assert.equal(user1.hydrationData, )
+  // })
 });
 
 //should create an instance of hydration

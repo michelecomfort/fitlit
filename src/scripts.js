@@ -9,6 +9,8 @@ import UserRepository from './UserRepository';
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
 const greeting = document.querySelector('h1');
+const stepGoals = document.querySelector('#stepGoals');
+console.log(stepGoals);
 
 // Event Listeners
 // window.addEventListener('load', renderDOM);
@@ -24,6 +26,7 @@ const renderDOM = () => {
   console.log(randomUser.id);
   greetUser(randomUser);
   displayProfileInfo(randomUser);
+  displayStepInfo(randomUser);
 }
 
 const getRandomIndex = (array) => {
@@ -34,7 +37,6 @@ const greetUser = (user) => {
   greeting.innerText = `Welcome, ${user.returnFirstName()}!`;
 }
 
-// fills user profile section with info
 const displayProfileInfo = (user) => {
   userProfile.innerHTML = `
   <p>Name: ${user.name}</p>
@@ -42,6 +44,13 @@ const displayProfileInfo = (user) => {
   <p>Email: ${user.email}</p>
   <p>Member Since: Oct 2021</p>
 `
+}
+
+const displayStepInfo = (user) => {
+  stepGoals.innerHTML = `
+    <p>${user.dailyStepGoal} steps/day</p>
+    <p>${userRepo.calculateAverageStepGoal()} steps/day</p>
+    `
 }
 
 renderDOM();

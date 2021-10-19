@@ -38,6 +38,14 @@ h2 {
 
 .widgets {
   border: 1px solid blue;
-  height: 60%;
+  height: 75%;
   display: flex;
+}
+
+.widgets section {
+  height: 40%;
+}
+
+.profile {
+  width: 45%;
 }

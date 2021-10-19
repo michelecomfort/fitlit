@@ -1,5 +1,94 @@
-body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-  background-repeat: no-repeat;
-  height: 100%;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
+
+body, html {
+  height: 100%;
+  border: 1px solid yellow;
+  margin: 0;
+  font-size: 24px;
+}
+
+body {
+  border: 2px solid green;
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+  /* font-size: 25px; */
+}
+
+section,
+h1,
+h2 {
+  border: 1px solid red;
+}
+
+h1 {
+  text-align: right;
+  font-size: 1.7em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+p {
+  border: 1px solid orange;
+  height: fit-content;
+}
+
+.sidebar {
+  width: 7%;
+}
+
+.sidebar p {
+  text-align: center;
+}
+
+.dashboard-main {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.widgets {
+  border: 1px solid blue;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.user,
+.activity {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: space-around;
+}
+
+.activity section,
+.friends {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-profile {
+  width: 50%;
+}
+
+.step-goals,
+.sleep-calendar { 
+  width: 100%;
+  display: flex;
+}
+
+/* add padding to widgets box. Then adjust flex of widgets to space between so that they line up more nicely? */

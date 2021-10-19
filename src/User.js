@@ -16,8 +16,8 @@ export default class User {
     return this.name.split(' ')[0];
   }
 
-  retrieveHydrationData(id) {
-    this.hydrationData = new Hydration();
+//   retrieveHydrationData(id) {
+//     this.hydrationData = new Hydration();
 
-  }
+//   }
 }

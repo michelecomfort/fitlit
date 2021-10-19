@@ -48,6 +48,15 @@ describe('User Repository', function() {
   //   assert.equal(user1.hydrationData, )
   // })
 
+  it('should return the users first name', () => {
+    user1.initializeUser(userData[0]);
+    assert.equal(user1.returnFirstName(), 'Markus');
+  });
+
+  // it('should retrieve hydration data', () => {
+  //   user1.retrieveHydrationData()
+  //   assert.equal(user1.hydrationData, )
+  // })
 });
 
 //should create an instance of hydration

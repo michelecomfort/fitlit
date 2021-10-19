@@ -1,49 +1,47 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS file
 import './css/styles.css';
+import userData from './data/users';
+import UserRepository from './UserRepository';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
+// import './images/turing-logo.png'
 
-console.log('This is the JavaScript entry file - your code begins here.');
 
-// An example of how you tell webpack to use a JS file
-
-// import userData from './data/users';
-import userData from './sampleData';
-import UserRepository from './UserRepository';
-import User from './User';
-
-// targets array of user objects from the userData import
-const data = Object.values(userData)[0];
-
-// instantiates empty user repo
-const userRepo = new UserRepository();
-// calls method using data from import to create all instances of User
-userRepo.buildUserRepo(data);
-
-// for testing (change index number to cycle through users)
-const user1 = userRepo.users[0];
-
-// Query Selector
+// Query Selectors
 const userProfile = document.querySelector('#userProfile');
 const greeting = document.querySelector('h1');
 
-const greetUser = () => {
-  greeting.innerText = `Welcome, ${user1.returnFirstName()}!`;
+// Event Listeners
+// window.addEventListener('load', renderDOM);
+
+// Global Variables
+const data = Object.values(userData);
+const userRepo = new UserRepository();
+
+// Functions
+const renderDOM = () => {
+  userRepo.buildUserRepo(data);
+  const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
+  console.log(randomUser.id);
+  greetUser(randomUser);
+  displayProfileInfo(randomUser);
+}
+
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length);
+}
+
+const greetUser = (user) => {
+  greeting.innerText = `Welcome, ${user.returnFirstName()}!`;
 }
 
 // fills user profile section with info
-const displayProfileInfo = () => {
+const displayProfileInfo = (user) => {
   userProfile.innerHTML = `
-  <p>Name: ${user1.name}</p>
-  <p>Address: ${user1.address}</p>
-  <p>Email: ${user1.email}</p>
-  <p>Member Since: Oct</p>
+  <p>Name: ${user.name}</p>
+  <p>Address: ${user.address}</p>
+  <p>Email: ${user.email}</p>
+  <p>Member Since: Oct 2021</p>
 `
 }
 
-greetUser();
-displayProfileInfo();
+renderDOM();

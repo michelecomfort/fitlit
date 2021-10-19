@@ -7,7 +7,7 @@ body, html {
   height: 100%;
   border: 1px solid yellow;
   margin: 0;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 body {
@@ -24,8 +24,21 @@ h2 {
   border: 1px solid red;
 }
 
+h1 {
+  text-align: right;
+  font-size: 1.7em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
 .sidebar {
   width: 7%;
+}
+
+.sidebar p {
+  text-align: center;
 }
 
 .dashboard-main {
@@ -38,14 +51,25 @@ h2 {
 
 .widgets {
   border: 1px solid blue;
-  height: 75%;
+  height: 80%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.widgets section {
-  height: 40%;
+.user,
+.activity {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.profile {
-  width: 45%;
+.activity section,
+.friends {
+  width: 30%;
+}
+
+.user-profile {
+  width: 50%;
 }

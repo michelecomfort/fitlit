@@ -133,9 +133,9 @@ const sleepData = [
   }
 ]
 
-export {
-  userData,
-  hydrationData,
-  sleepData,
-  activityData
+export default {
+  userData
+  // hydrationData,
+  // sleepData,
+  // activityData
 }

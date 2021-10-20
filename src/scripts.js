@@ -1,7 +1,13 @@
 import './css/styles.css';
-import userData from './data/users';
+// import userData from './data/users';
 import UserRepository from './UserRepository';
-import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch'
+import {
+  getUserData,
+  getSleepData,
+  getActivityData,
+  getHydrationData,
+  allData
+} from './fetch'
 import DataManager from './DataManager'
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
@@ -22,33 +28,39 @@ console.log(stepGoals);
 
 const userRepo = new UserRepository();
 const dataManager = new DataManager();
-let data;
+// let data;
+
 // Functions
 const renderDOM = () => {
-  retrieveAllData()
+  let data = Object.values(dataManager.userData)
 
-  data = Object.values(dataManager.userData)
   userRepo.buildUserRepo(data);
-  console.log(data)
+
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
-  console.log(randomUser.id);
+
   greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
 };
 
-const retrieveAllData = () => {
-  return Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
-    dataManager.setUserData(data[0].userData);
-    dataManager.setSleepData(data[1].sleepData);
-    dataManager.setActivityData(data[2].activityData)
-    dataManager.setHydrationData(data[3].hydrationData)
-  });
-
+const retrieveAllData = (data) => {
+  console.log('here',allData)
+  allData.then(data => {
+    parseData(data)
+    renderDOM();
+  })
 }
 
+const parseData = (data) => {
+  dataManager.setUserData(data[0].userData);
+  dataManager.setSleepData(data[1].sleepData);
+  dataManager.setActivityData(data[2].activityData)
+  dataManager.setHydrationData(data[3].hydrationData)
+}
+
+
 const getRandomIndex = (array) => {
-  return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length + 1);
 }
 
 const greetUser = (user) => {
@@ -73,4 +85,4 @@ const displayStepInfo = (user) => {
 
 
 
-renderDOM();
+retrieveAllData()

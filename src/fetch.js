@@ -34,9 +34,14 @@ const getHydrationData = () => {
     });
 };
 
+
+  const allData = Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()])
+
+
  export {
   getUserData,
   getSleepData,
   getActivityData,
-  getHydrationData
+  getHydrationData,
+  allData
 }

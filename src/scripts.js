@@ -6,7 +6,7 @@ import {
   getSleepData,
   getActivityData,
   getHydrationData,
-  allData
+
 } from './fetch'
 import DataManager from './DataManager'
 
@@ -33,18 +33,16 @@ const dataManager = new DataManager();
 // Functions
 const renderDOM = () => {
   let data = Object.values(dataManager.userData)
-
   userRepo.buildUserRepo(data);
-
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
-
   greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
 };
 
+const allData = Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()])
+
 const retrieveAllData = (data) => {
-  console.log('here',allData)
   allData.then(data => {
     parseData(data)
     renderDOM();
@@ -57,7 +55,6 @@ const parseData = (data) => {
   dataManager.setActivityData(data[2].activityData)
   dataManager.setHydrationData(data[3].hydrationData)
 }
-
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);

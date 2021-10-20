@@ -1,5 +1,3 @@
-
-
 const getUserData = () => {
   return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/users')
     .then(result => result.json())
@@ -16,7 +14,6 @@ const getSleepData = () => {
     });
 };
 
-
 const getActivityData = () => {
   return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/activity')
     .then(result => result.json())
@@ -24,7 +21,6 @@ const getActivityData = () => {
       return data
     });
 };
-
 
 const getHydrationData = () => {
   return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/hydration')
@@ -34,14 +30,9 @@ const getHydrationData = () => {
     });
 };
 
-
-  const allData = Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()])
-
-
  export {
   getUserData,
   getSleepData,
   getActivityData,
   getHydrationData,
-  allData
 }

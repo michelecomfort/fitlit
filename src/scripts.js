@@ -31,7 +31,12 @@ const renderDOM = () => {
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
   console.log('yo')
-
+  Promise.all([getUserData(), getSleepData()]).then(data => {
+    const dataManager = new DataManager()
+    dataManager.setUserData(data[0].userData)
+    dataManager.setSleepData(data[1].sleepData)
+    console.log(dataManager)
+  })
 }
 
 const getRandomIndex = (array) => {

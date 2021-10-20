@@ -16,7 +16,7 @@ console.log(stepGoals);
 
 // Event Listeners
 // window.addEventListener('load', renderDOM);
-// window.addEventListener('load', renderDOM);
+
 
 // Global Variables
 const data = Object.values(userData);
@@ -30,14 +30,16 @@ const renderDOM = () => {
   greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
-  console.log('yo')
-  Promise.all([getUserData(), getSleepData()]).then(data => {
-    const dataManager = new DataManager()
-    dataManager.setUserData(data[0].userData)
-    dataManager.setSleepData(data[1].sleepData)
-    console.log(dataManager)
-  })
-}
+
+  Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
+    console.log(data)
+    const dataManager = new DataManager();
+    dataManager.setUserData(data[0].userData);
+    dataManager.setSleepData(data[1].sleepData);
+    dataManager.setHydrationData
+
+  });
+};
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -64,5 +66,3 @@ const displayStepInfo = (user) => {
 }
 
 renderDOM();
-//const allData = Promise.all([getUserData(), getSleepData()])
-//new DataManager(userdata, sleepdata)

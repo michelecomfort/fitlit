@@ -1,6 +1,8 @@
 import './css/styles.css';
 import userData from './data/users';
 import UserRepository from './UserRepository';
+import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch'
+import DataManager from './DataManager'
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png'
@@ -13,6 +15,7 @@ const stepGoals = document.querySelector('#stepGoals');
 console.log(stepGoals);
 
 // Event Listeners
+// window.addEventListener('load', renderDOM);
 // window.addEventListener('load', renderDOM);
 
 // Global Variables
@@ -27,6 +30,8 @@ const renderDOM = () => {
   greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
+  console.log('yo')
+
 }
 
 const getRandomIndex = (array) => {
@@ -54,3 +59,5 @@ const displayStepInfo = (user) => {
 }
 
 renderDOM();
+//const allData = Promise.all([getUserData(), getSleepData()])
+//new DataManager(userdata, sleepdata)

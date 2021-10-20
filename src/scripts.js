@@ -19,27 +19,33 @@ console.log(stepGoals);
 
 
 // Global Variables
-const data = Object.values(userData);
-const userRepo = new UserRepository();
 
+const userRepo = new UserRepository();
+const dataManager = new DataManager();
+let data;
 // Functions
 const renderDOM = () => {
+  retrieveAllData()
+
+  data = Object.values(dataManager.userData)
   userRepo.buildUserRepo(data);
+  console.log(data)
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
   console.log(randomUser.id);
   greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
+};
 
-  Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
-    console.log(data)
-    const dataManager = new DataManager();
+const retrieveAllData = () => {
+  return Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
     dataManager.setUserData(data[0].userData);
     dataManager.setSleepData(data[1].sleepData);
-    dataManager.setHydrationData
-
+    dataManager.setActivityData(data[2].activityData)
+    dataManager.setHydrationData(data[3].hydrationData)
   });
-};
+
+}
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length);
@@ -64,5 +70,7 @@ const displayStepInfo = (user) => {
     <p>${userRepo.calculateAverageStepGoal()} steps/day</p>
     `
 }
+
+
 
 renderDOM();

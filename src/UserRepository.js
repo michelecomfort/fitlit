@@ -6,8 +6,13 @@ export default class UserRepository {
     this.users = [];
   }
 
-  buildUserRepo(userData) {
-    this.users = userData.map(user => new User(user));
+  buildUserRepo(userData, hydrationData, sleepData, activityData) {
+    this.users = userData.map(user => {
+      const filteredHydration = dataManager.filterData(user.userID, 'hydration')
+      const filteredSleep = dataManager.filterData(user.userID, 'sleep')
+      const filteredAcvity = dataManager.filterData(user.userID, 'activity')
+      new User(user, filteredHydration, filteredSleep, filteredAcvity));
+    }
   }
 
   retrieveUser(id) {

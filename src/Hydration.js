@@ -5,6 +5,10 @@ export default class Hydration {
     this.hydrationData = hydrationData;
   }
 
+  // constructor(idData) {
+  //   this.hydrationData = hydrationData;
+  // }  
+
   getUserData(id) {
     this.userHydration = this.hydrationData.filter(user => user.userID === id);
   }

@@ -36,24 +36,29 @@ const allData = Promise.all([getUserData(), getSleepData(), getActivityData(), g
 
 const retrieveAllData = (data) => {
   allData.then(data => {
-    parseData(data)
+    parseData(data);
     renderDOM();
   })
 }
 
 const parseData = (data) => {
+  // instantiate Hydration & Sleep classes here????
   dataManager.setUserData(data[0].userData);
   dataManager.setSleepData(data[1].sleepData);
   dataManager.setActivityData(data[2].activityData)
   dataManager.setHydrationData(data[3].hydrationData)
+
 }
 
 const renderDOM = () => {
   const data = Object.values(dataManager.userData);
-  // const hydrationData = Object.values(dataManager.hydrationData);
-  // const sleepData = Object.values(dataManager.sleepData);
-  // const activityData = Object.values(dataManager.activityData);
-  userRepo.buildUserRepo(data);
+  // everything
+  const hydrationData = Object.values(dataManager.hydrationData);
+  const sleepData = Object.values(dataManager.sleepData);
+  const activityData = Object.values(dataManager.activityData);
+
+  userRepo.buildUserRepo(data, hydrationData, sleepData, activityData);
+  
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
   parseHydrationData(randomUser.id);
@@ -66,6 +71,7 @@ const renderDOM = () => {
 // these operations need to be moved somewhere else.
 const parseHydrationData = (id) => {
   const hydration = new Hydration(dataManager.hydrationData);
+  
   hydration.getUserData(id);
   console.log(hydration.userHydration);
   console.log(hydration.getTotalAverageDrank());

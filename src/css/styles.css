@@ -8,6 +8,7 @@ body, html {
   border: 1px solid yellow;
   margin: 0;
   font-size: 24px;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -41,12 +42,45 @@ p {
   height: fit-content;
 }
 
+.button, .button-active {
+  margin-top: 32px;
+  width: 61px;
+  height: 61px;
+  border-radius: 30px;
+  background-color: #0C3245;
+  border: none;
+}
+
+.button-active {
+  background-color: #FC6F7F;
+}
+
+.button:hover {
+  background-color: #00BFCF;
+}
+
+.dashboard-cards {
+  background-color: rgb(12, 50, 69, 0.75);
+  border-radius: 30px;
+}
+
 .sidebar {
-  width: 7%;
+  width: 140px;
+  height: 608;
 }
 
 .sidebar p {
   text-align: center;
+  color: #FC6F7F;
+  font-size: 36px;
+  font-weight: 700;
+  padding-top: 16px;
+}
+
+.sidebar div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dashboard-main {

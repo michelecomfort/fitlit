@@ -1,4 +1,4 @@
-import { hydrationData } from '../src/sampleData.js';
+// import { hydrationData } from '../src/sampleData.js';
 
 export default class Hydration {
   constructor(hydrationData) {
@@ -7,7 +7,7 @@ export default class Hydration {
 
   // constructor(idData) {
   //   this.hydrationData = hydrationData;
-  // }  
+  // }
 
   getUserData(id) {
     this.userHydration = this.hydrationData.filter(user => user.userID === id);
@@ -31,4 +31,3 @@ export default class Hydration {
   // }
 
 }
-

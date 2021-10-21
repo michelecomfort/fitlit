@@ -54,11 +54,12 @@ const renderDOM = () => {
   const data = Object.values(dataManager.userData);
   // everything
   const hydrationData = Object.values(dataManager.hydrationData);
+  console.log(hydrationData)
   const sleepData = Object.values(dataManager.sleepData);
   const activityData = Object.values(dataManager.activityData);
 
-  userRepo.buildUserRepo(data, hydrationData, sleepData, activityData);
-  
+  userRepo.buildUserRepo(dataManager, data, hydrationData, sleepData, activityData);
+
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
   parseHydrationData(randomUser.id);
@@ -71,7 +72,7 @@ const renderDOM = () => {
 // these operations need to be moved somewhere else.
 const parseHydrationData = (id) => {
   const hydration = new Hydration(dataManager.hydrationData);
-  
+
   hydration.getUserData(id);
   console.log(hydration.userHydration);
   console.log(hydration.getTotalAverageDrank());

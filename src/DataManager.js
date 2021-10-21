@@ -15,7 +15,8 @@ export default class DataManager {
   }
 
   filterData(id, dataset) {
-    return this[`${dataset}Data`].filter(day => day.userID === id);
+    console.log(id)
+    return this[`${dataset}Data`].filter(user => user.userID === id)
   }
 
   setSleepData(sleepData) {

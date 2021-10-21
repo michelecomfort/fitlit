@@ -59,6 +59,11 @@ p {
   background-color: #00BFCF;
 }
 
+.button img {
+  height: 28px;
+  width: 34px;
+}
+
 .dashboard-cards {
   background-color: rgb(12, 50, 69, 0.75);
   border-radius: 30px;

@@ -11,8 +11,13 @@ import {
 } from './fetch'
 import DataManager from './DataManager'
 
+import './images/Home.svg';
+import './images/Steps.svg';
+import './images/Water.svg';
+import './images/Sleep.svg';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png'
+
 
 
 // Query Selectors

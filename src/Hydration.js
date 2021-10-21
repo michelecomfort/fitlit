@@ -14,15 +14,15 @@ export default class Hydration {
       sum += day.numOunces;
       return sum;
     }, 0)
-    return total / this.userHydration.length;
+    return Math.floor(total / this.userHydration.length);
   }
 
   getOzDrank(date) {
-    const today = this.userHydration.find(user => user.date === date);
-    return today.numOunces;
+    const day = this.userHydration.find(user => user.date === date);
+    return day.numOunces;
   }
 
-  // getWeeklyDrank() {
+  // getWeeklyDrank(start, end) {
 
   // }
 

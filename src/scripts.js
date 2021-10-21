@@ -1,6 +1,7 @@
 import './css/styles.css';
 // import userData from './data/users';
 import UserRepository from './UserRepository';
+import Hydration from './Hydration';
 import {
   getUserData,
   getSleepData,
@@ -31,15 +32,6 @@ const dataManager = new DataManager();
 // let data;
 
 // Functions
-const renderDOM = () => {
-  let data = Object.values(dataManager.userData)
-  userRepo.buildUserRepo(data);
-  const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
-  greetUser(randomUser);
-  displayProfileInfo(randomUser);
-  displayStepInfo(randomUser);
-};
-
 const allData = Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()])
 
 const retrieveAllData = (data) => {
@@ -54,6 +46,30 @@ const parseData = (data) => {
   dataManager.setSleepData(data[1].sleepData);
   dataManager.setActivityData(data[2].activityData)
   dataManager.setHydrationData(data[3].hydrationData)
+}
+
+const renderDOM = () => {
+  const data = Object.values(dataManager.userData);
+  // const hydrationData = Object.values(dataManager.hydrationData);
+  // const sleepData = Object.values(dataManager.sleepData);
+  // const activityData = Object.values(dataManager.activityData);
+  userRepo.buildUserRepo(data);
+  const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
+
+  parseHydrationData(randomUser.id);
+
+  greetUser(randomUser);
+  displayProfileInfo(randomUser);
+  displayStepInfo(randomUser);
+};
+
+// these operations need to be moved somewhere else.
+const parseHydrationData = (id) => {
+  const hydration = new Hydration(dataManager.hydrationData);
+  hydration.getUserData(id);
+  console.log(hydration.userHydration);
+  console.log(hydration.getTotalAverageDrank());
+  console.log(hydration.getOzDrank('2020/01/21'));
 }
 
 const getRandomIndex = (array) => {

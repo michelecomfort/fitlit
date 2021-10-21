@@ -37,7 +37,7 @@ describe('Hydration', function() {
     assert.equal(hydration.getOzDrank('2019/06/15'), 38);
   });
 
-  it(' should calculate a user\'s consumed each day for a week', function() {
+  it(' should calculate a user\'s oz consumed each day for a week', function() {
 
   });
 

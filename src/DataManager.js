@@ -14,6 +14,10 @@ export default class DataManager {
     this.hydrationData = hydrationData;
   }
 
+  filterData(id, dataset) {
+    return this[`${dataset}Data`].filter(day => day.userID === id);
+  }
+
   setSleepData(sleepData) {
     this.sleepData = sleepData
   }

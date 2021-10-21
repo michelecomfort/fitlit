@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import User from '../src/User';
 import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js'
 
-describe('User Repository', function() {
+describe('User', function() {
   let user1;
   let user2;
   let user3;
@@ -10,7 +10,6 @@ describe('User Repository', function() {
   let hydration1
 
   beforeEach(function() {
-
     user1 = new User(userData[0]);
     user2 = new User(userData[1]);
     user3 = new User(userData[2]);
@@ -43,13 +42,7 @@ describe('User Repository', function() {
     assert.equal(user1.friends.length, 3);
   });
 
-  // it('should retrieve hydration data', function() {
-  //   user1.retrieveHydrationData()
-  //   assert.equal(user1.hydrationData, )
-  // })
-
   it('should return the users first name', () => {
-    user1.initializeUser(userData[0]);
     assert.equal(user1.returnFirstName(), 'Markus');
   });
 

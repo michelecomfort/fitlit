@@ -11,6 +11,9 @@ body, html {
 }
 
 body {
+  background-image: url('../images/backgroundimage.jpg');
+  background-color: rgb(255, 255, 255, 0.4);
+  background-blend-mode: color-burn;
   border: 2px solid green;
   display: flex;
   justify-content: space-around;

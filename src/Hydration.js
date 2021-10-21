@@ -9,9 +9,9 @@ export default class Hydration {
   //   this.hydrationData = hydrationData;
   // }
 
-  getUserData(id) {
-    this.userHydration = this.hydrationData.filter(user => user.userID === id);
-  }
+  // getUserData(id) {
+  //   this.userHydration = this.hydrationData.filter(user => user.userID === id);
+  // }
 
   getTotalAverageDrank() {
     const total = this.userHydration.reduce((sum, day) => {
@@ -22,7 +22,8 @@ export default class Hydration {
   }
 
   getOzDrank(date) {
-    const day = this.userHydration.find(user => user.date === date);
+    console.log(date)
+    const day = this.hydrationData.find(user => user.date === date);
     return day.numOunces;
   }
 

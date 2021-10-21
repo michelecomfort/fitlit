@@ -15,7 +15,7 @@ export default class DataManager {
   }
 
   filterData(id, dataset) {
-    console.log(id)
+    
     return this[`${dataset}Data`].filter(user => user.userID === id)
   }
 

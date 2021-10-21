@@ -19,7 +19,8 @@ import DataManager from './DataManager'
 const userProfile = document.querySelector('#userProfile');
 const greeting = document.querySelector('h1');
 const stepGoals = document.querySelector('#stepGoals');
-console.log(stepGoals);
+const waterStats = document.getElementById('waterStats')
+
 
 // Event Listeners
 // window.addEventListener('load', renderDOM);
@@ -54,7 +55,7 @@ const renderDOM = () => {
   const data = Object.values(dataManager.userData);
   // everything
   const hydrationData = Object.values(dataManager.hydrationData);
-  console.log(hydrationData)
+  // console.log(hydrationData)
   const sleepData = Object.values(dataManager.sleepData);
   const activityData = Object.values(dataManager.activityData);
 
@@ -62,22 +63,23 @@ const renderDOM = () => {
 
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
-  parseHydrationData(randomUser.id);
+  // parseHydrationData(randomUser.id);
 
   greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
+  displayHydrationInfo(randomUser)
 };
 
 // these operations need to be moved somewhere else.
-const parseHydrationData = (id) => {
-  const hydration = new Hydration(dataManager.hydrationData);
-
-  hydration.getUserData(id);
-  console.log(hydration.userHydration);
-  console.log(hydration.getTotalAverageDrank());
-  console.log(hydration.getOzDrank('2020/01/21'));
-}
+// const parseHydrationData = (id) => {
+//   const hydration = new Hydration(dataManager.hydrationData);
+//
+//   // hydration.getUserData(id);
+//   console.log(hydration.userHydration);
+//   console.log(hydration.getTotalAverageDrank());
+//   console.log(hydration.getOzDrank('2020/01/21'));
+// }
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
@@ -101,6 +103,13 @@ const displayStepInfo = (user) => {
     <p>${user.dailyStepGoal} steps/day</p>
     <p>${userRepo.calculateAverageStepGoal()} steps/day</p>
     `
+}
+
+const displayHydrationInfo = (user) => {
+  console.log(user.hydrationData)
+  waterStats.innerHTML = `
+  <p>${user.hydrationData.getOzDrank('2020/01/21')}oz</p>
+  `
 }
 
 

@@ -7,6 +7,7 @@ describe('User', function() {
   let user2;
   let user3;
   let user4;
+  let allUsers;
   let hydration1
 
   beforeEach(function() {
@@ -14,6 +15,7 @@ describe('User', function() {
     user2 = new User(userData[1]);
     user3 = new User(userData[2]);
     user4 = new User(userData[3]);
+    allUsers = [user1, user2, user3, user4];
     // hydration1 = new Hydration()
   });
 
@@ -41,7 +43,7 @@ describe('User', function() {
   });
 
   it.only('should use the friend IDs to find those users', function() {
-    user1.findFriends();
+    user1.findFriends(allUsers);
     assert.deepEqual(user1.friends, [user2, user3, user4]);
   });
 

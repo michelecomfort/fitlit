@@ -13,6 +13,7 @@ export default class UserRepository {
       const filteredActivity = dataManager.filterData(user.id, 'activity');
       return new User(user, filteredHydration, filteredSleep, filteredActivity);
     });
+    this.users.forEach(user => user.findFriends());
   };
 
   retrieveUser(id) {
@@ -34,5 +35,5 @@ export default class UserRepository {
     }, 0);
     return Math.round(allSleepAverage / sleepData.length * 10) / 10;
   };
-  
 };
+

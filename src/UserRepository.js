@@ -8,11 +8,10 @@ export default class UserRepository {
 
   buildUserRepo(dataManager, userData, hydrationData, sleepData, activityData) {
     this.users = userData.map(user => {
-      const filteredHydration = dataManager.filterData(user.id, 'hydration')
-      const filteredSleep = dataManager.filterData(user.id, 'sleep')
-      const filteredActivity = dataManager.filterData(user.id, 'activity')
+      const filteredHydration = dataManager.filterData(user.id, 'hydration');
+      const filteredSleep = dataManager.filterData(user.id, 'sleep');
+      const filteredActivity = dataManager.filterData(user.id, 'activity');
       return new User(user, filteredHydration, filteredSleep, filteredActivity);
-
     })
   }
 

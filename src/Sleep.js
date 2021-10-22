@@ -3,7 +3,7 @@ export default class Sleep {
     this.sleepData = sleepData;
   };
 
-  getTotalAverageHoursSlept() {
+  getAverageHoursSlept() {
     const averageHours = this.sleepData.reduce((total, day) => {
       total += day.hoursSlept;
     return total;
@@ -31,5 +31,32 @@ export default class Sleep {
     }, 0);
     return week;
   };
-  
+
+  getAverageSleepQuality() {
+    const quality = this.sleepData.reduce((total, day) => {
+      total += day.sleepQuality;
+      return total;
+    }, 0);
+    return Math.floor(quality / this.sleepData.length);
+  };
+
+  getQualityOfSleep(date) {
+    const day = this.sleepData.find(user => user.date === date);
+    return Math.floor(day.sleepQuality);
+  };
+
+  getWeeklyHoursSlept(date) {
+    let week = [];
+    let startDate = this.sleepData.find(day => day.date === date);
+    let dayIndex = this.sleepData.indexOf(startDate);
+    const result = this.sleepData.reduce((acc, day) => {
+      if (acc < 7) {
+        week.push(Math.floor(this.sleepData[dayIndex + acc].sleepQuality));
+        acc++;
+      }
+      return acc;
+    }, 0)
+    return week;
+  }
+
 };

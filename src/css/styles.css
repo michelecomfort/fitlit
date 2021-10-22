@@ -69,6 +69,11 @@ p {
   border-radius: 30px;
 }
 
+.user-card {
+  width: 288px;
+  width: 482px;
+}
+
 .sidebar {
   width: 140px;
   height: 608;
@@ -121,10 +126,6 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.user-profile {
-  width: 50%;
 }
 
 .step-goals,

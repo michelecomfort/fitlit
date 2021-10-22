@@ -69,6 +69,7 @@ const renderDOM = () => {
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
   displayHydrationInfo(randomUser)
+  randomUser.hydrationData.getWeeklyDrank('2020/01/14')
 };
 
 // these operations need to be moved somewhere else.
@@ -106,7 +107,8 @@ const displayStepInfo = (user) => {
 }
 
 const displayHydrationInfo = (user) => {
-  console.log(user.hydrationData)
+  // console.log(user.hydrationData)
+
   waterStats.innerHTML = `
   <p>${user.hydrationData.getOzDrank('2020/01/21')}oz</p>
   `

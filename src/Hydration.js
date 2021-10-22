@@ -4,11 +4,11 @@ export default class Hydration {
   }
 
   getTotalAverageDrank() {
-    const total = this.userHydration.reduce((sum, day) => {
+    const total = this.hydrationData.reduce((sum, day) => {
       sum += day.numOunces;
       return sum;
     }, 0)
-    return Math.floor(total / this.userHydration.length);
+    return Math.floor(total / this.hydrationData.length);
   }
 
   getOzDrank(date) {
@@ -17,17 +17,17 @@ export default class Hydration {
   }
 
   getWeeklyDrank(start) {
-    let week = [];
-    let startDate = this.hydrationData.find(day => day.date === start);
-    let dayIndex = this.hydrationData.indexOf(startDate);
+    const week = [];
+    const startDate = this.hydrationData.find(day => day.date === start);
+    const startDateIndex = this.hydrationData.indexOf(startDate);
     const result = this.hydrationData.reduce((acc, date) => {
       if (acc < 7) {
-        week.push(this.hydrationData[dayIndex + acc].numOunces);
+        week.push(this.hydrationData[startDateIndex + acc].numOunces);
         acc++;
       }
       return acc;
     }, 0)
-    return result;
+    return week;
   }
 
 }

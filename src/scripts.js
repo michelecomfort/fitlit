@@ -11,6 +11,8 @@ import {
 } from './fetch'
 import DataManager from './DataManager'
 
+import './images/Kyra.png';
+
 import './images/Home.svg';
 import './images/Steps.svg';
 import './images/Water.svg';
@@ -23,7 +25,6 @@ import './images/Friends.svg';
 
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
-const greeting = document.querySelector('h1');
 const stepGoals = document.querySelector('#stepGoals');
 const waterStats = document.getElementById('waterStats')
 
@@ -84,10 +85,10 @@ const getRandomIndex = (array) => {
 // };
 
 const displayProfileInfo = (user) => {
-  userProfile.innerHTML = `
-  <p>Name ${user.name}</p>
-  <p>Address ${user.address}</p>
-  <p>Email ${user.email}</p>
+  userProfile.childNodes[3].innerHTML = `
+  <h2>Hi, ${user.returnFirstName()}!</h2>
+  <p>${user.address}</p>
+  <p>${user.email}</p>
   `;
 };
 

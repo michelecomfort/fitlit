@@ -1,5 +1,7 @@
+import Hydration from './Hydration';
+
 export default class User {
-  constructor(userData) {
+  constructor(userData, hydrationData, sleepData, activityData) {
     this.id = userData.id;
     this.name = userData.name;
     this.address = userData.address;
@@ -7,9 +9,9 @@ export default class User {
     this.strideLength = userData.strideLength;
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
-    this.hydrationData = null;
-    this.sleepData = null;
-    this.activityData = null;
+    this.hydrationData = new Hydration(hydrationData);
+    // this.sleepData = new Sleep(sleepData)
+    this.activityData = activityData;
   }
 
   returnFirstName() {

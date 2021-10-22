@@ -57,7 +57,7 @@ const hydrationData = [
   {
     "userID": 1,
     "date": "2019/06/15",
-    "numOunces": 37
+    "numOunces": 38
   },
   {
     "userID": 2,
@@ -72,6 +72,26 @@ const hydrationData = [
   {
     "userID": 4,
     "date": "2019/06/15",
+    "numOunces": 85
+  },
+  {
+    "userID": 1,
+    "date": "2020/1/22",
+    "numOunces": 37
+  },
+  {
+    "userID": 2,
+    "date": "2019/06/22",
+    "numOunces": 75
+  },
+  {
+    "userID": 3,
+    "date": "2019/06/16",
+    "numOunces": 47
+  },
+  {
+    "userID": 4,
+    "date": "2019/06/16",
     "numOunces": 85
   }
 ]
@@ -133,9 +153,9 @@ const sleepData = [
   }
 ]
 
-export default {
-  userData
-  // hydrationData,
-  // sleepData,
-  // activityData
+export {
+  userData,
+  hydrationData,
+  sleepData,
+  activityData
 }

@@ -14,12 +14,16 @@ export default class DataManager {
     this.hydrationData = hydrationData;
   }
 
+  filterData(id, dataset) {
+    return this[`${dataset}Data`].filter(user => user.userID === id);
+  }
+
   setSleepData(sleepData) {
-    this.sleepData = sleepData
+    this.sleepData = sleepData;
   }
 
   setActivityData(activityData) {
-    this.activityData = activityData
+    this.activityData = activityData;
   }
 
 }

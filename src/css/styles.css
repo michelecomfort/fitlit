@@ -17,9 +17,8 @@ body {
   background-blend-mode: color-burn;
   border: 2px solid green;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 2%;
-  /* font-size: 25px; */
 }
 
 section,
@@ -40,6 +39,7 @@ h2 {
 p {
   border: 1px solid orange;
   height: fit-content;
+  color: white;
 }
 
 .button, .button-active {
@@ -57,26 +57,26 @@ p {
 
 .button:hover {
   background-color: #00BFCF;
+  cursor: pointer;
 }
 
 .button img {
-  height: 28px;
-  width: 34px;
+  height: 45%;
 }
 
 .dashboard-cards {
   background-color: rgb(12, 50, 69, 0.75);
   border-radius: 30px;
+  padding: 1%;
 }
 
 .user-card {
-  width: 288px;
-  width: 482px;
+  width: 57%;
 }
 
 .sidebar {
-  width: 140px;
-  height: 608;
+  width: 11%;
+  height: 100%;
 }
 
 .sidebar p {
@@ -93,35 +93,40 @@ p {
   align-items: center;
 }
 
-.dashboard-main {
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-}
-
 .widgets {
   border: 1px solid blue;
-  height: 80%;
+  height: 100%;
+  width: 85%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 2%;
+  justify-content: space-between;
+}
+
+.large-widget {
+  width: 37%;
+}
+
+.small-widget {
+  width: 26%;
+}
+
+.widgets img {
+  height: 17%;
 }
 
 .user,
 .activity {
-  height: 50%;
+  height: 48%;
   width: 100%;
   display: flex;
-  /* justify-content: space-between; */
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
+
+.user-card,
 .activity section,
-.friends {
-  width: 25%;
+.water {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -15,6 +15,7 @@ import './images/Home.svg';
 import './images/Steps.svg';
 import './images/Water.svg';
 import './images/Sleep.svg';
+import './images/Friends.svg';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png'
 
@@ -67,7 +68,7 @@ const renderDOM = () => {
 
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
-  greetUser(randomUser);
+  // greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
   displayHydrationInfo(randomUser);
@@ -78,28 +79,27 @@ const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
 
-const greetUser = (user) => {
-  greeting.innerText = `Welcome, ${user.returnFirstName()}!`;
-};
+// const greetUser = (user) => {
+//   greeting.innerText = `Welcome, ${user.returnFirstName()}!`;
+// };
 
 const displayProfileInfo = (user) => {
   userProfile.innerHTML = `
-  <p>Name: ${user.name}</p>
-  <p>Address: ${user.address}</p>
-  <p>Email: ${user.email}</p>
-  <p>Member Since: Oct 2021</p>
+  <p>Name ${user.name}</p>
+  <p>Address ${user.address}</p>
+  <p>Email ${user.email}</p>
   `;
 };
 
 const displayStepInfo = (user) => {
-  stepGoals.innerHTML = `
+  stepGoals.innerHTML += `
     <p>${user.dailyStepGoal} steps/day</p>
     <p>${userRepo.calculateAverageStepGoal()} steps/day</p>
     `;
 };
 
 const displayHydrationInfo = (user) => {
-  waterStats.innerHTML = `
+  waterStats.innerHTML += `
   <p>${user.hydrationData.getOzDrank('2020/01/21')} oz</p>
   `;
 };

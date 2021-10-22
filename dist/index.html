@@ -17,48 +17,47 @@
       <button type="button" class="button"><img src="./images/Sleep.svg"></button>
       </div>
     </section>
-    <section class="dashboard-main">
-      <section class="greeting">
-        <h1></h1>
-        <h2>Home</h2>
-      </section>
       <section class="widgets">
         <section class="user">
           <section class="user-card dashboard-cards" id="userProfile">
-            <img src="./imaages/Home.svg">
-            <p>Name: </p>
-            <p>Address: ${user.address}</p>
-            <p>Email: ${user.email}</p>
-            <p>Member Since: Oct 2021</p>
+            <!-- <img src="./images/Home.svg"> -->
+            <p>Name </p>
+            <p>Address </p>
+            <p>Email ${user.email}</p>
+            <p>Member Since Oct 2021</p>
           </section>
-          <section class="friends">
-            <p>Friend 1</p>
-            <p>Friend 2</p>
+          <section class="water dashboard-cards large-widget" id="waterStats">
+            <img src="./images/Water.svg">
+            <p></p>
           </section>
         </section>
         <section class="activity">
-          <section class="steps">
+          <section class="steps dashboard-cards small-widget">
+            <img src="./images/Steps.svg">
             <p>__ steps</p>
             <section class="step-goals" id="stepGoals">
               <p>Daily Goal</p>
               <p>Avg Goal</p>
             </section>
           </section>
-          <section class="water" id="waterStats">
-            <p>__ oz</p>
-            <section class="water-calendar">Calendar</section>
-          </section>
-          <section class="sleep">
+          <section class="sleep dashboard-cards large-widget">
+            <img src="./images/Sleep.svg">
             <p>__ hrs</p>
             <p>__ Quality</p>
             <section class="avg-sleep">
               <p>Avg hrs</p>
               <p>Avg Quality</p>
             </section>
+            <section class="sleep-calendar">Calendar</section>
+          </section>
+          <section class="friends dashboard-cards small-widget">
+            <img src="./images/Friends.svg">
+            <p>Friend 1</p>
+            <p>Friend 2</p>
+          </section>
           </section>
         </section>
       </section>
-    </section>
 
 <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>

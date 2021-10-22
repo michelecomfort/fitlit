@@ -6,16 +6,16 @@ export default class DataManager {
     this.stepData = null;
   }
 
+  filterData(id, dataset) {
+    return this[`${dataset}Data`].filter(user => user.userID === id);
+  }
+
   setUserData(userData) {
     this.userData = userData;
   }
 
   setHydrationData(hydrationData) {
     this.hydrationData = hydrationData;
-  }
-
-  filterData(id, dataset) {
-    return this[`${dataset}Data`].filter(user => user.userID === id);
   }
 
   setSleepData(sleepData) {

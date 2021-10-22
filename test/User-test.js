@@ -36,8 +36,17 @@ describe('User', function() {
     assert.equal(user1.friends.length, 3);
   });
 
-  it('should return the users first name', () => {
+  it('should return the users first name', function() {
     assert.equal(user1.returnFirstName(), 'Markus');
   });
 
+  it.only('should use the friend IDs to find those users', function() {
+    user1.findFriends();
+    assert.deepEqual(user1.friends, [user2, user3, user4]);
+  });
+
+  // it('should retrieve hydration data', () => {
+  //   user1.retrieveHydrationData()
+  //   assert.equal(user1.hydrationData, )
+  // })
 });

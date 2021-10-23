@@ -8,14 +8,14 @@ export default class Sleep {
       total += day.hoursSlept;
     return total;
   }, 0);
-    return Math.floor(averageHours / this.sleepData.length);
+    return Math.round((averageHours / this.sleepData.length) * 10) / 10;
   };
 
   getHoursSlept(date) {
     const day = this.sleepData.find(user => {
       return user.date === date;
     })
-    return Math.floor(day.hoursSlept);
+    return day.hoursSlept;
   };
 
   getWeeklyHoursSlept(start) {
@@ -24,11 +24,12 @@ export default class Sleep {
     let dayIndex = this.sleepData.indexOf(startDate);
     const result = this.sleepData.reduce((acc, date) => {
       if (acc < 7) {
-        week.push(Math.floor(this.sleepData[dayIndex + acc].hoursSlept));
+        week.push(this.sleepData[dayIndex + acc].hoursSlept);
         acc++;
       };
       return acc;
     }, 0);
+
     return week;
   };
 
@@ -37,21 +38,21 @@ export default class Sleep {
       total += day.sleepQuality;
       return total;
     }, 0);
-    return Math.floor(quality / this.sleepData.length);
+    return Math.round((quality / this.sleepData.length) * 10) / 10;
   };
 
   getQualityOfSleep(date) {
     const day = this.sleepData.find(user => user.date === date);
-    return Math.floor(day.sleepQuality);
+    return day.sleepQuality;
   };
 
-  getWeeklyHoursSlept(date) {
+  getWeeklySleepQuality(date) {
     let week = [];
     let startDate = this.sleepData.find(day => day.date === date);
     let dayIndex = this.sleepData.indexOf(startDate);
     const result = this.sleepData.reduce((acc, day) => {
       if (acc < 7) {
-        week.push(Math.floor(this.sleepData[dayIndex + acc].sleepQuality));
+        week.push(this.sleepData[dayIndex + acc].sleepQuality);
         acc++;
       }
       return acc;

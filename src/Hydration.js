@@ -4,11 +4,11 @@ export default class Hydration {
   }
 
   getTotalAverageDrank() {
-    const total = this.userHydration.reduce((sum, day) => {
+    const total = this.hydrationData.reduce((sum, day) => {
       sum += day.numOunces;
       return sum;
     }, 0)
-    return Math.floor(total / this.userHydration.length);
+    return Math.floor(total / this.hydrationData.length);
   }
 
   getOzDrank(date) {

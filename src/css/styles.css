@@ -1,94 +1,249 @@
+/* ~~~~~~~~~~~ GLOBAL RULES ~~~~~~~~~~ */
 * {
   box-sizing: border-box;
   margin: 0;
+  border: 0;
 }
 
 body, html {
   height: 100%;
-  border: 1px solid yellow;
-  margin: 0;
   font-size: 24px;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  border: 2px solid green;
+  background-image: url('../images/backgroundimage.jpg');
+  background-color: rgb(255, 255, 255, 0.4);
+  background-blend-mode: color-burn;
   display: flex;
-  justify-content: space-around;
-  padding: 2%;
-  /* font-size: 25px; */
+  justify-content: space-between;
+  padding: 3%;
 }
 
-section,
+/* section,
 h1,
 h2 {
   border: 1px solid red;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.button-active {
+  color: #FC6F7F;
 }
 
+
 h1 {
-  text-align: right;
-  font-size: 1.7em;
+  font-size: 1.8em;
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 2.7em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.2em;
 }
 
 p {
-  border: 1px solid orange;
-  height: fit-content;
+  /* border: 1px solid orange; */
+  color: white;
+  font-size: 0.9em;
+}
+
+/* div {
+  border: 1px solid green;
+} */
+
+.orange {
+  color: #FF9E2D;
+}
+
+/* ~~~~~~~~~~~ SIDENAV RULES ~~~~~~~~~~ */
+
+button {
+  margin-top: 15%;
+  width: 45%;
+  height: 9%;
+  border-radius: 100%;
+  background-color: #0C3245;
+}
+
+button img {
+  height: 47%;
+  max-width: 70%;
+}
+
+button:hover {
+  background-color: #00BFCF;
+  cursor: pointer;
 }
 
 .sidebar {
-  width: 7%;
-}
-
-.sidebar p {
-  text-align: center;
-}
-
-.dashboard-main {
-  width: 85%;
+  width: 11%;
+  height: 100%;
+  padding: 2% 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-
-}
-
-.widgets {
-  border: 1px solid blue;
-  height: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 2%;
-}
-
-.user,
-.activity {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  /* justify-content: space-between; */
-  justify-content: space-around;
-}
-
-.activity section,
-.friends {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.user-profile {
-  width: 50%;
+/* ~~~~~~~~~~~ WIDGET DASHBOARD RULES ~~~~~~~~~~ */
+
+.dashboard-cards {
+  background-color: rgb(12, 50, 69, 0.75);
+  border-radius: 30px;
+  padding: 1%;
 }
 
-.step-goals,
-.sleep-calendar { 
+.widgets {
+  /* border: 1px solid blue; */
+  height: 100%;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.large-widget {
+  width: 37%;
+}
+
+.small-widget {
+  width: 27%;
+}
+
+.widgets img {
+  height: 17%;
+}
+
+.top-half,
+.bottom-half {
+  height: 47%;
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
-/* add padding to widgets box. Then adjust flex of widgets to space between so that they line up more nicely? */
+.water,
+.steps,
+.sleep,
+.friends,
+.today-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.user-info-card {
+  width: 58%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.user-info-card img {
+  max-width: 35%;
+  height: auto;
+  border-radius: 100%;
+}
+
+.user-data {
+  width: 45%;
+  /* border: 1px solid green; */
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow-wrap: break-word;
+}
+
+.today-data {
+  height: 35%;
+}
+
+.today-data p {
+  font-size: 1.2em;
+}
+
+.step-goals { 
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.info-type-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-text {
+  font-size: 0.6em;
+}
+
+.border-right {
+  border-right: 2px solid white;
+}
+
+.calendar {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar div {
+  text-align: center;
+}
+
+.sleep-hours,
+.sleep-quality {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sleep-data-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.today-data-sleep {
+  font-size: 1em;
+  padding-right: 2%;
+}
+
+.sleep-card {
+  margin-top: 1%;
+  display: flex;
+  width: 100%;
+  height: 45%;
+  justify-content: space-around;
+}
+
+.sleep-card .info-text {
+  margin-bottom: 2%;
+}

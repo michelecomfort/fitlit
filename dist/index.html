@@ -3,53 +3,168 @@
   <head>
     <meta charset="UTF-8">
     <title>FitLit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section class="sidebar">
-      <p>FitLit</p>
-      <button type="button" class="home-btn">Home</button>
-      <button type="button" class="friend-btn">Friends</button>
-      <button type="button" class="steps-btn">Steps</button>
-      <button type="button" class="water-btn">Water</button>
-      <button type="button" class="sleep-btn">Sleep</button>
+    <section class="sidebar dashboard-cards">
+      <h1>FitLit</h1>
+      <button type="button" class="button button-active"><img src="./images/Home.svg"></button>
+      <button type="button" class="button"><img src="./images/Steps.svg"></button>
+      <button type="button" class="button"><img src="./images/Water.svg"></button>
+      <button type="button" class="button"><img src="./images/Sleep.svg"></button>
     </section>
-    <section class="dashboard-main">
-      <section class="greeting">
-        <h1></h1>
-        <h2>Home</h2>
-      </section>
       <section class="widgets">
-        <section class="user">
-          <section class="user-profile" id="userProfile">
+        <section class="top-half">
+          <section class="user-info-card dashboard-cards" id="userProfile">
+            <img src="./images/Kyra.png">
+            <div class="user-data">
+              <h2></h2>
+              <p></p>
+              <p></p>
+            </div>
           </section>
-          <section class="friends">
+          <section class="water dashboard-cards large-widget" id="waterStats">
+            <img src="./images/Water.svg">
+            <section class="today-data">
+              <h3>##</h3>
+              <p>oz</p>
+            </section>
+            <section class="calendar">
+              <div>
+                <p>M</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+              <div>
+                <p>T</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+              <div>
+                <p>W</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+              <div>
+                <p>Th</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+              <div>
+                <p>F</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+              <div>
+                <p>Sa</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+              <div>
+                <p>Su</p>
+                <h5>##</h5>
+                <p>oz</p>
+              </div>
+            </section>
+          </section>
+        </section>
+        <section class="bottom-half">
+          <section class="steps dashboard-cards small-widget">
+            <img src="./images/Steps.svg">
+            <section class="today-data">
+              <h3>####</h3>
+              <p>steps</p>
+            </section>
+            <section class="step-goals" id="stepGoals">
+              <section class="info-type-box border-right">
+                <p class="info-text">You</p>
+              </section>
+              <section class="info-type-box">
+                <p class="info-text">Community</p>
+              </section>
+            </section>
+          </section>
+
+          <section class="sleep dashboard-cards large-widget">
+            <img src="./images/Sleep.svg">
+            <div class="sleep-card">
+              <section class="sleep-hours border-right">
+                <p class="info-text">Hours</p>
+                <div class="sleep-data-box">
+                  <section class="today-data-sleep border-right">
+                    <h3>#.#</h3>
+                    <p>today</p>
+                  </section>
+                  <section class="today-data-sleep">
+                    <h4 class="orange">#.#</h4>
+                    <p>avg</p>
+                  </section>
+                </div>
+              </section>
+              <section class="sleep-quality">
+                <p class="info-text">Quality</p>
+                <div class="sleep-data-box">
+                  <section class="today-data-sleep border-right">
+                    <h3>#.#</h3>
+                    <p>today</p>
+                  </section>
+                  <section class="today-data-sleep">
+                    <h4 class="orange">#.#</h4>
+                    <p>avg</p>
+                  </section>
+                </div>
+              </section>
+            </div>
+            <section class="calendar">
+              <div>
+                <p>M</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+              <div>
+                <p>T</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+              <div>
+                <p>W</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+              <div>
+                <p>Th</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+              <div>
+                <p>F</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+              <div>
+                <p>Sa</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+              <div>
+                <p>Su</p>
+                <h5>#.#</h5>
+                <p class="orange">#.#</p>
+              </div>
+            </section>
+          </section>
+          <section class="friends dashboard-cards small-widget">
+            <img src="./images/Friends.svg">
             <p>Friend 1</p>
             <p>Friend 2</p>
+            <p>Friend 3</p>
+            <p>Friend 4</p>
           </section>
-        </section>
-        <section class="activity">
-          <section class="steps">
-            <p>__ steps</p>
-            <section class="step-goals" id="stepGoals">
-              <p>Daily Goal</p>
-              <p>Avg Goal</p>
-            </section>
-          </section>
-          <section class="water" id="waterStats">
-            <p>__ oz</p>
-            <section class="water-calendar">Calendar</section>
-          </section>
-          <section class="sleep">
-            <p>__ hrs</p>
-            <p>__ Quality</p>
-            <section class="avg-sleep">
-              <p>Avg hrs</p>
-              <p>Avg Quality</p>
-            </section>
           </section>
         </section>
       </section>
-    </section>
 
 <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>

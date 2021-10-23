@@ -11,13 +11,20 @@ import {
 } from './fetch'
 import DataManager from './DataManager'
 
+import './images/Kyra.png';
+
+import './images/Home.svg';
+import './images/Steps.svg';
+import './images/Water.svg';
+import './images/Sleep.svg';
+import './images/Friends.svg';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png'
 
 
+
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
-const greeting = document.querySelector('h1');
 const stepGoals = document.querySelector('#stepGoals');
 const waterStats = document.getElementById('waterStats')
 
@@ -62,7 +69,8 @@ const renderDOM = () => {
 
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
-  greetUser(randomUser);
+  console.log(randomUser);
+  // greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
   displayHydrationInfo(randomUser);
@@ -73,29 +81,29 @@ const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
 
-const greetUser = (user) => {
-  greeting.innerText = `Welcome, ${user.returnFirstName()}!`;
-};
-
 const displayProfileInfo = (user) => {
-  userProfile.innerHTML = `
-  <p>Name: ${user.name}</p>
-  <p>Address: ${user.address}</p>
-  <p>Email: ${user.email}</p>
-  <p>Member Since: Oct 2021</p>
+  userProfile.childNodes[3].innerHTML = `
+  <h2>Hi, ${user.returnFirstName()}!</h2>
+  <p>${user.address}</p>
+  <p>${user.email}</p>
   `;
 };
 
 const displayStepInfo = (user) => {
-  stepGoals.innerHTML = `
-    <p>${user.dailyStepGoal} steps/day</p>
-    <p>${userRepo.calculateAverageStepGoal()} steps/day</p>
-    `;
+  stepGoals.childNodes[1].innerHTML += `
+  <h4>${user.dailyStepGoal}</h4>
+  <p class="unit">/day</p>
+  `;
+  stepGoals.childNodes[3].innerHTML += `
+  <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
+  <p class="unit">/day</p>
+  `;
 };
 
 const displayHydrationInfo = (user) => {
-  waterStats.innerHTML = `
-  <p>${user.hydrationData.getOzDrank('2020/01/21')} oz</p>
+  waterStats.childNodes[3].innerHTML = `
+  <h3>${user.hydrationData.getOzDrank('2020/01/21')}</h4> 
+  <p>oz</p>
   `;
 };
 

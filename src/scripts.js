@@ -26,7 +26,10 @@ import './images/Friends.svg';
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
 const stepGoals = document.querySelector('#stepGoals');
-const waterStats = document.getElementById('waterStats')
+const waterStats = document.getElementById('waterStats');
+const todaySteps = document.getElementById('todaySteps');
+const sleepHours = document.querySelector('#sleepHours');
+const sleepQuality = document.querySelector('#sleepQuality')
 
 
 // Event Listeners
@@ -75,6 +78,7 @@ const renderDOM = () => {
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
   displayHydrationInfo(randomUser);
+  displaySleepInfo(randomUser);
   randomUser.hydrationData.getWeeklyDrank('2020/01/14');
 };
 
@@ -99,13 +103,39 @@ const displayStepInfo = (user) => {
   <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
   <p class="unit">/day</p>
   `;
+
+  todaySteps.innerHTML =
+  `
+  <h3>${user.activityData[user.activityData.length - 1].numSteps}</h3>
+  <p>steps</p>`
 };
 
 const displayHydrationInfo = (user) => {
   waterStats.childNodes[3].innerHTML = `
-  <h3>${user.hydrationData.getOzDrank('2020/01/21')}</h4> 
+  <h3>${user.hydrationData.getOzDrank('2020/01/21')}</h3>
   <p>oz</p>
   `;
+};
+
+const displaySleepInfo = (user) => {
+
+  sleepHours.childNodes[1].innerHTML = `
+  <h3>${user.sleepData.getHoursSlept('2020/01/22')}</h3>
+  <p>today</p>
+  `;
+  sleepHours.childNodes[3].innerHTML = `
+  <h4 class="orange">${user.sleepData.getAverageHoursSlept()}</h4>
+  <p>avg</p>
+  `;
+  sleepQuality.childNodes[1].innerHTML = `
+  <h3>${user.sleepData.getQualityOfSleep('2020/01/22')}</h3>
+  <p>today</p>
+  `;
+  sleepQuality.childNodes[3].innerHTML = `
+  <h4 class="orange">${user.sleepData.getAverageSleepQuality()}</h4>
+  <p>avg</p>
+  `;
+
 };
 
 

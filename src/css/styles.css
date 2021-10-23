@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  border: 0;
 }
 
 body, html {
@@ -29,18 +30,14 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.button-active {
   color: #FC6F7F;
 }
 
-.orange {
-  color: #FF9E2D;
-}
 
 h1 {
-  text-align: center;
   font-size: 1.8em;
-  font-weight: 700;
 }
 
 h2 {
@@ -61,68 +58,54 @@ h5 {
 
 p {
   /* border: 1px solid orange; */
-  height: fit-content;
   color: white;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 /* div {
   border: 1px solid green;
 } */
 
+.orange {
+  color: #FF9E2D;
+}
+
 /* ~~~~~~~~~~~ SIDENAV RULES ~~~~~~~~~~ */
 
-.button, .button-active {
+button {
   margin-top: 15%;
   width: 45%;
-  /* change to %% */
-  height: 62px;
+  height: 9%;
   border-radius: 100%;
   background-color: #0C3245;
-  border: none;
 }
 
-.button-active {
-  background-color: #FC6F7F;
-}
-
-.button:hover {
-  background-color: #00BFCF;
-  cursor: pointer;
-}
-
-.button img {
+button img {
   height: 47%;
   max-width: 70%;
 }
 
-.dashboard-cards {
-  background-color: rgb(12, 50, 69, 0.75);
-  border-radius: 30px;
-  padding: 1%;
+button:hover {
+  background-color: #00BFCF;
+  cursor: pointer;
 }
 
 .sidebar {
   width: 11%;
   height: 100%;
   padding: 2% 0;
-}
-
-.sidebar p {
-  text-align: center;
-  color: #FC6F7F;
-  font-size: 36px;
-  font-weight: 700;
-  padding-top: 16px;
-}
-
-.sidebar div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 /* ~~~~~~~~~~~ WIDGET DASHBOARD RULES ~~~~~~~~~~ */
+
+.dashboard-cards {
+  background-color: rgb(12, 50, 69, 0.75);
+  border-radius: 30px;
+  padding: 1%;
+}
 
 .widgets {
   /* border: 1px solid blue; */
@@ -146,24 +129,27 @@ p {
   height: 17%;
 }
 
-.user,
-.activity {
+.top-half,
+.bottom-half {
   height: 47%;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
+.water,
+.steps,
 .sleep,
 .friends,
-.water {
+.today-data {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  align-content: center;
 }
 
-.user-card {
+.user-info-card {
   width: 58%;
   display: flex;
   flex-direction: row;
@@ -171,7 +157,13 @@ p {
   align-items: center;
 }
 
-.user-card div {
+.user-info-card img {
+  max-width: 35%;
+  height: auto;
+  border-radius: 100%;
+}
+
+.user-data {
   width: 45%;
   /* border: 1px solid green; */
   height: 70%;
@@ -181,28 +173,11 @@ p {
   overflow-wrap: break-word;
 }
 
-.user-card img {
-  max-width: 35%;
-  height: auto;
-  border-radius: 100%;
-}
-
-.steps,
-.steps-today,
-.water-today {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.steps-today,
-.water-today {
+.today-data {
   height: 35%;
 }
 
-.steps-today p,
-.water-today p, {
+.today-data p {
   font-size: 1.2em;
 }
 
@@ -214,34 +189,61 @@ p {
   text-align: center;
 }
 
-.you,
-.community {
+.info-type-box {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.you {
-  border-right: 2px solid white;
-}
-
-.info-type {
+.info-text {
   font-size: 0.6em;
 }
 
-.unit {
-  font-size: 1.3em;
+.border-right {
+  border-right: 2px solid white;
 }
 
-.water-calendar {
+.calendar {
   width: 95%;
-  /* height: 35%; */
   display: flex;
   justify-content: space-around;
 }
 
-.water-calendar div {
+.calendar div {
   text-align: center;
 }
-/* add padding to widgets box. Then adjust flex of widgets to space between so that they line up more nicely? */
+
+.sleep-hours,
+.sleep-quality {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sleep-data-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.today-data-sleep {
+  font-size: 1em;
+  padding-right: 2%;
+}
+
+.sleep-card {
+  margin-top: 1%;
+  display: flex;
+  width: 100%;
+  height: 45%;
+  justify-content: space-around;
+}
+
+.sleep-card .info-text {
+  margin-bottom: 2%;
+}

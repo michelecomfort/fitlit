@@ -81,10 +81,6 @@ const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
 
-// const greetUser = (user) => {
-//   greeting.innerText = `Welcome, ${user.returnFirstName()}!`;
-// };
-
 const displayProfileInfo = (user) => {
   userProfile.childNodes[3].innerHTML = `
   <h2>Hi, ${user.returnFirstName()}!</h2>
@@ -102,7 +98,6 @@ const displayStepInfo = (user) => {
   <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
   <p class="unit">/day</p>
   `;
-  // stepGoals.childNodes[7].innerText = `${userRepo.calculateAverageStepGoal()} steps/day`;
 };
 
 const displayHydrationInfo = (user) => {

@@ -20,12 +20,6 @@ body {
   padding: 3%;
 }
 
-/* section,
-h1,
-h2 {
-  border: 1px solid red;
-} */
-
 h1,
 h2,
 h3,
@@ -57,14 +51,9 @@ h5 {
 }
 
 p {
-  /* border: 1px solid orange; */
   color: white;
   font-size: 0.9em;
 }
-
-/* div {
-  border: 1px solid green;
-} */
 
 .orange {
   color: #FF9E2D;

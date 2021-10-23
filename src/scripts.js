@@ -1,5 +1,6 @@
 import './css/styles.css';
-// import userData from './data/users';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 import UserRepository from './UserRepository';
 import Hydration from './Hydration';
 import {
@@ -18,10 +19,6 @@ import './images/Steps.svg';
 import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-// import './images/turing-logo.png'
-
-
 
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
@@ -30,14 +27,9 @@ const waterStats = document.getElementById('waterStats');
 const todaySteps = document.getElementById('todaySteps');
 const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality')
-
-
-// Event Listeners
-// window.addEventListener('load', renderDOM);
-
+const waterCalendar = document.getElementById('myChart').getContext('2d');
 
 // Global Variables
-
 const userRepo = new UserRepository();
 const dataManager = new DataManager();
 // let data;
@@ -53,7 +45,6 @@ const retrieveAllData = (data) => {
 }
 
 const parseData = (data) => {
-  // instantiate Hydration & Sleep classes here????
   dataManager.setUserData(data[0].userData);
   dataManager.setSleepData(data[1].sleepData);
   dataManager.setActivityData(data[2].activityData)
@@ -74,17 +65,65 @@ const renderDOM = () => {
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
   console.log(randomUser);
-  // greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
   displayHydrationInfo(randomUser);
   displaySleepInfo(randomUser);
-  randomUser.hydrationData.getWeeklyDrank('2020/01/14');
+  generateCalendarChart(randomUser);
 };
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
+
+const generateCalendarChart = (user) => {
+  const waterChart = new Chart(waterCalendar, {
+    type: 'line',
+    data: {
+        labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
+        datasets: [{
+            label: 'oz of water',
+            data: user.hydrationData.getWeeklyDrank('2020/01/15'),
+            backgroundColor: '#FC6F7F',
+            borderColor: '#FC6F7F',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        plugins: {
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+              color: '#ffffff'
+            },
+          }
+        },
+        scales: {
+          y: {
+            ticks: {
+              color: ['#ffffff'],
+            },
+            beginAtZero: true,
+            grid: {
+              color: 'rgba(0, 0, 0, 0)',
+              borderColor: 'rgba(0, 0, 0, 0)',
+            }
+          },
+          x: {
+            ticks: {
+              color: ['#ffffff']
+            },
+            grid: {
+              color: 'rgba(0, 0, 0, 0)',
+              borderColor: 'rgba(0, 0, 0, 0)',
+            },
+          },
+        }
+    },
+    })
+}
+
 
 const displayProfileInfo = (user) => {
   userProfile.childNodes[3].innerHTML = `

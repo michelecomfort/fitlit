@@ -69,6 +69,7 @@ const renderDOM = () => {
 
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
+  console.log(randomUser);
   // greetUser(randomUser);
   displayProfileInfo(randomUser);
   displayStepInfo(randomUser);
@@ -93,7 +94,6 @@ const displayProfileInfo = (user) => {
 };
 
 const displayStepInfo = (user) => {
-  console.log(stepGoals.childNodes);
   stepGoals.childNodes[1].innerHTML += `
   <h4>${user.dailyStepGoal}</h4>
   <p class="unit">/day</p>
@@ -106,8 +106,9 @@ const displayStepInfo = (user) => {
 };
 
 const displayHydrationInfo = (user) => {
-  waterStats.innerHTML += `
-  <p>${user.hydrationData.getOzDrank('2020/01/21')} oz</p>
+  waterStats.childNodes[3].innerHTML = `
+  <h3>${user.hydrationData.getOzDrank('2020/01/21')}</h4> 
+  <p>oz</p>
   `;
 };
 

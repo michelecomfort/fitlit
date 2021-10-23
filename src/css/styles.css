@@ -1,3 +1,4 @@
+/* ~~~~~~~~~~~ GLOBAL RULES ~~~~~~~~~~ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +6,6 @@
 
 body, html {
   height: 100%;
-  margin: 0;
   font-size: 24px;
   font-family: 'Roboto', sans-serif;
 }
@@ -16,7 +16,7 @@ body {
   background-blend-mode: color-burn;
   display: flex;
   justify-content: space-between;
-  padding: 2%;
+  padding: 3%;
 }
 
 /* section,
@@ -28,7 +28,8 @@ h2 {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   color: #FC6F7F;
 }
 
@@ -54,8 +55,8 @@ h4 {
   font-size: 1.5em;
 }
 
-.steps-today {
-  height: 35%;
+h5 {
+  font-size: 1.2em;
 }
 
 p {
@@ -65,9 +66,11 @@ p {
   font-size: .9em;
 }
 
-div {
+/* div {
   border: 1px solid green;
-}
+} */
+
+/* ~~~~~~~~~~~ SIDENAV RULES ~~~~~~~~~~ */
 
 .button, .button-active {
   margin-top: 15%;
@@ -119,6 +122,8 @@ div {
   align-items: center;
 }
 
+/* ~~~~~~~~~~~ WIDGET DASHBOARD RULES ~~~~~~~~~~ */
+
 .widgets {
   /* border: 1px solid blue; */
   height: 100%;
@@ -134,7 +139,7 @@ div {
 }
 
 .small-widget {
-  width: 26%;
+  width: 27%;
 }
 
 .widgets img {
@@ -143,36 +148,37 @@ div {
 
 .user,
 .activity {
-  height: 48%;
+  height: 47%;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.user-card,
 .sleep,
 .friends,
 .water {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   align-items: center;
 }
 
 .user-card {
-  width: 57%;
+  width: 58%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .user-card div {
   width: 45%;
   /* border: 1px solid green; */
-  height: 90%;
+  height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  overflow-wrap: break-word;
 }
 
 .user-card img {
@@ -182,14 +188,21 @@ div {
 }
 
 .steps,
-.steps-today {
+.steps-today,
+.water-today {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 
-.steps-today p {
+.steps-today,
+.water-today {
+  height: 35%;
+}
+
+.steps-today p,
+.water-today p, {
   font-size: 1.2em;
 }
 
@@ -221,4 +234,14 @@ div {
   font-size: 1.3em;
 }
 
+.water-calendar {
+  width: 95%;
+  /* height: 35%; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.water-calendar div {
+  text-align: center;
+}
 /* add padding to widgets box. Then adjust flex of widgets to space between so that they line up more nicely? */

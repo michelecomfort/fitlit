@@ -93,10 +93,16 @@ const displayProfileInfo = (user) => {
 };
 
 const displayStepInfo = (user) => {
-  stepGoals.innerHTML += `
-    <p>${user.dailyStepGoal} steps/day</p>
-    <p>${userRepo.calculateAverageStepGoal()} steps/day</p>
-    `;
+  console.log(stepGoals.childNodes);
+  stepGoals.childNodes[1].innerHTML += `
+  <h4>${user.dailyStepGoal}</h4>
+  <p class="unit">/day</p>
+  `;
+  stepGoals.childNodes[3].innerHTML += `
+  <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
+  <p class="unit">/day</p>
+  `;
+  // stepGoals.childNodes[7].innerText = `${userRepo.calculateAverageStepGoal()} steps/day`;
 };
 
 const displayHydrationInfo = (user) => {

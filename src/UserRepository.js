@@ -12,12 +12,12 @@ export default class UserRepository {
       const filteredSleep = dataManager.filterData(user.id, 'sleep');
       const filteredActivity = dataManager.filterData(user.id, 'activity');
       return new User(user, filteredHydration, filteredSleep, filteredActivity);
-    })
-  }
+    });
+  };
 
   retrieveUser(id) {
     return this.users.find(user => user.id === id);
-  }
+  };
 
   calculateAverageStepGoal() {
     const total = this.users.reduce((sum, user) => {
@@ -25,5 +25,13 @@ export default class UserRepository {
       return sum;
     }, 0);
     return total / this.users.length;
-  }
-}
+  };
+
+  calculateAllUserAverageSleep(sleepData) {
+    const allSleepAverage = sleepData.reduce((sum, user) => {
+      sum += user.hoursSlept;
+      return sum;
+    }, 0);
+    return Math.round(allSleepAverage / sleepData.length * 10) / 10;
+  };
+};

@@ -1,4 +1,5 @@
 import Hydration from './Hydration';
+import Sleep from './Sleep';
 
 export default class User {
   constructor(userData, hydrationData, sleepData, activityData) {

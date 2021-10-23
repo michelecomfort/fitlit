@@ -16,7 +16,7 @@ describe('User', function() {
     user4 = new User(userData[3]);
     // hydration1 = new Hydration()
   });
-  
+
   it('should be a function', function() {
     assert.isFunction(User);
   });
@@ -25,11 +25,11 @@ describe('User', function() {
     assert.instanceOf(user1, User);
   });
 
-  it('should have an no hydration, sleep, or activity data by default', function() {
-    assert.equal(user1.hydrationData, null);
-    assert.equal(user1.sleepData, null);
-    assert.equal(user1.activityData, null);
-  });
+  // it('should have an no hydration, sleep, or activity data by default', function() {
+  //   assert.equal(user1.hydrationData, null);
+  //   assert.equal(user1.sleepData, null);
+  //   assert.equal(user1.activityData, null);
+  // });
 
   it('should have single user data', function() {
     assert.equal(user1.id, 1);

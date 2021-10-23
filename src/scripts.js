@@ -56,6 +56,7 @@ const parseData = (data) => {
   dataManager.setActivityData(data[2].activityData)
   dataManager.setHydrationData(data[3].hydrationData)
 
+
 }
 
 const renderDOM = () => {
@@ -66,7 +67,7 @@ const renderDOM = () => {
   const activityData = Object.values(dataManager.activityData);
 
   userRepo.buildUserRepo(dataManager, data, hydrationData, sleepData, activityData);
-
+  userRepo.calculateAllUserAverageSleep(sleepData)
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
 
   console.log(randomUser);

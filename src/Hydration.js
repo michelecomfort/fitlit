@@ -17,12 +17,12 @@ export default class Hydration {
   }
 
   getWeeklyDrank(start) {
-    const week = [];
-    const startDate = this.hydrationData.find(day => day.date === start);
-    const startDateIndex = this.hydrationData.indexOf(startDate);
+    let week = [];
+    let startDate = this.hydrationData.find(day => day.date === start);
+    let dayIndex = this.hydrationData.indexOf(startDate);
     const result = this.hydrationData.reduce((acc, date) => {
       if (acc < 7) {
-        week.push(this.hydrationData[startDateIndex + acc].numOunces);
+        week.push(this.hydrationData[dayIndex + acc].numOunces);
         acc++;
       }
       return acc;

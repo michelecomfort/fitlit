@@ -42,6 +42,10 @@ describe('User Repository', function() {
   it('should calculate the average step goal amongst all users', function() {
     assert.equal(userRepo.calculateAverageStepGoal(), 7500);
   });
+  it('should calculate the average for all users hours slept', function() {
+    assert.equal(userRepo.calculateAllUserAverageSleep(user1Data))
+  })
+  //need test to calculate all user sleep average
 });
 
 //Will need tests for class instances creating in the future

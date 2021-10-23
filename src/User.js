@@ -1,4 +1,5 @@
 import Hydration from './Hydration';
+import Sleep from './Sleep';
 
 export default class User {
   constructor(userData, hydrationData, sleepData, activityData) {
@@ -10,7 +11,7 @@ export default class User {
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
     this.hydrationData = new Hydration(hydrationData);
-    // this.sleepData = new Sleep(sleepData)
+    this.sleepData = new Sleep(sleepData)
     this.activityData = activityData;
   }
 

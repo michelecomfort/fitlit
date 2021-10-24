@@ -19,7 +19,7 @@ describe('Sleep', function () {
     ];
     sleep = new Sleep(user1Data);
     today = '2020/01/22';
-  })
+  });
 
   it('should be a function', function() {
     assert.isFunction(Sleep);
@@ -59,6 +59,4 @@ describe('Sleep', function () {
     assert.deepEqual(sleep.getWeeklySleepQuality('2020/01/16'), [2.2, 3.3, 4.4, 5.5, 2.6, 4.7, 2.8]);
   });
 
-
-
-})
+});

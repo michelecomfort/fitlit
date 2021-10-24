@@ -1,10 +1,10 @@
 import User from "./User";
-import DataManager from './DataManager'
+import DataManager from './DataManager';
 
 export default class UserRepository {
   constructor() {
     this.users = [];
-  }
+  };
 
   buildUserRepo(dataManager, userData, hydrationData, sleepData, activityData) {
     this.users = userData.map(user => {
@@ -34,4 +34,5 @@ export default class UserRepository {
     }, 0);
     return Math.round(allSleepAverage / sleepData.length * 10) / 10;
   };
+  
 };

@@ -35,4 +35,4 @@ const getHydrationData = () => {
   getSleepData,
   getActivityData,
   getHydrationData,
-}
+};

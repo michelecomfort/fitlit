@@ -54,12 +54,12 @@ export default class Sleep {
       if (acc < 7) {
         week.push(this.sleepData[dayIndex + acc].sleepQuality);
         acc++;
-      }
+      };
       return acc;
     }, 0)
     return week;
-  }
+  };
 
-  
+
 
 };

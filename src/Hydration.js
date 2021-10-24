@@ -9,12 +9,12 @@ export default class Hydration {
       return sum;
     }, 0)
     return Math.floor(total / this.hydrationData.length);
-  }
+  };
 
   getOzDrank(date) {
     const day = this.hydrationData.find(user => user.date === date);
     return day.numOunces;
-  }
+  };
 
   getWeeklyDrank(start) {
     let week = [];
@@ -24,10 +24,10 @@ export default class Hydration {
       if (acc < 7) {
         week.push(this.hydrationData[dayIndex + acc].numOunces);
         acc++;
-      }
+      };
       return acc;
-    }, 0)
+    }, 0);
     return week;
-  }
+  };
 
-}
+};

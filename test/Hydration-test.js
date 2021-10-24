@@ -21,7 +21,7 @@ describe('Hydration', function() {
   });
 
   it(' should be an instance of Hydration', function() {
-    assert.instanceOf(hydration, Hydration)
+    assert.instanceOf(hydration, Hydration);
   });
 
   it(' should be instantiated with a specific user\'s data inside a property', function() {
@@ -29,7 +29,7 @@ describe('Hydration', function() {
   });
 
   it(' should calculate a user\'s average oz consumed per day for all time', function() {
-    assert.equal(hydration.getTotalAverageDrank(), 33)
+    assert.equal(hydration.getTotalAverageDrank(), 33);
   });
 
   it(' should calculate a user\'s oz consumed on a single day', function() {
@@ -38,9 +38,7 @@ describe('Hydration', function() {
   });
 
   it(' should calculate a user\'s oz consumed each day for a week', function() {
-    assert.deepEqual(hydration.getWeeklyDrank("2020/01/16"), [30, 31, 32, 33, 34, 35, 36])
+    assert.deepEqual(hydration.getWeeklyDrank("2020/01/16"), [30, 31, 32, 33, 34, 35, 36]);
   });
-
-  
 
 });

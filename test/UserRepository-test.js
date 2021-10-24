@@ -3,9 +3,6 @@ import User from '../src/User';
 import UserRepository from '../src/UserRepository';
 import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js'
 
-//User repo is going create instances of user for all user data
-
-
 describe('User Repository', function() {
   let user1;
   let user2;
@@ -43,6 +40,7 @@ describe('User Repository', function() {
     assert.equal(userRepo.calculateAverageStepGoal(), 7500);
   });
   it('should calculate the average for all users hours slept', function() {
-    assert.equal(userRepo.calculateAllUserAverageSleep(user1Data))
-  })
+    assert.equal(userRepo.calculateAllUserAverageSleep(user1Data));
+  });
+
 });

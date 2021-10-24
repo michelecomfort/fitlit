@@ -25,12 +25,6 @@ describe('User', function() {
     assert.instanceOf(user1, User);
   });
 
-  // it('should have an no hydration, sleep, or activity data by default', function() {
-  //   assert.equal(user1.hydrationData, null);
-  //   assert.equal(user1.sleepData, null);
-  //   assert.equal(user1.activityData, null);
-  // });
-
   it('should have single user data', function() {
     assert.equal(user1.id, 1);
     assert.equal(user1.name, 'Markus Rossio');
@@ -46,12 +40,4 @@ describe('User', function() {
     assert.equal(user1.returnFirstName(), 'Markus');
   });
 
-  // it('should retrieve hydration data', () => {
-  //   user1.retrieveHydrationData()
-  //   assert.equal(user1.hydrationData, )
-  // })
 });
-
-//should create an instance of hydration
-//should create an instance of sleep
-//should create an instance of activity(steps)

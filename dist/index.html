@@ -10,15 +10,15 @@
   <body>
     <section class="sidebar dashboard-cards">
       <h1>FitLit</h1>
-      <button type="button" class="button button-active"><img src="./images/Home.svg"></button>
-      <button type="button" class="button"><img src="./images/Steps.svg"></button>
-      <button type="button" class="button"><img src="./images/Water.svg"></button>
-      <button type="button" class="button"><img src="./images/Sleep.svg"></button>
+      <button type="button" class="button button-active"><img src="./images/Home.svg" alt='home icon'></button>
+      <button type="button" class="button"><img src="./images/Steps.svg" alt='walking person icon'></button>
+      <button type="button" class="button"><img src="./images/Water.svg" alt='water droplet icon'></button>
+      <button type="button" class="button"><img src="./images/Sleep.svg" alt='moon icon'></button>
     </section>
       <section class="widgets">
         <section class="top-half">
           <section class="user-info-card dashboard-cards" id="userProfile">
-            <img src="./images/Kyra.png">
+            <img src="./images/Kyra.png" alt='person photo'>
             <div class="user-data">
               <h2></h2>
               <p></p>
@@ -26,56 +26,22 @@
             </div>
           </section>
           <section class="water dashboard-cards large-widget" id="waterStats">
-            <img src="./images/Water.svg">
+            <img src="./images/Water.svg" alt='water droplet icon'>
             <section class="today-data">
-              <h3>##</h3>
+              <h3></h3>
               <p>oz</p>
             </section>
-            <section class="calendar">
-              <div>
-                <p>M</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
-              <div>
-                <p>T</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
-              <div>
-                <p>W</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
-              <div>
-                <p>Th</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
-              <div>
-                <p>F</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
-              <div>
-                <p>Sa</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
-              <div>
-                <p>Su</p>
-                <h5>##</h5>
-                <p>oz</p>
-              </div>
+            <section class="calendar" id='calendar'>
+              <canvas id="myChart" width="250" height="90"></canvas>
             </section>
           </section>
         </section>
         <section class="bottom-half">
           <section class="steps dashboard-cards small-widget">
-            <img src="./images/Steps.svg">
-            <section class="today-data">
-              <h3>####</h3>
-              <p>steps</p>
+            <img src="./images/Steps.svg" alt='walking person icon'>
+            <section class="today-data" id='todaySteps'>
+              <h3></h3>
+              <p></p>
             </section>
             <section class="step-goals" id="stepGoals">
               <section class="info-type-box border-right">
@@ -86,77 +52,42 @@
               </section>
             </section>
           </section>
-
           <section class="sleep dashboard-cards large-widget">
-            <img src="./images/Sleep.svg">
-            <div class="sleep-card">
+            <img src="./images/Sleep.svg" alt='moon icon'>
+            <div class="sleep-card" >
               <section class="sleep-hours border-right">
                 <p class="info-text">Hours</p>
-                <div class="sleep-data-box">
-                  <section class="today-data-sleep border-right">
-                    <h3>#.#</h3>
-                    <p>today</p>
+                <div class="sleep-data-box" id='sleepHours'>
+                  <section class="today-data-sleep border-right" >
+                    <h3></h3>
+                    <p></p>
                   </section>
                   <section class="today-data-sleep">
-                    <h4 class="orange">#.#</h4>
-                    <p>avg</p>
+                    <h4 class="orange"></h4>
+                    <p></p>
                   </section>
                 </div>
               </section>
               <section class="sleep-quality">
                 <p class="info-text">Quality</p>
-                <div class="sleep-data-box">
+                <div class="sleep-data-box" id='sleepQuality'>
                   <section class="today-data-sleep border-right">
-                    <h3>#.#</h3>
-                    <p>today</p>
+                    <h3></h3>
+                    <p></p>
                   </section>
                   <section class="today-data-sleep">
-                    <h4 class="orange">#.#</h4>
-                    <p>avg</p>
+                    <h4 class="orange"></h4>
+                    <p></p>
                   </section>
                 </div>
               </section>
             </div>
-            <section class="calendar">
-              <div>
-                <p>M</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
-              <div>
-                <p>T</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
-              <div>
-                <p>W</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
-              <div>
-                <p>Th</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
-              <div>
-                <p>F</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
-              <div>
-                <p>Sa</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
-              <div>
-                <p>Su</p>
-                <h5>#.#</h5>
-                <p class="orange">#.#</p>
-              </div>
+            <section class="calendar" id='sleepCalendar'>
+              <canvas id="sleepChart" width="250" height="90"></canvas>
             </section>
           </section>
           <section class="friends dashboard-cards small-widget">
-            <img src="./images/Friends.svg">
+            <img src="./images/Friends.svg" alt='friends icon'>
             <p>Friend 1</p>
             <p>Friend 2</p>
             <p>Friend 3</p>

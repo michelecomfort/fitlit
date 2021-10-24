@@ -11,16 +11,12 @@ export default class User {
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
     this.hydrationData = new Hydration(hydrationData);
-    this.sleepData = new Sleep(sleepData)
+    this.sleepData = new Sleep(sleepData);
     this.activityData = activityData;
-  }
+  };
 
   returnFirstName() {
     return this.name.split(' ')[0];
-  }
+  };
 
-//   retrieveHydrationData(id) {
-//     this.hydrationData = new Hydration();
-
-//   }
-}
+};

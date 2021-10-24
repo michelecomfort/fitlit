@@ -28,6 +28,7 @@ const todaySteps = document.getElementById('todaySteps');
 const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality')
 const waterCalendar = document.getElementById('myChart').getContext('2d');
+const sleepCalendar = document.getElementById('sleepChart').getContext('2d');
 
 // Global Variables
 const userRepo = new UserRepository();
@@ -70,6 +71,7 @@ const renderDOM = () => {
   displayHydrationInfo(randomUser);
   displaySleepInfo(randomUser);
   generateCalendarChart(randomUser);
+  generateSleepChart(randomUser)
 };
 
 const getRandomIndex = (array) => {
@@ -121,6 +123,66 @@ const generateCalendarChart = (user) => {
           },
         }
     },
+    })
+};
+
+const generateSleepChart = (user) => {
+  const sleepChart = new Chart(sleepCalendar, {
+    type: 'line',
+    data: {
+        labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
+        datasets: [
+          {
+            label: 'hours',
+            data: user.sleepData.getWeeklyHoursSlept('2020/01/15'),
+            backgroundColor: '#FC6F7F',
+            borderColor: '#FC6F7F',
+            borderWidth: 2
+        },
+
+      {
+            label: 'quality',
+            data: user.sleepData.getWeeklySleepQuality('2020/01/15'),
+            backgroundColor: '#FF9E2D',
+            borderColor: '#FF9E2D',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        plugins: {
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+              color: '#ffffff'
+            },
+          }
+        },
+        scales: {
+          y: {
+            ticks: {
+              color: ['#ffffff'],
+              stepSize: 6,
+            },
+            beginAtZero: true,
+            min: 0,
+            max: 12,
+            grid: {
+              color: 'rgba(0, 0, 0, 0)',
+              borderColor: 'rgba(0, 0, 0, 0)',
+            }
+          },
+          x: {
+            ticks: {
+              color: ['#ffffff']
+            },
+            grid: {
+              color: 'rgba(0, 0, 0, 0)',
+              borderColor: 'rgba(0, 0, 0, 0)',
+            },
+          },
+        }
+      },
     })
 }
 

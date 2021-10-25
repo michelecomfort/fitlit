@@ -21,6 +21,7 @@ const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality');
 const waterCalendar = document.getElementById('myChart').getContext('2d');
 const sleepCalendar = document.getElementById('sleepChart').getContext('2d');
+const friendContainer = document.querySelector('.friends');
 
 // Global Variables
 const userRepo = new UserRepository();
@@ -60,7 +61,8 @@ const displayAllUserInfo = (user) => {
   displayHydrationInfo(user);
   displaySleepInfo(user);
   generateCalendarChart(user);
-  generateSleepChart(user)
+  generateSleepChart(user);
+  displayFriendsInfo(user);
 }
 
 const getRandomIndex = (array) => {
@@ -224,5 +226,16 @@ const displaySleepInfo = (user) => {
   <p>avg</p>
   `;
 };
+
+const displayFriendsInfo = (user) => {
+  friendContainer.innerHTML = `<img src="./images/Friends.svg" alt='friends icon'>`;
+  user.friends.forEach(friend => {
+    friendContainer.innerHTML += `<p>${friend.name}</p>`
+  });
+  // friendContainer[0].innerHTML = ``;
+  // friendContainer[1].innerHTML = `${user.friends[1].name}`;
+  // friendContainer[2].innerHTML = `${user.friends[2].name}`;
+  // friendContainer[3].innerHTML = `${user.friends[3].name}`;
+}
 
 retrieveAllData();

@@ -1,5 +1,7 @@
 import { assert } from 'chai';
 import User from '../src/User';
+import Hydration from '../src/Hydration';
+import Sleep from '../src/Sleep';
 import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js'
 
 describe('User', function() {
@@ -8,15 +10,17 @@ describe('User', function() {
   let user3;
   let user4;
   let allUsers;
-  let hydration1
+  let hydration1;
+  let sleep1;
 
   beforeEach(function() {
-    user1 = new User(userData[0]);
+    user1 = new User(userData[0], [hydrationData[0], hydrationData[4]], [sleepData[0], sleepData[4]]);
     user2 = new User(userData[1]);
     user3 = new User(userData[2]);
     user4 = new User(userData[3]);
     allUsers = [user1, user2, user3, user4];
-    // hydration1 = new Hydration()
+    hydration1 = new Hydration([hydrationData[0], hydrationData[4]]);
+    sleep1 = new Sleep([sleepData[0], sleepData[4]]);
   });
 
   it('should be a function', function() {
@@ -47,8 +51,11 @@ describe('User', function() {
     assert.deepEqual(user1.friends, [user2, user3, user4]);
   });
 
-  // it('should retrieve hydration data', () => {
-  //   user1.retrieveHydrationData()
-  //   assert.equal(user1.hydrationData, )
-  // })
+  it('should create an instance of hydration with the hydration data passed', () => {
+    assert.deepEqual(user1.hydrationData, hydration1);
+  });
+
+  it('should create an instance of sleep with the sleep data passed', () => {
+    assert.deepEqual(user1.sleepData, sleep1);
+  })
 });

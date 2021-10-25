@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import User from '../src/User';
 import UserRepository from '../src/UserRepository';
-import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js'
+import { userData } from '../src/sampleData.js'
 
 describe('User Repository', function() {
   let user1;

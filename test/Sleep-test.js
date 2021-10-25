@@ -1,6 +1,5 @@
 var assert = require('chai').assert;
 import Sleep from '../src/Sleep';
-import { userData, sleepData } from '../src/sampleData.js';
 
 describe('Sleep', function () {
   let sleep;

@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import { sampleData } from '../src/sampleData.js';
 import DataManager from '../src/DataManager.js';
 import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js';
 

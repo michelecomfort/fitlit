@@ -30,7 +30,7 @@ const getHydrationData = () => {
     });
 };
 
- export {
+export {
   getUserData,
   getSleepData,
   getActivityData,

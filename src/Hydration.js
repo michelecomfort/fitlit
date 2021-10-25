@@ -9,25 +9,25 @@ export default class Hydration {
       return sum;
     }, 0)
     return Math.floor(total / this.hydrationData.length);
-  };
+  }
 
   getOzDrank(date) {
     const day = this.hydrationData.find(user => user.date === date);
     return day.numOunces;
-  };
+  }
 
   getWeeklyDrank(start) {
-    let week = [];
-    let startDate = this.hydrationData.find(day => day.date === start);
-    let dayIndex = this.hydrationData.indexOf(startDate);
-    const result = this.hydrationData.reduce((acc, date) => {
+    const week = [];
+    const startDate = this.hydrationData.find(day => day.date === start);
+    const dayIndex = this.hydrationData.indexOf(startDate);
+    this.hydrationData.reduce((acc) => {
       if (acc < 7) {
         week.push(this.hydrationData[dayIndex + acc].numOunces);
         acc++;
-      };
+      }
       return acc;
     }, 0);
     return week;
-  };
+  }
 
-};
+}

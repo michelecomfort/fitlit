@@ -34,6 +34,10 @@ const retrieveAllData = (data) => {
   allData.then(data => {
     parseData(data);
     renderDOM();
+  }).catch(error => {
+    userProfile.childNodes[3].innerHTML = `
+  <h2>Hi, There seems to be an error! Please refresh the page!</h2>`
+    console.log(error);
   })
 };
 

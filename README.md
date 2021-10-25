@@ -48,7 +48,7 @@ Javascript, HTML, CSS, Webpack, Chart.js, Github
 
 [Markus Rossio](https://github.com/Markus-Xavier)
 
-### Artist 
+### Artists
 Background Painting by [Aenami Art](https://www.artstation.com/aenamiart)
 
 Home Icon By [Alexander Yordan Mulia](https://thenounproject.com/xander.yordan/)

@@ -23,5 +23,3 @@ export default class User {
     this.friends = users.filter(user => this.friends.includes(user.id));
   };
 };
-
-

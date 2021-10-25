@@ -13,7 +13,7 @@ export default class UserRepository {
       const filteredActivity = dataManager.filterData(user.id, 'activity');
       return new User(user, filteredHydration, filteredSleep, filteredActivity);
     });
-    this.users.forEach(user => user.findFriends());
+    this.users.forEach(user => user.findFriends(this.users));
   };
 
   retrieveUser(id) {

@@ -19,4 +19,7 @@ export default class User {
     return this.name.split(' ')[0];
   };
 
+  findFriends(users) {
+    this.friends = users.filter(user => this.friends.includes(user.id));
+  };
 };

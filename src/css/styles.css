@@ -1,53 +1,46 @@
 /* ~~~~~~~~~~~ GLOBAL RULES ~~~~~~~~~~ */
 * {
+  border: 0;
   box-sizing: border-box;
   margin: 0;
-  border: 0;
 }
 
 body, html {
-  height: 100%;
-  font-size: 24px;
   font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  height: 100%;
 }
 
 body {
+  background-blend-mode: color-burn;
+  background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
   background-color: rgb(255, 255, 255, 0.4);
-  background-blend-mode: color-burn;
-  display: flex;
-  justify-content: space-between;
   padding: 3%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-.button-active {
+.pink {
   color: #FC6F7F;
 }
 
+.orange {
+  color: #FF9E2D;
+}
 
 h1 {
-  font-size: 1.8em;
+  font-size: 1.7em;
 }
 
 h2 {
-  font-size: 1.4em;
+  font-size: 1.9em;
 }
 
 h3 {
-  font-size: 2.7em;
+  font-size: 2em;
 }
 
 h4 {
   font-size: 1.5em;
-}
-
-h5 {
-  font-size: 1.2em;
 }
 
 p {
@@ -55,23 +48,17 @@ p {
   font-size: 0.9em;
 }
 
-.orange {
-  color: #FF9E2D;
-}
-
-/* ~~~~~~~~~~~ SIDENAV RULES ~~~~~~~~~~ */
-
 button {
-  margin-top: 15%;
-  width: 45%;
-  height: 9%;
-  border-radius: 100%;
   background-color: #0C3245;
+  border-radius: 100%;
+  height: 9%;
+  margin-top: 17%;
+  width: 55%;
 }
 
 button img {
-  height: 47%;
-  max-width: 70%;
+  height: 50%;
+  max-width: 80%;
 }
 
 button:hover {
@@ -79,30 +66,129 @@ button:hover {
   cursor: pointer;
 }
 
-.sidebar {
-  width: 11%;
-  height: 100%;
-  padding: 2% 0;
+/* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
+body,
+.sidebar,
+.widgets,
+.top-half,
+.bottom-half,
+.water,
+.steps,
+.sleep,
+.friends,
+.today-data,
+.user-info-card,
+.user-data,
+.step-goals,
+.info-type-box,
+.calendar,
+.sleep-hours,
+.sleep-quality,
+.sleep-data-box,
+.sleep-card,
+.today-data-sleep {
   display: flex;
+}
+
+.sidebar,
+.widgets,
+.water,
+.steps,
+.sleep,
+.friends,
+.today-data,
+.user-data,
+.info-type-box,
+.sleep-hours,
+.sleep-quality,
+.today-data-sleep {
   flex-direction: column;
+}
+
+.sidebar,
+.water,
+.steps,
+.sleep,
+.friends,
+.today-data,
+.user-info-card,
+.sleep-hours,
+.sleep-quality,
+.sleep-data-box,
+.today-data-sleep {
   align-items: center;
 }
 
-/* ~~~~~~~~~~~ WIDGET DASHBOARD RULES ~~~~~~~~~~ */
+body,
+.widgets,
+.top-half,
+.bottom-half,
+.info-type-box {
+  justify-content: space-between;
+}
+
+.water,
+.steps,
+.sleep,
+.friends,
+.today-data,
+.user-data,
+.step-goals,
+.sleep-card {
+  justify-content: space-around;
+}
+
+.user-info-card,
+.sleep-hours,
+.sleep-quality,
+.sleep-data-box {
+  justify-content: space-evenly;
+}
+
+.step-goals,
+.sleep-data-box {
+  text-align: center;
+}
+
+/* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
+
+.sidebar,
+.widgets {
+  height: 100%;
+}
+
+.top-half,
+.bottom-half,
+.step-goals,
+.sleep-data-box,
+.sleep-card {
+  width: 100%;
+}
+
+.sleep-card section {
+  height: 80%;
+}
+
+.info-type-box,
+.sleep-hours,
+.sleep-quality {
+  width: 50%;
+}
+
+.sidebar {
+  padding: 2% 0;
+  width: 11%;
+}
 
 .dashboard-cards {
   background-color: rgb(12, 50, 69, 0.75);
   border-radius: 30px;
-  padding: 1%;
+  padding: 2%;
 }
 
 .widgets {
-  height: 100%;
-  width: 85%;
-  display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 85%;
 }
 
 .large-widget {
@@ -120,9 +206,6 @@ button:hover {
 .top-half,
 .bottom-half {
   height: 47%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .water,
@@ -130,34 +213,27 @@ button:hover {
 .sleep,
 .friends,
 .today-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   align-content: center;
 }
 
 .user-info-card {
   width: 58%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
 }
 
 .user-info-card img {
-  max-width: 35%;
-  height: auto;
   border-radius: 100%;
+  height: auto;
+  max-width: 35%;
 }
 
 .user-data {
-  width: 45%;
   height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   overflow-wrap: break-word;
+  width: 45%;
+}
+
+.email {
+  font-size: 0.7em;
 }
 
 .today-data {
@@ -169,18 +245,7 @@ button:hover {
 }
 
 .step-goals {
-  width: 100%;
   height: 33%;
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
-
-.info-type-box {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .info-text {
@@ -191,46 +256,19 @@ button:hover {
   border-right: 2px solid white;
 }
 
-.calendar {
-  width: 95%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.calendar div {
-  text-align: center;
-}
-
-.sleep-hours,
-.sleep-quality {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.sleep-data-box {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-}
-
 .today-data-sleep {
   font-size: 1em;
-  padding-right: 2%;
 }
 
 .sleep-card {
-  margin-top: 1%;
-  display: flex;
-  width: 100%;
   height: 45%;
-  justify-content: space-around;
+  margin-top: 7%;
 }
 
-.sleep-card .info-text {
-  margin-bottom: 2%;
+.info-text {
+  margin-bottom: 5% 0;
+}
+
+.space-right {
+  padding-right: 10%;
 }

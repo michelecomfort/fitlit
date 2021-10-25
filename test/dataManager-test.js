@@ -6,7 +6,6 @@ import { userData, hydrationData, sleepData, activityData } from '../src/sampleD
 describe('Data Manager', function() {
   let dataManager;
 
-
   beforeEach(function() {
     dataManager = new DataManager();
   });

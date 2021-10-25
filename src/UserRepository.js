@@ -1,5 +1,4 @@
 import User from "./User";
-import DataManager from './DataManager';
 
 export default class UserRepository {
   constructor() {

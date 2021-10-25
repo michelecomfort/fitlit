@@ -39,6 +39,17 @@ Javascript, HTML, CSS, Webpack, Chart.js, Github
 [Here]](http://frontend.turing.io/projects/fitlit.html)
 
 ## Contributors
+### Developers
 [Michele Comfort](https://github.com/michelecomfort)
 [Kyra Bergsund](https://github.com/kbergsund)
 [Markus Rossio](https://github.com/Markus-Xavier)
+
+### Artist 
+[Friends By Ricardo Job-Reese](https://thenounproject.com/jobreesedesigns/)
+[Moon By Boccy0](https://thenounproject.com/Boccy0/)
+[Water By Komal](https://thenounproject.com/komalraju342/)
+[Walking By IYIKON](https://thenounproject.com/iyikon/)
+[Home By Alexander Yordan Mulia](https://thenounproject.com/xander.yordan/)
+
+
+

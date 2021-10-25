@@ -43,15 +43,24 @@ Javascript, HTML, CSS, Webpack, Chart.js, Github
 ## Contributors
 ### Developers
 [Michele Comfort](https://github.com/michelecomfort)
+
 [Kyra Bergsund](https://github.com/kbergsund)
+
 [Markus Rossio](https://github.com/Markus-Xavier)
 
 ### Artist 
-[Friends By Ricardo Job-Reese](https://thenounproject.com/jobreesedesigns/)
-[Moon By Boccy0](https://thenounproject.com/Boccy0/)
-[Water By Komal](https://thenounproject.com/komalraju342/)
-[Walking By IYIKON](https://thenounproject.com/iyikon/)
-[Home By Alexander Yordan Mulia](https://thenounproject.com/xander.yordan/)
+Background Painting by [Aenami Art](https://www.artstation.com/aenamiart)
+
+Home Icon By [Alexander Yordan Mulia](https://thenounproject.com/xander.yordan/)
+
+Walking Icon By [IYIKON](https://thenounproject.com/iyikon/)
+
+Moon Icon By [Boccy0](https://thenounproject.com/Boccy0/)
+
+Water Icon By [Komal](https://thenounproject.com/komalraju342/)
+
+Friends Icon By [Ricardo Job-Reese](https://thenounproject.com/jobreesedesigns/)
+
 
 
 

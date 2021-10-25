@@ -31,12 +31,16 @@ Javascript, HTML, CSS, Webpack, Chart.js, Github
 5. On the right-side, users can see their list of friends.
 6. A sidenav bar on the left has a collection of buttons. They will be implemented in part two.
 
+
+![Screen Shot 2021-10-25 at 10 20 50 AM (2)](https://user-images.githubusercontent.com/49960644/138741523-770a8865-d476-4834-af1f-31664a9f0091.png)
+
+
 ## Future Improvements
 1. Add functionality to the sidenav buttons. Take user's to different pages with more detailed data.
 2. Build out profile photo generation and display. 
 
 ## Project Spec & Rubric
-[Here]](http://frontend.turing.io/projects/fitlit.html)
+[Here](http://frontend.turing.io/projects/fitlit.html)
 
 ## Contributors
 [Michele Comfort](https://github.com/michelecomfort)

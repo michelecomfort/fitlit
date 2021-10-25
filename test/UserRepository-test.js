@@ -40,7 +40,7 @@ describe('User Repository', function() {
     assert.equal(userRepo.calculateAverageStepGoal(), 7500);
   });
   it('should calculate the average for all users hours slept', function() {
-    assert.equal(userRepo.calculateAllUserAverageSleep(user1Data));
+    assert.equal(userRepo.calculateAllUserAverageSleep());
   });
 
 });

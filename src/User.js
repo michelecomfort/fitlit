@@ -13,13 +13,13 @@ export default class User {
     this.hydrationData = new Hydration(hydrationData);
     this.sleepData = new Sleep(sleepData);
     this.activityData = activityData;
-  };
+  }
 
   returnFirstName() {
     return this.name.split(' ')[0];
-  };
+  }
 
   findFriends(users) {
     this.friends = users.filter(user => this.friends.includes(user.id));
-  };
-};
+  }
+}

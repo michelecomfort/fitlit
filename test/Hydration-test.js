@@ -1,6 +1,5 @@
 var assert = require('chai').assert;
 import Hydration from '../src/Hydration';
-import { userData, hydrationData } from '../src/sampleData.js';
 
 describe('Hydration', function() {
   const user1Data = [

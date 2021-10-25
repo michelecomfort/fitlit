@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import User from '../src/User';
 import Hydration from '../src/Hydration';
 import Sleep from '../src/Sleep';
-import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js'
+import { userData, hydrationData, sleepData } from '../src/sampleData.js'
 
 describe('User', function() {
   let user1;
@@ -46,7 +46,7 @@ describe('User', function() {
     assert.equal(user1.returnFirstName(), 'Markus');
   });
 
-  it.only('should use the friend IDs to find those users', function() {
+  it('should use the friend IDs to find those users', function() {
     user1.findFriends(allUsers);
     assert.deepEqual(user1.friends, [user2, user3, user4]);
   });

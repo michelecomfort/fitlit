@@ -104,7 +104,7 @@ const displaySleepInfo = (user) => {
   <p>today</p>
   `;
   sleepHours.childNodes[3].innerHTML = `
-  <p class="orange">${user.sleepData.getAverageHoursSlept()}</p>
+  <p class="orange ">${user.sleepData.getAverageHoursSlept()}</p>
   <p>avg</p>
   `;
   sleepQuality.childNodes[1].innerHTML = `

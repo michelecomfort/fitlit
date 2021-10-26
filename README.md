@@ -1,82 +1,66 @@
-# FitLit Starter Kit
+# FitLit 
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+Turing School of Software & Design
 
-## Setup
+2108 FEE, Mod 2 - Group Project, Part One
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `npm start` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+## Abstract
+Fitlit is a web app that presents user's with a number of helpful health metrics- daily step count, daily water consumption, daily sleep hours and quality -on a single dashboard with widgets. Line graphs display hydration and sleep each day for the last week.
 
-## Testing
+## Languages/Technology
+Javascript, HTML, CSS, Webpack, Chart.js, Github
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+## Learning Goals
+* Begin working with network requests and Fetch API
+* Process and manipulate large data sets with iterator methods
+* Design and build out a user-friendly dashboard from scratch
+* Use ES6 classes to write modular, reusable code
 
-## Linting Your Code
+## Install & Setup
+1. Clone down this repo
+2. `cd` into the directory
+3. Run `npm install`
+4. Run `npm start` to open the local server
+5. Head to `localhost:8080` in your browser
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+## Web App Attributes
+1. On load, users see their dashboard. Featured prominently is their profile photo & profile information.
+2. To the right is the hydration widget. Users see how many oz consumed today as well as a line graph of consumption over the whole week.
+3. Bottom left is step data. In addition to seeing steps for the day, they can see both their own and the Fitlit community's daily step goals.
+4. In the middle, user can see both the day's sleep hours and quality as well as their all-time average. A line graph at the bottom displays hours and quality over the past week.
+5. On the right-side, users can see their list of friends.
+6. A sidenav bar on the left has a collection of buttons. They will be implemented in part two.
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+![Screen Shot 2021-10-25 at 10 21 01 AM](https://user-images.githubusercontent.com/49960644/138742446-55fc28d9-62bf-4049-bdbe-ba9ac97dfe28.png)
 
-## Data Model
+## Future Improvements
+1. Add functionality to the sidenav buttons. Take user's to different pages with more detailed data.
+2. Build out profile photo generation and display. 
 
-**Users**
+## Project Spec & Rubric
+[Here](http://frontend.turing.io/projects/fitlit.html)
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+## Contributors
+### Developers
+[Michele Comfort](https://github.com/michelecomfort)
 
-**Activity**
+[Kyra Bergsund](https://github.com/kbergsund)
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+[Markus Rossio](https://github.com/Markus-Xavier)
 
-**Hydration**
+### Artists
+Background Painting by [Aenami Art](https://www.artstation.com/aenamiart)
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
+Home Icon By [Alexander Yordan Mulia](https://thenounproject.com/xander.yordan/)
 
-**Sleep**
+Walking Icon By [IYIKON](https://thenounproject.com/iyikon/)
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+Moon Icon By [Boccy0](https://thenounproject.com/Boccy0/)
+
+Water Icon By [Komal](https://thenounproject.com/komalraju342/)
+
+Friends Icon By [Ricardo Job-Reese](https://thenounproject.com/jobreesedesigns/)
+
+
+
+

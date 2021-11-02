@@ -5,6 +5,7 @@ import Activity from '../src/Activity';
 describe('Activity', function() {
   let userActivityData;
   let userStrideLength;
+  let userDailyStepGoal;
   let activity;
 
   beforeEach(function() {
@@ -44,7 +45,8 @@ describe('Activity', function() {
       "flightsOfStairs": 13
       }];
       userStrideLength = 4.4;
-      activity = new Activity(userActivityData, userStrideLength);
+      userDailyStepGoal = 9500;
+      activity = new Activity(userActivityData, userStrideLength, userDailyStepGoal);
   });
 
   it('should be a function', function() {
@@ -63,6 +65,10 @@ describe('Activity', function() {
     assert.equal(activity.userStrideLength, userStrideLength);
   });
 
+  it('should be instantiated with the users step goal', function() {
+    assert.equal(activity.userDailyStepGoal, 9500);
+  });
+
   it('should return the miles a user has walked on a given date', function() {
     assert.equal(activity.milesWalked('2019/06/15'), 2.9);
   });
@@ -73,5 +79,9 @@ describe('Activity', function() {
 
   it('should return the average minutes a user was active for a given week', function() {
     assert.equal(activity.averageActiveMinuets(), 144);
+  });
+
+  it('should return if user reached their step goal on a given date', function() {
+    assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
 });

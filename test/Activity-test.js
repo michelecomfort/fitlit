@@ -61,7 +61,7 @@ describe('Activity', function() {
     assert.deepEqual(activity.activityData, userActivityData);
   });
 
-  it.skip('should be instantiated with the users stride length', function() {
+  it.only('should be instantiated with the users stride length', function() {
     assert.equal(activity.userStrideLength, userStrideLength);
   });
 

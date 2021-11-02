@@ -61,31 +61,31 @@ describe('Activity', function() {
     assert.deepEqual(activity.activityData, userActivityData);
   });
 
-  it('should be instantiated with the users stride length', function() {
+  it.skip('should be instantiated with the users stride length', function() {
     assert.equal(activity.userStrideLength, userStrideLength);
   });
 
-  it('should be instantiated with the users step goal', function() {
+  it.skip('should be instantiated with the users step goal', function() {
     assert.equal(activity.userDailyStepGoal, 9500);
   });
 
-  it('should return the miles a user has walked on a given date', function() {
+  it.skip('should return the miles a user has walked on a given date', function() {
     assert.equal(activity.milesWalked('2019/06/15'), 2.9);
   });
 
-  it('should return the minutes a user was active on a given date', function() {
+  it.skip('should return the minutes a user was active on a given date', function() {
     assert.equal(activity.activeMinuets('2019/06/15', 140));
   });
 
-  it('should return the average minutes a user was active for a given week', function() {
+  it.skip('should return the average minutes a user was active for a given week', function() {
     assert.equal(activity.averageActiveMinuets(), 144);
   });
 
-  it('should return if user reached their step goal on a given date', function() {
+  it.skip('should return if user reached their step goal on a given date', function() {
     assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
 
-  it('should return all the days user step goal was met', function() {
+  it.skip('should return all the days user step goal was met', function() {
     assert.deepEqual(activity.findStepGoalDays(), [{
       "userID": 1,
       "date": "2019/06/18",
@@ -95,7 +95,7 @@ describe('Activity', function() {
     }]);
   });
 
-  it('should return the users all time stair climbing record', function() {
+  it.skip('should return the users all time stair climbing record', function() {
     assert.equal(activity.findStairClimbingRecord(), 33);
   });
 });

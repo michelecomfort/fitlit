@@ -1,5 +1,5 @@
 export default class Activity {
-  constructor () {
-    
+  constructor (userActivityData) {
+    this.activityData = userActivityData;
   }
 }

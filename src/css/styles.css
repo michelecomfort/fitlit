@@ -139,14 +139,19 @@ body,
 .widgets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-rows: auto;
-
+  grid-auto-rows: 200px;
   grid-column-gap: 10%;
   grid-row-gap:10%;
   margin-left: 10%;
-  height: 80vh;
+
 }
 
+.activity,
+.water,
+.steps,
+.sleep {
+  grid-row: span 3;
+}
 /* .steps,
 .sleep, */
 .friends {
@@ -309,4 +314,11 @@ body,
 
 .space-top {
   margin-top: 7%;
+}
+
+@media screen and (min-width: 1990px) {
+  .widgets {
+    grid-template-columns: 1fr 1fr;
+  }
+
 }

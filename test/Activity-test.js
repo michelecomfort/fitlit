@@ -7,7 +7,6 @@ describe('Activity', function() {
   let userActivityData;
 
   beforeEach(function() {
-    activity = new Activity();
     userActivityData = [{
       "userID": 1,
       "date": "2019/06/15",
@@ -43,6 +42,7 @@ describe('Activity', function() {
       "minutesActive": 213,
       "flightsOfStairs": 13
       }];
+      activity = new Activity(userActivityData);
   });
 
   it('should be a function', function() {

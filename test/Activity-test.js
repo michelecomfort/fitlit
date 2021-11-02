@@ -84,4 +84,14 @@ describe('Activity', function() {
   it('should return if user reached their step goal on a given date', function() {
     assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
+
+  it('should return all the days user step goal was met', function() {
+    assert.deepEqual(activity.findStepGoalDays(), [{
+      "userID": 1,
+      "date": "2019/06/18",
+      "numSteps": 11374,
+      "minutesActive": 213,
+      "flightsOfStairs": 13
+    }]);
+  });
 });

@@ -3,8 +3,9 @@ import { userData, hydrationData, sleepData, activityData } from '../src/data/sa
 import Activity from '../src/Activity';
 
 describe('Activity', function() {
-  let activity;
   let userActivityData;
+  let userStrideLength;
+  let activity;
 
   beforeEach(function() {
     userActivityData = [{
@@ -42,7 +43,8 @@ describe('Activity', function() {
       "minutesActive": 213,
       "flightsOfStairs": 13
       }];
-      activity = new Activity(userActivityData);
+      userStrideLength = 4.4;
+      activity = new Activity(userActivityData, userStrideLength);
   });
 
   it('should be a function', function() {
@@ -55,6 +57,10 @@ describe('Activity', function() {
 
   it('should be instantiated with activity data', function() {
     assert.deepEqual(activity.activityData, userActivityData);
+  });
+
+  it('should be instantiated with the users stride length', function() {
+    assert.equal(activity.userStrideLength, userStrideLength);
   });
 
   it('should return the miles a user has walked on a given date', function() {

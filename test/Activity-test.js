@@ -94,4 +94,8 @@ describe('Activity', function() {
       "flightsOfStairs": 13
     }]);
   });
+
+  it('should return the users all time stair climbing record', function() {
+    assert.equal(activity.findStairClimbingRecord(), 33);
+  });
 });

@@ -34,5 +34,6 @@ export default class UserRepository {
     }, 0);
     return Math.round(allSleepAverage / sleepData.length * 10) / 10;
   }
+
 }
 

@@ -21,12 +21,24 @@ const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality');
 const sleepCalendar = document.querySelector('#sleepCanvas').getContext('2d');
 const friendContainer = document.querySelector('#FriendDisplay');
+// const scrollSleep = document.getElementById('scrollSleep')
+
+
+// Event Listeners
+// scrollSleep.addEventListener('click', scrollToSleep)
 
 // Global Variables
 const userRepo = new UserRepository();
 const dataManager = new DataManager();
 
-// Functions
+//Functions
+// const scrollToSleep = () => {
+//   window.scrollTo(0, 0)
+// }
+
+
+
+
 const retrieveAllData = () => {
   Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
     parseData(data);

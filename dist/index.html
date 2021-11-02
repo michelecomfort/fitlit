@@ -13,10 +13,11 @@
       <button type="button" class="button"><img src="./images/Home.svg" alt='home icon'></button>
       <button type="button" class="button"><img src="./images/Steps.svg" alt='walking person icon'></button>
       <button type="button" class="button"><img src="./images/Water.svg" alt='water droplet icon'></button>
-      <button type="button" class="button"><img src="./images/Sleep.svg" alt='moon icon'></button>
+      <button type="button" id='scrollSleep' class="button"><img src="./images/Sleep.svg" alt='moon icon'></button>
     </section>
+
       <section class="widgets">
-        <section class="top-half">
+
           <section class="user-info-card dashboard-cards" id="userProfile">
             <img src="./images/Kyra.png" alt='person photo'>
             <div class="user-data">
@@ -25,6 +26,15 @@
               <p></p>
             </div>
           </section>
+
+          <section class='activity dashboard-cards large-widget' id='activityStats'>
+            <img src="./images/Water.svg" alt='water droplet icon'>
+            <section class="today-activity-data">
+              <h3>Activity</h3>
+              <p>FAKE FILLER INFO Y29sb3IiOiIjMDAwMDAwIiwicHJlbWl1bSI6MCwic29ydCI6M30seyJpZCI6ODI1NDQyLCJuYW1lIjoiV2FsayIsImNvbG9yIjoiIzAwMDAwMCIsInByZW1pdW0iOjAsInNvcnQiOjR9LHsiaWQiOjgyOTg0LCJuYW1lIjoiU3RpY2sgTWFuIFdhbGtpbmciLCJjb2xvciI6IiMwMDAwMDAiLCJwcmVtaXVtIjowLCJzb3J0Ijo1fSx7ImlkIjozMzMwOTMwLCJuYW1lIjoiV2FsayIsImNvbG9yIjoiIzAwMDAwMCIsInByZW1pdW0iOjAsInNvcnQiOjZ9LHsiaWQiOjYwNjgwNywibmFtZSI6Ik1vb24iLCJjb2xvciI6IiMwMDAwMDAiLCJwcmVtaXVtIjowLCJzb3J0Ijo3fSx7ImlkIjo3ODYyMjcsIm5hbWUiOiJOaWdodCIsImNvbG9yIjoiIzAwMDA</p>
+            </section>
+          </section>
+
           <section class="water dashboard-cards large-widget" id="waterStats">
             <img src="./images/Water.svg" alt='water droplet icon'>
             <section class="today-data">
@@ -33,8 +43,7 @@
             </section>
             <canvas id="waterCanvas" width="250" height="90"></canvas>
           </section>
-        </section>
-        <section class="bottom-half">
+
           <section class="steps dashboard-cards small-widget">
             <img src="./images/Steps.svg" alt='walking person icon'>
             <section class="today-data" id='stepsToday'>
@@ -54,6 +63,7 @@
               </section>
             </section>
           </section>
+
           <section class="sleep dashboard-cards large-widget">
             <img src="./images/Sleep.svg" alt='moon icon'>
             <div class="sleep-card" >
@@ -86,6 +96,7 @@
             </div>
             <canvas id="sleepCanvas" width="250" height="80"></canvas>
           </section>
+
           <section class="friends dashboard-cards small-widget" id="FriendDisplay">
             <img src="./images/Friends.svg" alt='friends icon'>
             <p></p>
@@ -93,8 +104,8 @@
             <p></p>
             <p></p>
           </section>
-          </section>
         </section>
+
       </section>
     <script src="bundle.js"></script>
   </body>

@@ -61,11 +61,11 @@ describe('Activity', function() {
     assert.deepEqual(activity.activityData, userActivityData);
   });
 
-  it.only('should be instantiated with the users stride length', function() {
+  it('should be instantiated with the users stride length', function() {
     assert.equal(activity.userStrideLength, userStrideLength);
   });
 
-  it.skip('should be instantiated with the users step goal', function() {
+  it.only('should be instantiated with the users step goal', function() {
     assert.equal(activity.userDailyStepGoal, 9500);
   });
 

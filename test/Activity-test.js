@@ -72,6 +72,6 @@ describe('Activity', function() {
   });
 
   it('should return the average minutes a user was active for a given week', function() {
-
+    assert.equal(activity.averageActiveMinuets(), 144);
   });
 });

@@ -4,4 +4,11 @@ export default class Activity {
     this.userStrideLength = userStrideLength;
     this.userDailyStepGoal = userDailyStepGoal;
   }
+
+  milesWalked(date) {
+    const day = this.activityData.find(user => user.date === date);
+    const feetWalked = this.userStrideLength * day.numSteps;
+    const milesWalked = feetWalked / 5280;
+    return milesWalked.toFixed(1);
+  }
 }

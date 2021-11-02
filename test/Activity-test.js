@@ -65,12 +65,12 @@ describe('Activity', function() {
     assert.equal(activity.userStrideLength, userStrideLength);
   });
 
-  it.only('should be instantiated with the users step goal', function() {
+  it('should be instantiated with the users step goal', function() {
     assert.equal(activity.userDailyStepGoal, 9500);
   });
 
-  it.skip('should return the miles a user has walked on a given date', function() {
-    assert.equal(activity.milesWalked('2019/06/15'), 2.9);
+  it.only('should return the miles a user has walked on a given date', function() {
+    assert.equal(activity.milesWalked('2019/06/15'), 3.0);
   });
 
   it.skip('should return the minutes a user was active on a given date', function() {

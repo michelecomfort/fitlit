@@ -85,7 +85,7 @@ describe('Activity', function() {
     assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
 
-  it.only('should return all the days user step goal was met', function() {
+  it('should return all the days user step goal was met', function() {
     assert.deepEqual(activity.filterAchievedStepGoalDays(), [{
       "userID": 1,
       "date": "2019/06/19",
@@ -95,7 +95,7 @@ describe('Activity', function() {
     }]);
   });
 
-  it.skip('should return the users all time stair climbing record', function() {
+  it.only('should return the users all time stair climbing record', function() {
     assert.equal(activity.findStairClimbingRecord(), 33);
   });
 });

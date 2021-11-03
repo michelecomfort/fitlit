@@ -50,4 +50,14 @@ export default class Activity {
     const achievedGoalDays = this.userActivityData.filter(data => this.checkStepGoal(data.date));
     return achievedGoalDays;
   }
+
+  findStairClimbingRecord() {
+    const climbingRecord = this.userActivityData.reduce((record, data) => {
+      if (record < data.flightsOfStairs) {
+        record = data.flightsOfStairs;
+      }
+      return record;
+    }, 0);
+    return climbingRecord;
+  }
 }

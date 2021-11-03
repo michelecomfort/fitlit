@@ -9,6 +9,7 @@ body, html {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   height: 100%;
+  overflow: scroll;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
   background-image: url('../images/backgroundimage.jpg');
   background-color: rgb(255, 255, 255, 0.4);
   padding: 3%;
+  width: 100%;
 }
 
 .pink {
@@ -69,32 +71,33 @@ button:hover {
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
 body,
 .sidebar,
-.widgets,
-.top-half,
-.bottom-half,
 .water,
 .steps,
 .sleep,
 .friends,
+.activity,
 .today-data,
 .user-info-card,
 .user-data,
 .step-goals,
+.flights-of-stairs,
+.minutes-active,
 .info-type-box,
 .calendar,
 .sleep-hours,
 .sleep-quality,
 .sleep-data-box,
 .sleep-card,
-.today-data-sleep {
+.today-data-sleep,
+.step-miles {
   display: flex;
 }
 
 .sidebar,
-.widgets,
 .water,
 .steps,
 .sleep,
+.activity,
 .friends,
 .today-data,
 .user-data,
@@ -103,14 +106,16 @@ body,
 .sleep-quality,
 .today-data-sleep {
   flex-direction: column;
+
 }
 
 .sidebar,
 .water,
+.activity,
 .steps,
 .sleep,
 .friends,
-.today-data,
+/* .today-data, */
 .user-info-card,
 .sleep-hours,
 .sleep-quality,
@@ -119,22 +124,42 @@ body,
   align-items: center;
 }
 
-body,
-.widgets,
-.top-half,
-.bottom-half,
-.info-type-box {
+.steps-miles {
+  flex-direction: row;
   justify-content: space-between;
 }
 
-.water,
-.steps,
-.sleep,
-.friends,
-.today-data,
-.user-data,
-.step-goals,
-.sleep-card {
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.widgets {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 200px;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+  margin-left: 4%;
+  width: 80%;
+}
+
+
+.sleep {
+  grid-row: span 4;
+}
+
+.activity,
+.steps {
+  grid-row: span 4;
+}
+
+.water {
+  grid-row: span 2;
+}
+
+.friends {
   justify-content: space-around;
 }
 
@@ -146,27 +171,20 @@ body,
 }
 
 .step-goals,
-.sleep-data-box {
+.sleep-data-box,
+.flights-of-stairs,
+.minutes-active {
   text-align: center;
 }
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 
-.sidebar,
-.widgets {
-  height: 100%;
-}
-
-.top-half,
-.bottom-half,
 .step-goals,
+.flights-of-stairs,
+.minutes-active,
 .sleep-data-box,
 .sleep-card {
   width: 100%;
-}
-
-.sleep-card section {
-  height: 80%;
 }
 
 .info-type-box,
@@ -191,50 +209,32 @@ body,
   padding: 2%;
 }
 
-.widgets {
-  flex-wrap: wrap;
-  width: 85%;
-}
-
-.large-widget {
-  width: 37%;
-}
-
-.small-widget {
-  width: 27%;
-}
-
 .widgets img {
   height: 17%;
-}
-
-.top-half,
-.bottom-half {
-  height: 47%;
+  padding-bottom: 3%;
+  padding-top: 3%;
 }
 
 .water,
 .steps,
 .sleep,
 .friends,
-.today-data {
+/* .today-data, */
+.activity {
   align-content: center;
 }
 
-.user-info-card {
-  width: 58%;
+.today-data {
+  align-items: center;
 }
 
 .user-info-card img {
   border-radius: 100%;
-  height: auto;
   max-width: 35%;
 }
 
 .user-data {
-  height: 70%;
   overflow-wrap: break-word;
-  width: 45%;
 }
 
 .email {
@@ -242,16 +242,19 @@ body,
 }
 
 .today-data {
-  height: 35%;
-  margin-top: 3%;
+  height: 20%;
+  margin-top: 1%;
 }
 
 .today-data p {
   font-size: 1.2em;
 }
 
-.step-goals {
-  height: 33%;
+.step-goals,
+.flights-of-stairs,
+.minutes-active {
+  height: 40%;
+  padding-top: 12%;
 }
 
 .info-text {
@@ -260,6 +263,12 @@ body,
 
 .border-right {
   border-right: 2px solid white;
+  /* height: 50%; */
+}
+
+.border-right-half {
+  border-right: 2px solid white;
+  height: 50%;
 }
 
 .today-data-sleep {
@@ -281,4 +290,15 @@ body,
 
 .space-top {
   margin-top: 7%;
+}
+
+.steps-miles {
+  width: 80%;
+}
+
+@media screen and (min-width: 1990px) {
+  .widgets {
+    grid-template-columns: 1fr;
+  }
+
 }

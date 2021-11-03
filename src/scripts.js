@@ -6,7 +6,7 @@ import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
-import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch';
+import { getUserData, getSleepData, getActivityData, getHydrationData, postData } from './fetch';
 import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
 // import { } from './domManipulation';
 import DataManager from './DataManager';
@@ -141,3 +141,9 @@ const displayFriendsInfo = (user) => {
 }
 
 retrieveAllData();
+// postData('sleep', {
+//   userID: 50, 
+//   date: "11/03/2021", 
+//   hoursSlept: 100000, 
+//   sleepQuality: 50.0
+// });

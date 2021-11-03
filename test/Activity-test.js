@@ -73,12 +73,12 @@ describe('Activity', function() {
     assert.equal(activity.milesWalked('2019/06/15'), 3.0);
   });
 
-  it.only('should return the minutes a user was active on a given date', function() {
+  it('should return the minutes a user was active on a given date', function() {
     assert.equal(activity.activeMinutes('2019/06/15'), 140);
   });
 
-  it.skip('should return the average minutes a user was active for a given week', function() {
-    assert.equal(activity.averageActiveMinuets(), 144);
+  it.only('should return the average minutes a user was active for a given week', function() {
+    assert.equal(activity.averageActiveMinutes(), 144);
   });
 
   it.skip('should return if user reached their step goal on a given date', function() {

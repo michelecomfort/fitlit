@@ -1,5 +1,5 @@
 const getUserData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/users')
+  return fetch('http://localhost:3001/api/v1/users')
     .then(result => result.json())
     .then(data => {
       return data
@@ -7,7 +7,7 @@ const getUserData = () => {
 };
 
 const getSleepData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/sleep')
+  return fetch('http://localhost:3001/api/v1/sleep')
     .then(result => result.json())
     .then(data => {
       return data
@@ -15,7 +15,7 @@ const getSleepData = () => {
 };
 
 const getActivityData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/activity')
+  return fetch('http://localhost:3001/api/v1/activity')
     .then(result => result.json())
     .then(data => {
       return data
@@ -23,7 +23,7 @@ const getActivityData = () => {
 };
 
 const getHydrationData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/hydration')
+  return fetch('http://localhost:3001/api/v1/hydration')
     .then(result => result.json())
     .then(data => {
       return data

@@ -13,7 +13,7 @@ export default class Activity {
   }
 
   activeMinutes(date) {
-    const day = this.activityData.find(user => user.date === date);
+    const day = this.activityData.find(data => data.date === date);
     return day.minutesActive;
   }
 
@@ -35,5 +35,14 @@ export default class Activity {
     }, 0);
 
     return Math.round(average / week.length);
+  }
+
+  checkStepGoal(date) {
+    const day = this.activityData.find(data => data.date === date);
+    if (day.numSteps >= this.userDailyStepGoal) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

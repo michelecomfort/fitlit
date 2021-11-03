@@ -11,4 +11,9 @@ export default class Activity {
     const milesWalked = feetWalked / 5280;
     return milesWalked.toFixed(1);
   }
+
+  activeMinutes(date) {
+    const day = this.activityData.find(user => user.date === date);
+    return day.minutesActive;
+  }
 }

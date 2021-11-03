@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import { userData, hydrationData, sleepData, activityData } from '../src/data/sampleData';
 import Activity from '../src/Activity';
 
 describe('Activity', function() {
@@ -81,7 +80,7 @@ describe('Activity', function() {
     assert.equal(activity.averageActiveMinutes('2019/06/15'), 144);
   });
 
-  it('should return if user reached their step goal on a given date', function() {
+  it.only('should return if user reached their step goal on a given date', function() {
     assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
 
@@ -95,7 +94,7 @@ describe('Activity', function() {
     }]);
   });
 
-  it.only('should return the users all time stair climbing record', function() {
+  it('should return the users all time stair climbing record', function() {
     assert.equal(activity.findStairClimbingRecord(), 33);
   });
 });

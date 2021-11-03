@@ -1,6 +1,6 @@
 export default class Activity {
   constructor (userActivityData, userStrideLength, userDailyStepGoal) {
-    this.activityData = userActivityData;
+    this.userActivityData = userActivityData;
     this.userStrideLength = userStrideLength;
     this.userDailyStepGoal = userDailyStepGoal;
   }
@@ -44,5 +44,8 @@ export default class Activity {
     } else {
       return false;
     }
+  }
+
+  filterAchievedStepGoalDays() {
   }
 }

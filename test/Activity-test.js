@@ -58,7 +58,7 @@ describe('Activity', function() {
   });
 
   it('should be instantiated with activity data', function() {
-    assert.deepEqual(activity.activityData, userActivityData);
+    assert.deepEqual(activity.userActivityData, userActivityData);
   });
 
   it('should be instantiated with the users stride length', function() {
@@ -81,12 +81,12 @@ describe('Activity', function() {
     assert.equal(activity.averageActiveMinutes('2019/06/15'), 144);
   });
 
-  it.only('should return if user reached their step goal on a given date', function() {
+  it('should return if user reached their step goal on a given date', function() {
     assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
 
-  it.skip('should return all the days user step goal was met', function() {
-    assert.deepEqual(activity.findStepGoalDays(), [{
+  it.only('should return all the days user step goal was met', function() {
+    assert.deepEqual(activity.filterAchievedStepGoalDays(), [{
       "userID": 1,
       "date": "2019/06/18",
       "numSteps": 11374,

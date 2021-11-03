@@ -18,28 +18,28 @@ describe('Activity', function() {
       },
       {
       "userID": 1,
-      "date": "2019/06/15",
+      "date": "2019/06/16",
       "numSteps": 4294,
       "minutesActive": 138,
       "flightsOfStairs": 10
       },
       {
       "userID": 1,
-      "date": "2019/06/16",
+      "date": "2019/06/17",
       "numSteps": 7402,
       "minutesActive": 116,
       "flightsOfStairs": 33
       },
       {
       "userID": 1,
-      "date": "2019/06/17",
+      "date": "2019/06/18",
       "numSteps": 3486,
       "minutesActive": 114,
       "flightsOfStairs": 32
       },
       {
       "userID": 1,
-      "date": "2019/06/18",
+      "date": "2019/06/19",
       "numSteps": 11374,
       "minutesActive": 213,
       "flightsOfStairs": 13
@@ -78,7 +78,7 @@ describe('Activity', function() {
   });
 
   it.only('should return the average minutes a user was active for a given week', function() {
-    assert.equal(activity.averageActiveMinutes(), 144);
+    assert.equal(activity.averageActiveMinutes('2019/06/15'), 144);
   });
 
   it.skip('should return if user reached their step goal on a given date', function() {

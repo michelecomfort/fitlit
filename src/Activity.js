@@ -16,4 +16,24 @@ export default class Activity {
     const day = this.activityData.find(user => user.date === date);
     return day.minutesActive;
   }
+
+  averageActiveMinutes(startDate) {
+    let startIndex;
+    this.activityData.find((data, index) => {
+      if (data.date === startDate) {
+        startIndex = index;
+      }
+    });
+    const week = this.activityData.reduce((week, data, index) => {
+      if (index >= startIndex && index < startIndex + 6) {
+        week.push(data);
+      }
+      return week;
+    }, []);
+    const average = week.reduce((sum, data) => {
+      return sum + data.minutesActive;
+    }, 0);
+
+    return Math.round(average / week.length);
+  }
 }

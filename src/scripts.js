@@ -30,7 +30,7 @@ const dataManager = new DataManager();
 const retrieveAllData = () => {
   Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
     parseData(data);
-    renderDOM();
+    renderDOM(dataManager);
   }).catch(error => {
     userProfile.childNodes[3].innerHTML = `
   <h2>Hi, There seems to be an error! Please refresh the page!</h2>`
@@ -45,12 +45,8 @@ const parseData = (data) => {
   dataManager.setHydrationData(data[3].hydrationData);
 };
 
-const renderDOM = () => {
-  const data = Object.values(dataManager.userData);
-  const hydrationData = Object.values(dataManager.hydrationData);
-  const sleepData = Object.values(dataManager.sleepData);
-  const activityData = Object.values(dataManager.activityData);
-  userRepo.buildUserRepo(dataManager, data, hydrationData, sleepData, activityData);
+const renderDOM = (dataManager) => {
+  userRepo.buildUserRepo(dataManager, dataManager.userData);
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
   displayAllUserInfo(randomUser);
 };
@@ -104,7 +100,7 @@ const displaySleepInfo = (user) => {
   <p>today</p>
   `;
   sleepHours.childNodes[3].innerHTML = `
-  <p class="orange">${user.sleepData.getAverageHoursSlept()}</p>
+  <p class="orange ">${user.sleepData.getAverageHoursSlept()}</p>
   <p>avg</p>
   `;
   sleepQuality.childNodes[1].innerHTML = `
@@ -228,7 +224,7 @@ const generateSleepChart = (user) => {
             borderColor: 'rgba(0, 0, 0, 0)',
           },
         },
-      }
+      },
     },
   })
 };

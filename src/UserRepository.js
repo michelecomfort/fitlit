@@ -27,12 +27,36 @@ export default class UserRepository {
     return total / this.users.length;
   }
 
-  calculateAllUserAverageSleep(sleepData) {
+  calculateAllUserAverageSleepQuality(sleepData) {
     const allSleepAverage = sleepData.reduce((sum, user) => {
-      sum += user.hoursSlept;
+      sum += user.sleepQuality;
       return sum;
     }, 0);
     return Math.round(allSleepAverage / sleepData.length * 10) / 10;
   }
-}
 
+  filterToday(date, data) {
+    return data.filter(day => day.date === date);
+  }
+
+  calculateAllUserAverage(date, data, activity) {
+    const filteredData = this.filterToday(date, data);
+    const total = filteredData.reduce((acc, user) => {
+      switch (activity) {
+        case 'steps': 
+          acc += user.numSteps;
+          console.log(acc);
+          break;
+        case 'stairs':
+          acc += user.flightsOfStairs;
+          break;
+        case 'minutes':
+          acc += user.minutesActive;
+          break;
+      }
+      return acc;
+    }, 0)
+    console.log(total + "WEROWEIR")
+    return Math.round(total / filteredData.length);
+  }
+}

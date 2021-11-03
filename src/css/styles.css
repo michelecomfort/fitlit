@@ -175,6 +175,11 @@ body,
   width: 50%;
 }
 
+.sleep-hours,
+.sleep-quality {
+  height: 100%;
+}
+
 .sidebar {
   padding: 2% 0;
   width: 11%;
@@ -238,6 +243,7 @@ body,
 
 .today-data {
   height: 35%;
+  margin-top: 3%;
 }
 
 .today-data p {
@@ -262,7 +268,7 @@ body,
 
 .sleep-card {
   height: 45%;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .info-text {
@@ -270,5 +276,9 @@ body,
 }
 
 .space-right {
-  padding-right: 10%;
+  padding-right: 13%;
+}
+
+.space-top {
+  margin-top: 7%;
 }

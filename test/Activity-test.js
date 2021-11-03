@@ -88,7 +88,7 @@ describe('Activity', function() {
   it.only('should return all the days user step goal was met', function() {
     assert.deepEqual(activity.filterAchievedStepGoalDays(), [{
       "userID": 1,
-      "date": "2019/06/18",
+      "date": "2019/06/19",
       "numSteps": 11374,
       "minutesActive": 213,
       "flightsOfStairs": 13

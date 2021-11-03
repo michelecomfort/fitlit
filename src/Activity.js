@@ -47,5 +47,7 @@ export default class Activity {
   }
 
   filterAchievedStepGoalDays() {
+    const achievedGoalDays = this.userActivityData.filter(data => this.checkStepGoal(data.date));
+    return achievedGoalDays;
   }
 }

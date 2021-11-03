@@ -30,7 +30,7 @@ const dataManager = new DataManager();
 const retrieveAllData = () => {
   Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
     parseData(data);
-    renderDOM();
+    renderDOM(dataManager);
   }).catch(error => {
     userProfile.childNodes[3].innerHTML = `
   <h2>Hi, There seems to be an error! Please refresh the page!</h2>`
@@ -45,9 +45,8 @@ const parseData = (data) => {
   dataManager.setHydrationData(data[3].hydrationData);
 };
 
-const renderDOM = () => {
+const renderDOM = (dataManager) => {
   userRepo.buildUserRepo(dataManager, dataManager.userData);
-  console.log(userRepo.users)
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
   displayAllUserInfo(randomUser);
 };
@@ -225,7 +224,7 @@ const generateSleepChart = (user) => {
             borderColor: 'rgba(0, 0, 0, 0)',
           },
         },
-      }
+      },
     },
   })
 };

@@ -25,5 +25,4 @@ export default class DataManager {
   setActivityData(activityData) {
     this.activityData = activityData;
   }
-
 }

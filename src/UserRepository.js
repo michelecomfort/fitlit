@@ -40,10 +40,12 @@ export default class UserRepository {
   }
 
   calculateAllUserAverage(date, data, activity) {
-    const total = this.filterToday(date, data).reduce((acc, user) => {
+    const filteredData = this.filterToday(date, data);
+    const total = filteredData.reduce((acc, user) => {
       switch (activity) {
         case 'steps': 
           acc += user.numSteps;
+          console.log(acc);
           break;
         case 'stairs':
           acc += user.flightsOfStairs;
@@ -54,8 +56,7 @@ export default class UserRepository {
       }
       return acc;
     }, 0)
-    return Math.round(total / data.length);
-  
-
+    console.log(total + "WEROWEIR")
+    return Math.round(total / filteredData.length);
+  }
 }
-

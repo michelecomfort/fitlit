@@ -46,12 +46,20 @@ describe('User Repository', function() {
     assert.equal(userRepo.calculateAverageStepGoal(), 7500);
   });
 
-  it('should calculate the average for all users hours slept', function() {
-    assert.equal(userRepo.calculateAllUserAverageSleep(user1.sleepData.sleepData), 6.1);
+  it('should calculate the average sleep quality for all users', function() {
+    assert.equal(userRepo.calculateAllUserAverageSleepQuality(sleepData), 3.7);
   });
 
-  it('should calculate average number of stairs climbed for specified date', function() {
-    assert.equal(userRepo.calculateTotalSteps());
+  it('should calculate average number of steps taken for specific day across all users', function() {
+    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'steps'), 4690);
   });
+
+  it('should calculate the average flights of stairs climbed for a specific day across all users', function() {
+    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'stairs'), 23)
+  })
+
+  it('should calculate the average minutes active for a specific day across all users', function() {
+    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'minutes'), 127)
+  })
 
 });

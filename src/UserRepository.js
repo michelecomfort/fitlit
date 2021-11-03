@@ -27,13 +27,35 @@ export default class UserRepository {
     return total / this.users.length;
   }
 
-  calculateAllUserAverageSleep(sleepData) {
+  calculateAllUserAverageSleepQuality(sleepData) {
     const allSleepAverage = sleepData.reduce((sum, user) => {
-      sum += user.hoursSlept;
+      sum += user.sleepQuality;
       return sum;
     }, 0);
     return Math.round(allSleepAverage / sleepData.length * 10) / 10;
   }
+
+  filterToday(date, data) {
+    return data.filter(day => day.date === date);
+  }
+
+  calculateAllUserAverage(date, data, activity) {
+    const total = this.filterToday(date, data).reduce((acc, user) => {
+      switch (activity) {
+        case 'steps': 
+          acc += user.numSteps;
+          break;
+        case 'stairs':
+          acc += user.flightsOfStairs;
+          break;
+        case 'minutes':
+          acc += user.minutesActive;
+          break;
+      }
+      return acc;
+    }, 0)
+    return Math.round(total / data.length);
+  
 
 }
 

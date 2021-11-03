@@ -37,9 +37,6 @@ const dataManager = new DataManager();
 //   window.scrollTo(0, 0)
 // }
 
-
-
-
 const retrieveAllData = () => {
   Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
     parseData(data);

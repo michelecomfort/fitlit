@@ -141,14 +141,20 @@ body,
   grid-column-gap: 5%;
   grid-row-gap: 5%;
   margin-left: 3%;
+}
 
+
+.sleep {
+  grid-row: span 4;
 }
 
 .activity,
-.water,
-.steps,
-.sleep {
-  grid-row: span 3;
+.steps {
+  grid-row: span 4;
+}
+
+.water {
+  grid-row: span 2;
 }
 
 .friends {
@@ -204,6 +210,7 @@ body,
 .widgets img {
   height: 17%;
   padding-bottom: 3%;
+  padding-top: 3%;
 }
 
 .water,
@@ -233,8 +240,8 @@ body,
 }
 
 .today-data {
-  height: 25%;
-  margin-top: 2%;
+  height: 20%;
+  margin-top: 1%;
 }
 
 .today-data p {
@@ -244,7 +251,8 @@ body,
 .step-goals,
 .flights-of-stairs,
 .minutes-active {
-  height: 48%;
+  height: 40%;
+  padding-top: 12%;
 }
 
 .info-text {

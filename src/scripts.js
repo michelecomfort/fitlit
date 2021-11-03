@@ -5,6 +5,7 @@ import './images/Steps.svg';
 import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
+import './images/activity.svg'
 import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';
@@ -14,6 +15,7 @@ Chart.register(...registerables);
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
 const todaySteps = document.querySelector('#stepsToday');
+// const activityGoals = document.querySelector('#activityGoals');
 const stepGoals = document.querySelector('#stepGoals');
 const waterStats = document.querySelector('#waterStats');
 const waterCalendar = document.querySelector('#waterCanvas').getContext('2d');
@@ -69,6 +71,7 @@ const renderDOM = () => {
 
 const displayAllUserInfo = (user) => {
   displayProfileInfo(user);
+  // displayActivityInfo(user)
   displayStepInfo(user);
   displayHydrationInfo(user);
   displaySleepInfo(user);
@@ -86,6 +89,12 @@ const displayProfileInfo = (user) => {
   <p class="email">${user.email}</p>
   `;
 };
+
+// const displayActivityInfo = (user) => {
+//   activityGoals.childNodes[].innerHTML += `
+//   <h4 class='pink'>85</h4>
+//   <p class='unit'>/minutes</p>`
+// }
 
 const displayStepInfo = (user) => {
   stepGoals.childNodes[1].innerHTML += `

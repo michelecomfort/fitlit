@@ -70,33 +70,34 @@ button:hover {
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
 body,
 .sidebar,
-/* .widgets, */
-/* .top-half,
-.bottom-half, */
 .water,
 .steps,
 .sleep,
 .friends,
+.activity,
 .today-data,
 .user-info-card,
 .user-data,
 .step-goals,
+.flights-of-stairs,
+.minutes-active,
 .info-type-box,
 .calendar,
 .sleep-hours,
 .sleep-quality,
 .sleep-data-box,
 .sleep-card,
-.today-data-sleep {
+.today-data-sleep,
+.step-miles {
   display: flex;
 
 }
 
 .sidebar,
-/* .widgets, */
 .water,
 .steps,
 .sleep,
+.activity,
 .friends,
 .today-data,
 .user-data,
@@ -110,10 +111,11 @@ body,
 
 .sidebar,
 .water,
+.activity,
 .steps,
 .sleep,
 .friends,
-.today-data,
+/* .today-data, */
 .user-info-card,
 .sleep-hours,
 .sleep-quality,
@@ -122,11 +124,8 @@ body,
   align-items: center;
 }
 
-body,
-/* .widgets, */
-/* .top-half,
-.bottom-half, */
-.info-type-box {
+.steps-miles {
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -138,11 +137,11 @@ body,
 
 .widgets {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 50% 50%;
   grid-auto-rows: 200px;
-  grid-column-gap: 10%;
-  grid-row-gap:10%;
-  margin-left: 10%;
+  grid-column-gap:  5%;
+  grid-row-gap:5%;
+  margin-left: 5%;
 
 }
 
@@ -152,13 +151,8 @@ body,
 .sleep {
   grid-row: span 3;
 }
-/* .steps,
-.sleep, */
+
 .friends {
-/* .today-data,
-.user-data,
-.step-goals,
-.sleep-card { */
   justify-content: space-around;
 }
 
@@ -169,33 +163,24 @@ body,
   justify-content: space-evenly;
 }
 
+
+
 .step-goals,
-.sleep-data-box {
+.sleep-data-box,
+.flights-of-stairs,
+.minutes-active {
   text-align: center;
 }
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 
-/* .sidebar,
-.widgets {
-  height: 100%;
-} */
-
-/* .top-half,
-.bottom-half, */
 .step-goals,
+.flights-of-stairs,
+.minutes-active,
 .sleep-data-box,
 .sleep-card {
   width: 100%;
 }
-
-/* .sleep-card section {
-  height: 30%;
-} */
-
-/* .user-info-card {
-  height: 150%;
-} */
 
 .info-type-box,
 .sleep-hours,
@@ -217,57 +202,28 @@ body,
   background-color: rgb(12, 50, 69, 0.75);
   border-radius: 30px;
   padding: 2%;
-  /* display: grid; */
 }
-
-/* .widgets {
-  flex-wrap: wrap;
-  width: 85%;
-} */
-
-/* .large-widget {
-  width: 20%;
-}
-
-.small-widget {
-  width: 22%;
-} */
-
-
 
 .widgets img {
   height: 17%;
 }
 
-/* .top-half,
-.bottom-half {
-  height: 47%;
-  flex-wrap: wrap;
-} */
-
 .water,
 .steps,
 .sleep,
 .friends,
-.today-data {
+/* .today-data, */
+.activity {
   align-content: center;
-  /* width: 40% */
-
 }
-
-
 
 .user-info-card img {
   border-radius: 100%;
-  /* height: auto; */
   max-width: 35%;
 }
 
-.user-data,
-.activity {
-  /* height: 100%; */
+.user-data {
   overflow-wrap: break-word;
-  /* width: 40%; */
 }
 
 .email {
@@ -276,14 +232,16 @@ body,
 
 .today-data {
   height: 25%;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 .today-data p {
   font-size: 1.2em;
 }
 
-.step-goals {
+.step-goals,
+.flights-of-stairs,
+.minutes-active {
   height: 33%;
 }
 
@@ -293,6 +251,12 @@ body,
 
 .border-right {
   border-right: 2px solid white;
+
+}
+
+.border-activity {
+  border-right: 2px solid white;
+  height: 50%;
 }
 
 .today-data-sleep {

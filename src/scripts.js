@@ -6,7 +6,7 @@ import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
-import { getUserData, getSleepData, getActivityData, getHydrationData, postData } from './fetch';
+import { fetchData, postData } from './fetch';
 import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
 // import { } from './domManipulation';
 import DataManager from './DataManager';
@@ -38,7 +38,7 @@ const dataManager = new DataManager();
 // }
 
 const retrieveAllData = () => {
-  Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
+  Promise.all([fetchData('users'), fetchData('sleep'), fetchData('activity'), fetchData('hydration')]).then(data => {
     parseData(data);
     renderDOM(dataManager);
   }).catch(error => {

@@ -90,7 +90,6 @@ body,
 .today-data-sleep,
 .step-miles {
   display: flex;
-
 }
 
 .sidebar,
@@ -139,9 +138,9 @@ body,
   display: grid;
   grid-template-columns: 50% 50%;
   grid-auto-rows: 200px;
-  grid-column-gap:  5%;
-  grid-row-gap:5%;
-  margin-left: 5%;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+  margin-left: 3%;
 
 }
 
@@ -162,8 +161,6 @@ body,
 .sleep-data-box {
   justify-content: space-evenly;
 }
-
-
 
 .step-goals,
 .sleep-data-box,
@@ -206,6 +203,7 @@ body,
 
 .widgets img {
   height: 17%;
+  padding-bottom: 3%;
 }
 
 .water,
@@ -215,6 +213,10 @@ body,
 /* .today-data, */
 .activity {
   align-content: center;
+}
+
+.today-data {
+  align-items: center;
 }
 
 .user-info-card img {
@@ -242,7 +244,7 @@ body,
 .step-goals,
 .flights-of-stairs,
 .minutes-active {
-  height: 33%;
+  height: 48%;
 }
 
 .info-text {
@@ -251,10 +253,10 @@ body,
 
 .border-right {
   border-right: 2px solid white;
-
+  /* height: 50%; */
 }
 
-.border-activity {
+.border-right-half {
   border-right: 2px solid white;
   height: 50%;
 }
@@ -278,6 +280,10 @@ body,
 
 .space-top {
   margin-top: 7%;
+}
+
+.steps-miles {
+  width: 80%;
 }
 
 @media screen and (min-width: 1990px) {

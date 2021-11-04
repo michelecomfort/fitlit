@@ -17,26 +17,6 @@ export default class Activity {
     return day.minutesActive;
   }
 
-  averageActiveMinutes(startDate) {
-    let startIndex;
-    this.userActivityData.find((data, index) => {
-      if (data.date === startDate) {
-        startIndex = index;
-      }
-    });
-    const week = this.userActivityData.reduce((week, data, index) => {
-      if (index >= startIndex && index < startIndex + 6) {
-        week.push(data);
-      }
-      return week;
-    }, []);
-    const average = week.reduce((sum, data) => {
-      return sum + data.minutesActive;
-    }, 0);
-
-    return Math.round(average / week.length);
-  }
-
   checkStepGoal(date) {
     const day = this.userActivityData.find(data => data.date === date);
     if (day.numSteps >= this.userDailyStepGoal) {
@@ -59,5 +39,38 @@ export default class Activity {
       return record;
     }, 0);
     return climbingRecord;
+  }
+
+  getWeekOfActivityData(start, type) {
+    const week = [];
+    const startDate = this.userActivityData.find(day => day.date === start);
+    const dayIndex = this.userActivityData.indexOf(startDate);
+    this.userActivityData.reduce((acc) => {
+      if (acc < 7) {
+        switch (type) {
+          case 'steps':
+            week.push(this.userActivityData[dayIndex + acc].numSteps);
+            break;
+          case 'stairs':
+              week.push(this.userActivityData[dayIndex + acc].flightsOfStairs);
+              break;
+          case 'minutes':
+            week.push(this.userActivityData[dayIndex + acc].minutesActive);
+            break;
+        }
+        acc++;
+      }
+      return acc;
+    }, 0);
+    return week;
+  }
+
+  getWeeklyAverageActiveMinutes(start) {
+    const week = this.getWeekOfActivityData(start, 'minutes')
+    const totalMinutes = week.reduce((acc, day) => {
+      acc += day;
+      return acc;
+    }, 0)
+    return Math.round(totalMinutes / week.length) 
   }
 }

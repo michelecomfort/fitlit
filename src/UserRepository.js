@@ -45,7 +45,6 @@ export default class UserRepository {
       switch (activity) {
         case 'steps': 
           acc += user.numSteps;
-          console.log(acc);
           break;
         case 'stairs':
           acc += user.flightsOfStairs;
@@ -56,7 +55,6 @@ export default class UserRepository {
       }
       return acc;
     }, 0)
-    console.log(total + "WEROWEIR")
     return Math.round(total / filteredData.length);
   }
 }

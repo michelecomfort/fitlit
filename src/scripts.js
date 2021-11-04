@@ -33,6 +33,24 @@ const userInputActivityStairs = document.querySelector('#flight-of-stairs');
 const userInputActivityMinutesActive = document.querySelector('#minutes-active');
 const userInputActivitySteps = document.querySelector('#number-of-steps');
 
+const postData = (location, data) => {
+  fetch(`http://localhost:3001/api/v1/${location}`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+};
+
+const formatDate = (date) => {
+  const formattedDate = date.replaceAll('-', '/');
+  return formattedDate;
+}
+
 activityTypeForm.addEventListener('change', () => {
   switch (activityOptions.value) {
     case 'sleep':
@@ -63,7 +81,7 @@ sleepForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const userInputSleepData = {
     userID: userRepo.activeUser.id,
-    date: userInputSleepDate.value,
+    date: formatDate(userInputSleepDate.value),
     hoursSlept: userInputHoursSlept.value,
     sleepQuality: userInputSleepQuality.value
   }
@@ -74,7 +92,7 @@ hydrationForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const userInputHydrationData = {
     userID: userRepo.activeUser.id, 
-    date: userInputHydrationDate.value, 
+    date: formatDate(userInputHydrationDate.value), 
     numOunces: userInputHydrationOunces.value
   }
   console.log(userInputHydrationData);
@@ -84,7 +102,7 @@ activityForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const userInputActivityData = { 
     userID: userRepo.activeUser.id, 
-    date: userInputActivityDate.value, 
+    date: formatDate(userInputActivityDate.value), 
     flightsOfStairs: userInputActivityStairs.value, 
     minutesActive: userInputActivityMinutesActive.value, 
     numSteps: userInputActivitySteps.value,

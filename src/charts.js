@@ -4,6 +4,7 @@ const activityCalendar = document.querySelector('#minutesCanvas').getContext('2d
 const flightsCalendar = document.querySelector('#flightsCanvas').getContext('2d')
 const waterCalendar = document.querySelector('#waterCanvas').getContext('2d');
 const sleepCalendar = document.querySelector('#sleepCanvas').getContext('2d');
+const stepCalendar = document.querySelector('#stepsCanvas').getContext('2d');
 
 const generateActivityChart = (user) => {
   const activityChart = new Chart(activityCalendar, {
@@ -55,7 +56,7 @@ const generateActivityChart = (user) => {
 
 const generateFlightsChart = (user) => {
   const flightsChart = new Chart(flightsCalendar, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
       datasets: [{
@@ -209,10 +210,60 @@ const generateSleepChart = (user) => {
   })
 };
 
+const generateStepsChart = (user) => {
+  const stepChart = new Chart(stepCalendar, {
+    type: 'line',
+    data: {
+      labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
+      datasets: [{
+        label: 'oz of water',
+        data: user.hydrationData.getWeeklyDrank('2020/01/15'),
+        backgroundColor: '#FC6F7F',
+        borderColor: '#FC6F7F',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            color: '#ffffff'
+          },
+        }
+      },
+      scales: {
+        y: {
+          ticks: {
+            color: ['#ffffff'],
+          },
+          beginAtZero: true,
+          grid: {
+            color: 'rgba(0, 0, 0, 0)',
+            borderColor: 'rgba(0, 0, 0, 0)',
+          }
+        },
+        x: {
+          ticks: {
+            color: ['#ffffff']
+          },
+          grid: {
+            color: 'rgba(0, 0, 0, 0)',
+            borderColor: 'rgba(0, 0, 0, 0)',
+          },
+        },
+      }
+    },
+  })
+};
+
+
 
 export {
   generateFlightsChart,
   generateActivityChart,
   generateWaterChart,
-  generateSleepChart
+  generateSleepChart,
+  generateStepsChart
 }

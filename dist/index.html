@@ -10,10 +10,10 @@
   <body>
     <section class="sidebar dashboard-cards">
       <h1 class="pink">FitLit</h1>
-      <button type="button" class="button"><img src="./images/Home.svg" alt='home icon'></button>
-      <button type="button" class="button"><img src="./images/Steps.svg" alt='walking person icon'></button>
-      <button type="button" class="button"><img src="./images/Water.svg" alt='water droplet icon'></button>
-      <button type="button" id='scrollSleep' class="button"><img src="./images/Sleep.svg" alt='moon icon'></button>
+      <button type="button" id='homeButton' class="button"><img src="./images/Home.svg" alt='home icon'></button>
+      <button type="button" id='personButton' class="button"><img src="./images/Steps.svg" alt='walking person icon'></button>
+      <button type="button" id='waterButton' class="button"><img src="./images/Water.svg" alt='water droplet icon'></button>
+      <button type="button" id='moonButton' class="button"><img src="./images/Sleep.svg" alt='moon icon'></button>
     </section>
 
       <section class="widgets">
@@ -81,7 +81,7 @@
             </section>
 
             <section class="step-goals" id="stepGoals">
-              <section class="info-type-box border-right">
+              <section class="info-type-box border-right-half">
                 <p class="info-text">You</p>
                 <h4></h4>
                 <p></p>
@@ -92,7 +92,7 @@
                 <p></p>
               </section>
             </section>
-            <canvas id="stepsCanvas" width="250" height="80"></canvas>
+            <canvas id="stepsCanvas" width="250" height="100"></canvas>
           </section>
 
           <section class="sleep dashboard-cards ">

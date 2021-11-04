@@ -5,20 +5,27 @@
   margin: 0;
 }
 
+html {
+  overflow: auto;
+
+}
 body, html {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   height: 100%;
-  overflow: scroll;
 }
 
 body {
+  background-attachment: fixed;
   background-blend-mode: color-burn;
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
   background-color: rgb(255, 255, 255, 0.4);
+  /* background-repeat: no-repeat; */
   padding: 3%;
   width: 100%;
+  /* overflow: scroll; */
+
 }
 
 .pink {
@@ -130,22 +137,27 @@ body,
 }
 
 .sidebar {
-  position: -webkit-sticky;
-  position: sticky;
+  /* position: -webkit-sticky; */
+  position: fixed;
   top: 0;
+  height: 90vh;
+  margin-top: 3%;
 }
 
 .widgets {
+  position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-auto-rows: 200px;
   grid-column-gap: 5%;
   grid-row-gap: 5%;
-  margin-left: 4%;
+  margin-left: 15%;
   width: 80%;
 }
 
-
+.user-info-card {
+  grid-row: span 2;
+}
 .sleep {
   grid-row: span 4;
 }
@@ -156,7 +168,7 @@ body,
 }
 
 .water {
-  grid-row: span 2;
+  grid-row: span 3;
 }
 
 .friends {
@@ -215,13 +227,9 @@ body,
   padding-top: 3%;
 }
 
-.water,
-.steps,
-.sleep,
-.friends,
-/* .today-data, */
-.activity {
-  align-content: center;
+
+.water {
+  justify-content: space-around;
 }
 
 .today-data {

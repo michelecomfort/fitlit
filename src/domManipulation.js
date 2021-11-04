@@ -7,6 +7,44 @@ const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality');
 const userProfile = document.querySelector('#userProfile');
 const friendContainer = document.querySelector('#FriendDisplay');
+const homeButton = document.querySelector('#homeButton');
+const personButton = document.querySelector('#personButton');
+const waterButton = document.querySelector('#waterButton');
+const moonButton = document.querySelector('#moonButton');
+
+const scrollHome = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
+const scrollSleep = () => {
+  window.scrollTo({
+    top: 1200,
+    behavior: 'smooth'
+  })
+}
+
+const scrollWater = () => {
+  window.scrollTo({
+    top: 500,
+    behavior: 'smooth'
+  })
+}
+
+const scrollSteps = () => {
+  window.scrollTo({
+    top: 1000,
+    behavior: 'smooth'
+  })
+}
+
+//EventListeners
+homeButton.addEventListener('click', scrollHome);
+moonButton.addEventListener('click', scrollSleep);
+waterButton.addEventListener('click', scrollWater);
+personButton.addEventListener('click', scrollSteps);
 
 const displayProfileInfo = (user) => {
   userProfile.childNodes[3].innerHTML = `

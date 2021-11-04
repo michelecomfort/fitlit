@@ -98,7 +98,7 @@ const displayStepInfo = (user) => {
   <p class="unit">/day</p>
   `;
   todaySteps.innerHTML = `
-  <h3 class="pink">${user.activityData[user.activityData.length - 1].numSteps}</h3>
+  <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].numSteps}</h3>
   <p>steps</p>
   `;
 };

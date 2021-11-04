@@ -6,9 +6,9 @@ import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
-import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch';
+import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayFriendsInfo } from './domManipulation';
+import { fetchData, postData } from './fetch';
 import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
-// import { } from './domManipulation';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';
 import { Chart, registerables } from 'chart.js';
@@ -16,12 +16,6 @@ Chart.register(...registerables);
 
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
-const todaySteps = document.querySelector('#stepsToday');
-const stepGoals = document.querySelector('#stepGoals');
-const waterStats = document.querySelector('#waterStats');
-const sleepHours = document.querySelector('#sleepHours');
-const sleepQuality = document.querySelector('#sleepQuality');
-const friendContainer = document.querySelector('#FriendDisplay');
 // const scrollSleep = document.getElementById('scrollSleep')
 
 
@@ -38,7 +32,7 @@ const dataManager = new DataManager();
 // }
 
 const retrieveAllData = () => {
-  Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
+  Promise.all([fetchData('users'), fetchData('sleep'), fetchData('activity'), fetchData('hydration')]).then(data => {
     parseData(data);
     renderDOM(dataManager);
   }).catch(error => {
@@ -58,86 +52,26 @@ const parseData = (data) => {
 const renderDOM = (dataManager) => {
   userRepo.buildUserRepo(dataManager, dataManager.userData);
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
-  displayAllUserInfo(randomUser);
+  displayAllUserInfo(randomUser, userRepo);
 };
 
-const displayAllUserInfo = (user) => {
+const displayAllUserInfo = (user, userRepo) => {
   displayProfileInfo(user);
   // displayActivityInfo(user)
-  displayStepInfo(user);
+  displayStepInfo(user, userRepo);
   displayHydrationInfo(user);
   displaySleepInfo(user);
-  displayFriendsInfo(user);
 }
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
 
-const displayProfileInfo = (user) => {
-  userProfile.childNodes[3].innerHTML = `
-  <h2 class="pink">Hi, ${user.returnFirstName()}!</h2>
-  <p>${user.address}</p>
-  <p class="email">${user.email}</p>
-  `;
-};
-
-// const displayActivityInfo = (user) => {
-//   activityGoals.childNodes[].innerHTML += `
-//   <h4 class='pink'>85</h4>
-//   <p class='unit'>/minutes</p>`
-// }
-
-const displayStepInfo = (user) => {
-  stepGoals.childNodes[1].innerHTML += `
-  <h4 class="pink">${user.dailyStepGoal}</h4>
-  <p class="unit">/day</p>
-  `;
-  stepGoals.childNodes[3].innerHTML += `
-  <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
-  <p class="unit">/day</p>
-  `;
-  todaySteps.innerHTML = `
-  <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].numSteps}</h3>
-  <p>steps</p>
-  `;
-};
-
-const displayHydrationInfo = (user) => {
-  waterStats.childNodes[3].innerHTML = `
-  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/21')}</h3>
-  <p>oz</p>
-  `;
-  generateWaterChart(user);
-  generateActivityChart(user)
-  generateFlightsChart(user)
-};
-
-const displaySleepInfo = (user) => {
-  sleepHours.childNodes[1].innerHTML = `
-  <h4 class="pink">${user.sleepData.getHoursSlept('2020/01/22')}</h4>
-  <p>today</p>
-  `;
-  sleepHours.childNodes[3].innerHTML = `
-  <p class="orange ">${user.sleepData.getAverageHoursSlept()}</p>
-  <p>avg</p>
-  `;
-  sleepQuality.childNodes[1].innerHTML = `
-  <h4 class="pink">${user.sleepData.getQualityOfSleep('2020/01/22')}</h4>
-  <p>today</p>
-  `;
-  sleepQuality.childNodes[3].innerHTML = `
-  <p class="orange">${user.sleepData.getAverageSleepQuality()}</p>
-  <p>avg</p>
-  `;
-  generateSleepChart(user);
-};
-
-const displayFriendsInfo = (user) => {
-  friendContainer.innerHTML = `<img src="./images/Friends.svg" alt='friends icon'>`;
-  user.friends.forEach(friend => {
-    friendContainer.innerHTML += `<p>${friend.name}</p>`
-  });
-}
 
 retrieveAllData();
+// postData('sleep', {
+//   userID: 50, 
+//   date: "11/03/2021", 
+//   hoursSlept: 100000, 
+//   sleepQuality: 50.0
+// });

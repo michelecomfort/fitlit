@@ -3,6 +3,7 @@ import User from "./User";
 export default class UserRepository {
   constructor() {
     this.users = [];
+    this.activeUser = null;
   }
 
   buildUserRepo(dataManager, userData) {

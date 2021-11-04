@@ -1,18 +1,18 @@
 import { generateStairsChart, generateMinutesActiveChart, generateWaterChart, generateSleepChart, generateStepsChart } from './charts';
 
 const userProfile = document.querySelector('#userProfile');
-const todaySteps = document.querySelector('#stepsToday');
+const stepStats = document.querySelector('#stepStats');
 const stepGoals = document.querySelector('#stepGoals');
 const waterStats = document.querySelector('#waterStats');
 const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality');
-const activityStats = document.querySelector('#activityStats');
+const minutesActiveStats = document.querySelector('#activityStats');
 const stairStats = document.querySelector('#stairStats');
-// const friendContainer = document.querySelector('#FriendDisplay');
 const homeButton = document.querySelector('#homeButton');
 const personButton = document.querySelector('#personButton');
 const waterButton = document.querySelector('#waterButton');
 const moonButton = document.querySelector('#moonButton');
+// const friendContainer = document.querySelector('#FriendDisplay');
 
 const scrollHome = () => {
   window.scrollTo({
@@ -57,11 +57,11 @@ const displayProfileInfo = (user) => {
 };
 
 const displayActivityInfo = (user, userRepo, dataManager) => {
-  activityStats.childNodes[1].innerHTML += `
+  minutesActiveStats.childNodes[1].innerHTML += `
   <h4 class="pink">${user.activityData.activeMinutes('2020/01/21')}</h4>
   <p class="unit">minutes</p>
   `
-  activityStats.childNodes[3].innerHTML += `
+  minutesActiveStats.childNodes[3].innerHTML += `
   <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/21', dataManager.activityData, 'minutes')}</h4>
   <p class="unit">minutes</p>
   `
@@ -77,11 +77,23 @@ const displayActivityInfo = (user, userRepo, dataManager) => {
   generateStairsChart(user);
 }
 
+const displayHydrationInfo = (user) => {
+  waterStats.childNodes[3].innerHTML = `
+  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/21')}</h3>
+  <p>oz</p>
+  `;
+  generateWaterChart(user)
+};
 
 const displayStepInfo = (user, userRepo) => {
-  todaySteps.innerHTML = `
+  console.log(stepStats.childNodes);
+  stepStats.childNodes[1].innerHTML = `
   <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].numSteps}</h3>
   <p>steps</p>
+  `;
+  stepStats.childNodes[3].innerHTML = `
+  <h3 class="pink">${user.activityData.milesWalked('2020/01/21')}</h3>
+  <p>miles</p>
   `;
   stepGoals.childNodes[1].innerHTML += `
   <h4 class="pink">${user.dailyStepGoal}</h4>
@@ -92,14 +104,6 @@ const displayStepInfo = (user, userRepo) => {
   <p class="unit">/day</p>
   `;
   generateStepsChart(user)
-};
-
-const displayHydrationInfo = (user) => {
-  waterStats.childNodes[3].innerHTML = `
-  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/21')}</h3>
-  <p>oz</p>
-  `;
-  generateWaterChart(user)
 };
 
 const displaySleepInfo = (user) => {
@@ -133,8 +137,8 @@ const displaySleepInfo = (user) => {
 export {
   displayProfileInfo,
   displayActivityInfo,
-  displayStepInfo,
   displayHydrationInfo,
+  displayStepInfo,
   displaySleepInfo,
   // displayFriendsInfo
 }

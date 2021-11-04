@@ -1,24 +1,24 @@
 export default class Activity {
-  constructor (userActivityData, userStrideLength, userDailyStepGoal) {
-    this.userActivityData = userActivityData;
+  constructor (activityData, userStrideLength, userDailyStepGoal) {
+    this.activityData = activityData;
     this.userStrideLength = userStrideLength;
     this.userDailyStepGoal = userDailyStepGoal;
   }
 
   milesWalked(date) {
-    const day = this.userActivityData.find(user => user.date === date);
+    const day = this.activityData.find(user => user.date === date);
     const feetWalked = this.userStrideLength * day.numSteps;
     const milesWalked = feetWalked / 5280;
     return milesWalked.toFixed(1);
   }
 
   activeMinutes(date) {
-    const day = this.userActivityData.find(data => data.date === date);
+    const day = this.activityData.find(data => data.date === date);
     return day.minutesActive;
   }
 
   checkStepGoal(date) {
-    const day = this.userActivityData.find(data => data.date === date);
+    const day = this.activityData.find(data => data.date === date);
     if (day.numSteps >= this.userDailyStepGoal) {
       return true;
     } else {
@@ -27,12 +27,12 @@ export default class Activity {
   }
 
   filterAchievedStepGoalDays() {
-    const achievedGoalDays = this.userActivityData.filter(data => this.checkStepGoal(data.date));
+    const achievedGoalDays = this.activityData.filter(data => this.checkStepGoal(data.date));
     return achievedGoalDays;
   }
 
   findStairClimbingRecord() {
-    const climbingRecord = this.userActivityData.reduce((record, data) => {
+    const climbingRecord = this.activityData.reduce((record, data) => {
       if (record < data.flightsOfStairs) {
         record = data.flightsOfStairs;
       }
@@ -43,19 +43,19 @@ export default class Activity {
 
   getWeekOfActivityData(start, type) {
     const week = [];
-    const startDate = this.userActivityData.find(day => day.date === start);
-    const dayIndex = this.userActivityData.indexOf(startDate);
-    this.userActivityData.reduce((acc) => {
+    const startDate = this.activityData.find(day => day.date === start);
+    const dayIndex = this.activityData.indexOf(startDate);
+    this.activityData.reduce((acc) => {
       if (acc < 7) {
         switch (type) {
           case 'steps':
-            week.push(this.userActivityData[dayIndex + acc].numSteps);
+            week.push(this.activityData[dayIndex + acc].numSteps);
             break;
           case 'stairs':
-              week.push(this.userActivityData[dayIndex + acc].flightsOfStairs);
+              week.push(this.activityData[dayIndex + acc].flightsOfStairs);
               break;
           case 'minutes':
-            week.push(this.userActivityData[dayIndex + acc].minutesActive);
+            week.push(this.activityData[dayIndex + acc].minutesActive);
             break;
         }
         acc++;

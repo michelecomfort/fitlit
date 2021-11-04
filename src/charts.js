@@ -12,8 +12,8 @@ const generateActivityChart = (user) => {
     data: {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
       datasets: [{
-        label: 'minutes of exercise',
-        data: user.hydrationData.getWeeklyDrank('2020/01/15'),
+        label: 'active minutes',
+        data: user.activityData.getWeekOfActivityData('2020/01/15', 'minutes'),
         backgroundColor: '#FC6F7F',
         borderColor: '#FC6F7F',
         borderWidth: 2
@@ -61,7 +61,7 @@ const generateFlightsChart = (user) => {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
       datasets: [{
         label: 'flights of stairs',
-        data: user.hydrationData.getWeeklyDrank('2020/01/15'),
+        data: user.activityData.getWeekOfActivityData('2020/01/15', 'stairs'),
         backgroundColor: '#FC6F7F',
         borderColor: '#FC6F7F',
         borderWidth: 2

@@ -67,6 +67,7 @@ const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
 
+
 retrieveAllData();
 // postData('sleep', {
 //   userID: 50, 

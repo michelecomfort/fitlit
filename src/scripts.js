@@ -6,8 +6,9 @@ import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
-import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch';
 import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayFriendsInfo } from './domManipulation';
+import { fetchData, postData } from './fetch';
+import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';
 import { Chart, registerables } from 'chart.js';
@@ -31,7 +32,7 @@ const dataManager = new DataManager();
 // }
 
 const retrieveAllData = () => {
-  Promise.all([getUserData(), getSleepData(), getActivityData(), getHydrationData()]).then(data => {
+  Promise.all([fetchData('users'), fetchData('sleep'), fetchData('activity'), fetchData('hydration')]).then(data => {
     parseData(data);
     renderDOM(dataManager);
   }).catch(error => {
@@ -67,3 +68,9 @@ const getRandomIndex = (array) => {
 };
 
 retrieveAllData();
+// postData('sleep', {
+//   userID: 50, 
+//   date: "11/03/2021", 
+//   hoursSlept: 100000, 
+//   sleepQuality: 50.0
+// });

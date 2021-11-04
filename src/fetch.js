@@ -1,38 +1,22 @@
-const getUserData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/users')
-    .then(result => result.json())
-    .then(data => {
-      return data
-    });
-};
+const fetchData = (location) => {
+  return fetch(`http://localhost:3001/api/v1/${location}`)
+    .then(result => result.json());
+}
 
-const getSleepData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/sleep')
-    .then(result => result.json())
-    .then(data => {
-      return data
-    });
-};
-
-const getActivityData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/activity')
-    .then(result => result.json())
-    .then(data => {
-      return data
-    });
-};
-
-const getHydrationData = () => {
-  return fetch('https://pacific-badlands-43237.herokuapp.com/api/v1/hydration')
-    .then(result => result.json())
-    .then(data => {
-      return data
-    });
+const postData = (location, data) => {
+  fetch(`http://localhost:3001/api/v1/${location}`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 };
 
 export {
-  getUserData,
-  getSleepData,
-  getActivityData,
-  getHydrationData,
+  fetchData,
+  postData,
 };

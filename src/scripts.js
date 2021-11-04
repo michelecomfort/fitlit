@@ -6,9 +6,8 @@ import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
-import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayFriendsInfo } from './domManipulation';
+import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayActivityInfo, displayFriendsInfo } from './domManipulation';
 import { fetchData, postData } from './fetch';
-import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';
 import { Chart, registerables } from 'chart.js';
@@ -16,20 +15,10 @@ Chart.register(...registerables);
 
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
-// const scrollSleep = document.getElementById('scrollSleep')
-
-
-// Event Listeners
-// scrollSleep.addEventListener('click', scrollToSleep)
 
 // Global Variables
 const userRepo = new UserRepository();
 const dataManager = new DataManager();
-
-//Functions
-// const scrollToSleep = () => {
-//   window.scrollTo(0, 0)
-// }
 
 const retrieveAllData = () => {
   Promise.all([fetchData('users'), fetchData('sleep'), fetchData('activity'), fetchData('hydration')]).then(data => {
@@ -57,7 +46,7 @@ const renderDOM = (dataManager) => {
 
 const displayAllUserInfo = (user, userRepo) => {
   displayProfileInfo(user);
-  // displayActivityInfo(user)
+  displayActivityInfo(user, userRepo, dataManager)
   displayStepInfo(user, userRepo);
   displayHydrationInfo(user);
   displaySleepInfo(user);
@@ -66,7 +55,6 @@ const displayAllUserInfo = (user, userRepo) => {
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };
-
 
 retrieveAllData();
 // postData('sleep', {

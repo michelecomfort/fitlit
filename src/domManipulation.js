@@ -1,12 +1,14 @@
-import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart, generateStepsChart } from './charts';
+import { generateStairsChart, generateMinutesActiveChart, generateWaterChart, generateSleepChart, generateStepsChart } from './charts';
 
+const userProfile = document.querySelector('#userProfile');
 const todaySteps = document.querySelector('#stepsToday');
 const stepGoals = document.querySelector('#stepGoals');
 const waterStats = document.querySelector('#waterStats');
 const sleepHours = document.querySelector('#sleepHours');
 const sleepQuality = document.querySelector('#sleepQuality');
-const userProfile = document.querySelector('#userProfile');
-const friendContainer = document.querySelector('#FriendDisplay');
+const activityStats = document.querySelector('#activityStats');
+const stairStats = document.querySelector('#stairStats');
+// const friendContainer = document.querySelector('#FriendDisplay');
 const homeButton = document.querySelector('#homeButton');
 const personButton = document.querySelector('#personButton');
 const waterButton = document.querySelector('#waterButton');
@@ -52,19 +54,35 @@ const displayProfileInfo = (user) => {
   <p>${user.address}</p>
   <p class="email">${user.email}</p>
   `;
-  generateActivityChart(user)
-  generateFlightsChart(user)
 };
 
-// const displayActivityInfo = (user) => {
-//   activityGoals.childNodes[].innerHTML += `
-//   <h4 class='pink'>85</h4>
-//   <p class='unit'>/minutes</p>`
-    // generateActivityChart(user)
-    // generateFlightsChart(user)
-// }
+const displayActivityInfo = (user, userRepo, dataManager) => {
+  activityStats.childNodes[1].innerHTML += `
+  <h4 class="pink">${user.activityData.activeMinutes('2020/01/21')}</h4>
+  <p class="unit">minutes</p>
+  `
+  activityStats.childNodes[3].innerHTML += `
+  <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/21', dataManager.activityData, 'minutes')}</h4>
+  <p class="unit">minutes</p>
+  `
+  stairStats.childNodes[1].innerHTML += `
+  <h4 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].flightsOfStairs}</h4>
+  <p class="unit">flights of stairs</p>
+  `
+  stairStats.childNodes[3].innerHTML += `
+  <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/21', dataManager.activityData, 'stairs')}</h4>
+  <p class="unit">flights of stairs</p>
+  `
+  generateMinutesActiveChart(user);
+  generateStairsChart(user);
+}
+
 
 const displayStepInfo = (user, userRepo) => {
+  todaySteps.innerHTML = `
+  <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].numSteps}</h3>
+  <p>steps</p>
+  `;
   stepGoals.childNodes[1].innerHTML += `
   <h4 class="pink">${user.dailyStepGoal}</h4>
   <p class="unit">/day</p>
@@ -72,10 +90,6 @@ const displayStepInfo = (user, userRepo) => {
   stepGoals.childNodes[3].innerHTML += `
   <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
   <p class="unit">/day</p>
-  `;
-  todaySteps.innerHTML = `
-  <h3 class="pink">${user.activityData[user.activityData.length - 1].numSteps}</h3>
-  <p>steps</p>
   `;
   generateStepsChart(user)
 };
@@ -108,18 +122,19 @@ const displaySleepInfo = (user) => {
   generateSleepChart(user);
 };
 
-const displayFriendsInfo = (user) => {
-  friendContainer.innerHTML = `<img src="./images/Friends.svg" alt='friends icon'>`;
-  user.friends.forEach(friend => {
-    friendContainer.innerHTML += `<p>${friend.name}</p>`
-  });
-  displayFriendsInfo(user);
-}
+// const displayFriendsInfo = (user) => {
+//   friendContainer.innerHTML = `<img src="./images/Friends.svg" alt='friends icon'>`;
+//   user.friends.forEach(friend => {
+//     friendContainer.innerHTML += `<p>${friend.name}</p>`
+//   });
+//   displayFriendsInfo(user);
+// }
 
 export {
   displayProfileInfo,
+  displayActivityInfo,
   displayStepInfo,
   displayHydrationInfo,
   displaySleepInfo,
-  displayFriendsInfo
+  // displayFriendsInfo
 }

@@ -6,8 +6,8 @@ const waterCalendar = document.querySelector('#waterCanvas').getContext('2d');
 const sleepCalendar = document.querySelector('#sleepCanvas').getContext('2d');
 const stepCalendar = document.querySelector('#stepsCanvas').getContext('2d');
 
-const generateActivityChart = (user) => {
-  const activityChart = new Chart(activityCalendar, {
+const generateMinutesActiveChart = (user) => {
+  new Chart(activityCalendar, {
     type: 'line',
     data: {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
@@ -54,8 +54,8 @@ const generateActivityChart = (user) => {
   })
 };
 
-const generateFlightsChart = (user) => {
-  const flightsChart = new Chart(flightsCalendar, {
+const generateStairsChart = (user) => {
+  new Chart(flightsCalendar, {
     type: 'line',
     data: {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
@@ -102,8 +102,56 @@ const generateFlightsChart = (user) => {
   })
 };
 
+const generateStepsChart = (user) => {
+  new Chart(stepCalendar, {
+    type: 'line',
+    data: {
+      labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
+      datasets: [{
+        label: 'number of steps',
+        data: user.activityData.getWeekOfActivityData('2020/01/15', 'steps'),
+        backgroundColor: '#FC6F7F',
+        borderColor: '#FC6F7F',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            color: '#ffffff'
+          },
+        }
+      },
+      scales: {
+        y: {
+          ticks: {
+            color: ['#ffffff'],
+          },
+          beginAtZero: true,
+          grid: {
+            color: 'rgba(0, 0, 0, 0)',
+            borderColor: 'rgba(0, 0, 0, 0)',
+          }
+        },
+        x: {
+          ticks: {
+            color: ['#ffffff']
+          },
+          grid: {
+            color: 'rgba(0, 0, 0, 0)',
+            borderColor: 'rgba(0, 0, 0, 0)',
+          },
+        },
+      }
+    },
+  })
+};
+
 const generateWaterChart = (user) => {
-  const waterChart = new Chart(waterCalendar, {
+  new Chart(waterCalendar, {
     type: 'line',
     data: {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
@@ -151,7 +199,7 @@ const generateWaterChart = (user) => {
 };
 
 const generateSleepChart = (user) => {
-  const sleepChart = new Chart(sleepCalendar, {
+  new Chart(sleepCalendar, {
     type: 'line',
     data: {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
@@ -210,59 +258,9 @@ const generateSleepChart = (user) => {
   })
 };
 
-const generateStepsChart = (user) => {
-  const stepChart = new Chart(stepCalendar, {
-    type: 'line',
-    data: {
-      labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
-      datasets: [{
-        label: 'oz of water',
-        data: user.hydrationData.getWeeklyDrank('2020/01/15'),
-        backgroundColor: '#FC6F7F',
-        borderColor: '#FC6F7F',
-        borderWidth: 2
-      }]
-    },
-    options: {
-      plugins: {
-        legend: {
-          display: true,
-          position: 'bottom',
-          labels: {
-            color: '#ffffff'
-          },
-        }
-      },
-      scales: {
-        y: {
-          ticks: {
-            color: ['#ffffff'],
-          },
-          beginAtZero: true,
-          grid: {
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 0, 0)',
-          }
-        },
-        x: {
-          ticks: {
-            color: ['#ffffff']
-          },
-          grid: {
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 0, 0)',
-          },
-        },
-      }
-    },
-  })
-};
-
-
-
 export {
-  generateFlightsChart,
-  generateActivityChart,
+  generateStairsChart,
+  generateMinutesActiveChart,
   generateWaterChart,
   generateSleepChart,
   generateStepsChart

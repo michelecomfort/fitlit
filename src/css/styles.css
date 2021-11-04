@@ -306,7 +306,26 @@ body,
 
 @media screen and (min-width: 1990px) {
   .widgets {
+    grid-template-columns:  1fr 1fr;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .widgets {
     grid-template-columns: 1fr;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .widgets {
+    grid-template-columns: 1fr;
+  },
+  .sidebar {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 
 }

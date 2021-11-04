@@ -1,4 +1,4 @@
-import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
+import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart, generateStepsChart } from './charts';
 
 const todaySteps = document.querySelector('#stepsToday');
 const stepGoals = document.querySelector('#stepGoals');
@@ -39,6 +39,7 @@ const displayStepInfo = (user, userRepo) => {
   <h3 class="pink">${user.activityData[user.activityData.length - 1].numSteps}</h3>
   <p>steps</p>
   `;
+  generateStepsChart(user)
 };
 
 const displayHydrationInfo = (user) => {

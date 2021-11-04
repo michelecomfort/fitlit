@@ -7,7 +7,6 @@ import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
 import { getUserData, getSleepData, getActivityData, getHydrationData } from './fetch';
-// import { generateFlightsChart, generateActivityChart, generateWaterChart, generateSleepChart } from './charts';
 import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayFriendsInfo } from './domManipulation';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';

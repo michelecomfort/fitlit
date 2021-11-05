@@ -7,3 +7,12 @@
   flex-direction: $flex-direction;
   justify-content: $justify-content;
 }
+
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin padding-margin($padding, $margin) {
+  padding: $padding;
+  margin: $margin;
+}

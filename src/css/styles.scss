@@ -1,3 +1,4 @@
+@use 'reset.scss' as *;
 @use 'variables.scss' as *;
 @use 'mixin.scss' as *;
 
@@ -43,14 +44,17 @@ h1 {
 
 h2 {
   font-size: 1.9em;
+  @include font-weight(700);
 }
 
 h3 {
   font-size: 2em;
+  @include font-weight(700);
 }
 
 h4 {
   font-size: 1.5em;
+  @include font-weight(700);
 }
 
 p {
@@ -347,13 +351,8 @@ body,
 }
 
 .input-container {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, flex-start);
   padding-bottom: 2%;
-}
-
-.submit-button {
-  margin: 0 0 25% 25%;
 }
 
 @media screen and (min-width: 1990px) {

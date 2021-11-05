@@ -72,7 +72,8 @@ sleepForm.addEventListener('submit', (event) => {
     hoursSlept: userInputHoursSlept.value,
     sleepQuality: userInputSleepQuality.value
   }
-  console.log(userInputSleepData);
+  sleepForm.reset();
+  postData('sleep', userInputSleepData);
 });
 
 hydrationForm.addEventListener('submit', (event) => {
@@ -82,7 +83,8 @@ hydrationForm.addEventListener('submit', (event) => {
     date: formatDate(userInputHydrationDate.value), 
     numOunces: userInputHydrationOunces.value
   }
-  console.log(userInputHydrationData);
+  hydrationForm.reset();
+  postData('hydration', userInputHydrationData);
 });
 
 activityForm.addEventListener('submit', (event) => {
@@ -94,7 +96,8 @@ activityForm.addEventListener('submit', (event) => {
     minutesActive: userInputActivityMinutesActive.value, 
     numSteps: userInputActivitySteps.value,
   }
-  console.log(userInputActivityData);
+  activityForm.reset();
+  postData('activity', userInputActivityData);
 });
 
 

@@ -58,7 +58,7 @@ const displayProfileInfo = (user) => {
 
 const displayActivityInfo = (user, userRepo, dataManager) => {
   minutesActiveStats.childNodes[1].innerHTML += `
-  <h4 class="pink">${user.activityData.activeMinutes('2020/01/21')}</h4>
+  <h3 class="pink">${user.activityData.activeMinutes('2020/01/21')}</h3>
   <p class="unit">minutes</p>
   `
   minutesActiveStats.childNodes[3].innerHTML += `
@@ -66,7 +66,7 @@ const displayActivityInfo = (user, userRepo, dataManager) => {
   <p class="unit">minutes</p>
   `
   stairStats.childNodes[1].innerHTML += `
-  <h4 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].flightsOfStairs}</h4>
+  <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].flightsOfStairs}</h3>
   <p class="unit">flights of stairs</p>
   `
   stairStats.childNodes[3].innerHTML += `

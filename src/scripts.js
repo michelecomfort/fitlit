@@ -15,6 +15,94 @@ Chart.register(...registerables);
 
 // Query Selectors
 const userProfile = document.querySelector('#userProfile');
+// const scrollSleep = document.getElementById('scrollSleep')
+
+// Form Selectors
+const activityTypeForm = document.querySelector('#activity-type-form');
+const activityOptions = document.querySelector('#activity-type');
+const sleepForm = document.querySelector('#sleep-form');
+const hydrationForm = document.querySelector('#hydration-form');
+const activityForm = document.querySelector('#activity-form');
+const userInputHoursSlept = document.querySelector('#hours-slept');
+const userInputSleepDate = document.querySelector('#sleep-date');
+const userInputSleepQuality = document.querySelector('#sleep-quality');
+const userInputHydrationDate = document.querySelector('#hydration-date');
+const userInputHydrationOunces = document.querySelector('#num-ounces');
+const userInputActivityDate = document.querySelector('#activity-date');
+const userInputActivityStairs = document.querySelector('#flight-of-stairs');
+const userInputActivityMinutesActive = document.querySelector('#minutes-active');
+const userInputActivitySteps = document.querySelector('#number-of-steps');
+
+const formatDate = (date) => {
+  const formattedDate = date.replaceAll('-', '/');
+  return formattedDate;
+}
+
+activityTypeForm.addEventListener('change', () => {
+  switch (activityOptions.value) {
+    case 'sleep':
+      hydrationForm.hidden = true;
+      activityForm.hidden = true;
+      sleepForm.hidden = false;
+      break;
+
+      case 'hydration':
+        sleepForm.hidden = true;
+        activityForm.hidden = true;
+        hydrationForm.hidden = false;
+        break;
+
+      case 'activity':
+        sleepForm.hidden = true;
+        hydrationForm.hidden = true;
+        activityForm.hidden = false;
+      break;
+
+    default:
+      console.log('something went wrong');
+      break;
+  } 
+});
+
+sleepForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userInputSleepData = {
+    userID: userRepo.activeUser.id,
+    date: formatDate(userInputSleepDate.value),
+    hoursSlept: userInputHoursSlept.value,
+    sleepQuality: userInputSleepQuality.value
+  }
+  sleepForm.reset();
+  postData('sleep', userInputSleepData);
+});
+
+hydrationForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userInputHydrationData = {
+    userID: userRepo.activeUser.id, 
+    date: formatDate(userInputHydrationDate.value), 
+    numOunces: userInputHydrationOunces.value
+  }
+  hydrationForm.reset();
+  postData('hydration', userInputHydrationData);
+});
+
+activityForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const userInputActivityData = { 
+    userID: userRepo.activeUser.id, 
+    date: formatDate(userInputActivityDate.value), 
+    flightsOfStairs: userInputActivityStairs.value, 
+    minutesActive: userInputActivityMinutesActive.value, 
+    numSteps: userInputActivitySteps.value,
+  }
+  activityForm.reset();
+  postData('activity', userInputActivityData);
+});
+
+
+// Event Listeners
+// scrollSleep.addEventListener('click', scrollToSleep)
 
 // Global Variables
 const userRepo = new UserRepository();
@@ -41,6 +129,7 @@ const parseData = (data) => {
 const renderDOM = (dataManager) => {
   userRepo.buildUserRepo(dataManager, dataManager.userData);
   const randomUser = userRepo.retrieveUser(getRandomIndex(userRepo.users));
+  userRepo.activeUser = randomUser;
   displayAllUserInfo(randomUser, userRepo);
 };
 

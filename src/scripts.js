@@ -33,7 +33,6 @@ const userInputActivityStairs = document.querySelector('#flight-of-stairs');
 const userInputActivityMinutesActive = document.querySelector('#minutes-active');
 const userInputActivitySteps = document.querySelector('#number-of-steps');
 
-
 const formatDate = (date) => {
   const formattedDate = date.replaceAll('-', '/');
   return formattedDate;

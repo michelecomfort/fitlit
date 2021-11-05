@@ -57,7 +57,7 @@ p {
   font-size: 0.9em;
 }
 
-button {
+button, input[type="submit"] {
   background-color: #0C3245;
   border-radius: 100%;
   height: 9%;
@@ -70,9 +70,26 @@ button img {
   max-width: 80%;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover {
   background-color: #00BFCF;
   cursor: pointer;
+}
+
+label[for="activity-type"] {
+  color: white;
+}
+
+input,select {
+  border-radius: 32px;
+  margin-top: 12px;
+}
+
+input[type="submit"] {
+  height: 40px;
+  width: 40px;
+  color: white;
+  font-size: 0.7em;
+  align-self: flex-end;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -189,6 +206,8 @@ body,
   text-align: center;
 }
 
+
+
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 
 .step-goals,
@@ -302,6 +321,11 @@ body,
 
 .steps-miles {
   width: 80%;
+}
+
+.input-container {
+  display: flex; 
+  flex-direction: column;
 }
 
 @media screen and (min-width: 1990px) {

@@ -120,40 +120,43 @@
             <canvas id="sleepCanvas" width="250" height="140"></canvas>
           </section>
           <section class="friends dashboard-cards" id="FriendDisplay">
-            <!-- <img src="./images/Friends.svg" alt='friends icon'>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p> -->
+            <div>
+              <form name="activity-type-form" id="activity-type-form">
+                <label for="activity-type">Add Activity</label>
+                <select name="activity-type" id="activity-type">
+                  <option value="sleep">Sleep</option>
+                  <option value="hydration">Hydration</option>
+                  <option value="activity">Activity</option>
+                </select>
+                </form>
+            </div>
+              <form name="sleep-form" id="sleep-form">
+                <div class="input-container">
+                  <input type="date" id="sleep-date">
+                  <input type="number" placeholder="Hours of Sleep" id="hours-slept">
+                  <input type="number" placeholder="Sleep Quality" id="sleep-quality">
+                  <input type="submit" value="+">
+                </div>
+              </form>
+              <form name="hydration-form" id="hydration-form" hidden>
+                <div class="input-container">
+                  <input type="date" id="hydration-date">
+                  <input type="number" placeholder="Ounces Drank" id="num-ounces">
+                  <input type="submit" value="+"> 
+                </div>
+              </form>
+              <form name="activity-form" id="activity-form" hidden>
+                <div class="input-container">
+                  <input type="date" id="activity-date">
+                  <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs">
+                  <input type="number" placeholder="Minuets Active" id="minutes-active">
+                  <input type="number" placeholder="Number of Steps" id="number-of-steps">
+                  <input type="submit" value="+"> 
+                </div>
+              </form>
           </section>
         </section>
       </section>
-      <form name="activity-type-form" id="activity-type-form">
-        <label for="activity-type">Choose Activity</label>
-        <select name="activity-type" id="activity-type">
-          <option value="sleep">Sleep</option>
-          <option value="hydration">Hydration</option>
-          <option value="activity">Activity</option>
-        </select>
-        </form>
-        <form name="sleep-form" id="sleep-form">
-          <input type="date" id="sleep-date">
-          <input type="number" placeholder="Hours of Sleep" id="hours-slept">
-          <input type="number" placeholder="Sleep Quality" id="sleep-quality">
-          <input type="submit">
-        </form>
-        <form name="hydration-form" id="hydration-form" hidden>
-          <input type="date" id="hydration-date">
-          <input type="number" placeholder="Ounces Drank" id="num-ounces">
-          <input type="submit">
-        </form>
-        <form name="activity-form" id="activity-form" hidden>
-          <input type="date" id="activity-date">
-          <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs">
-          <input type="number" placeholder="Minuets Active" id="minutes-active">
-          <input type="number" placeholder="Number of Steps" id="number-of-steps">
-          <input type="submit">
-        </form>
     <script src="bundle.js"></script>
   </body>
 </html>

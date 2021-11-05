@@ -1,4 +1,4 @@
-import './css/styles.css';
+import './css/styles.scss';
 import './images/Kyra.png';
 import './images/Home.svg';
 import './images/Steps.svg';

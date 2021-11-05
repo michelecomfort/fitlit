@@ -1,0 +1,9 @@
+@mixin width($width) {
+  width: $width;
+}
+
+@mixin flex($flex-direction, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}

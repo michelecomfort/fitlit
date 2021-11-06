@@ -6,17 +6,12 @@
 * {
   border: 0;
   box-sizing: border-box;
-  margin: 0;
-}
-
-html {
-  overflow: auto;
-
 }
 
 body, html {
   font-family: $main-font;
-  font-size: 24px;
+  color: $white;
+  font-size: 26px;
   height: 100%;
 }
 
@@ -25,9 +20,7 @@ body {
   background-blend-mode: color-burn;
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
-  background-color: rgb(255, 255, 255, 0.4);
   padding: 3%;
-  width: 100%;
 }
 
 .pink {
@@ -38,17 +31,18 @@ body {
   color: $orange;
 }
 
-h1 {
-  font-size: 1.7em;
+h1,
+label {
+  font-size: 1.5em;
 }
 
 h2 {
-  font-size: 1.9em;
+  font-size: 1.7em;
   @include font-weight(700);
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2.2em;
   @include font-weight(700);
 }
 
@@ -59,38 +53,50 @@ h4 {
 
 p {
   color: $white;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
-button, input[type="submit"] {
+button {
   background-color: #0C3245;
   border-radius: 100%;
   height: 9%;
   margin-top: 17%;
   width: 55%;
-}
 
-button img {
-  height: 50%;
+  img {
+    height: 50%;
   max-width: 80%;
-}
+  }
 
-button:hover, input[type="submit"]:hover {
-  background-color: #00BFCF;
+  &:hover {
+    background-color: #00BFCF;
   cursor: pointer;
+  }
 }
 
-label[for="activity-type"] {
-  color: $white;
-  font-size: 25px;
 
-  font-family: inherit;
+// .activity-type {
+
+//   width: 90%;
+// }
+
+label {
+  border: 1px solid green;
 }
 
-.activity-type {
+.activity-type-form {
+  padding-top: 3%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  width: 90%;
+.activity-type,
+input {
+  width: 70%;
   color: gray;
+  font-family: inherit;
 }
 
 input,select {
@@ -99,25 +105,6 @@ input,select {
   line-height: 1em;
   padding: 5%;
   font-size: 20px;
-}
-
-
-input[type='date'] {
-  color: gray;
-  font-family: inherit;
-}
-
-input[type="submit"] {
-  height: 40px;
-  width: 40px;
-  color: $white;
-  font-size: 0.7em;
-  align-self: flex-end;
-}
-
-span{
-  color: $white;
-  margin-top: 16px;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -236,13 +223,6 @@ body,
   text-align: center;
 }
 
-.bottom-input {
-  display: flex;
-  margin-top: 20%;
-  width: 140%;
-  // margin-right: 20%;
-}
-
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 
 .step-goals,
@@ -281,7 +261,6 @@ body,
   padding-top: 3%;
 }
 
-
 .water {
   justify-content: space-around;
 }
@@ -290,17 +269,12 @@ body,
   align-items: center;
 }
 
-.user-info-card img {
-  border-radius: 100%;
-  max-width: 35%;
-}
-
 .user-data {
   overflow-wrap: break-word;
 }
 
 .email {
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 
 .today-data {
@@ -320,7 +294,7 @@ body,
 }
 
 .info-text {
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 
 .border-right {
@@ -363,8 +337,15 @@ body,
 }
 
 .input-container {
+  margin-top: 20%;
+  width: 90%;
   @include flex(column, flex-start);
   padding-bottom: 2%;
+  align-items: center;
+}
+
+.bottom-input {
+  display: flex;
 }
 
 @media screen and (min-width: 1990px) {
@@ -377,7 +358,6 @@ body,
   .widgets {
     grid-template-columns: 1fr;
   }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -386,7 +366,6 @@ body,
   }
   .sidebar {
     display: none;
-    // visibility: collapse;
   }
 
 }

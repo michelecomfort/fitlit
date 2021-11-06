@@ -34,10 +34,30 @@ const userInputActivityDate = document.querySelector('#activity-date');
 const userInputActivityStairs = document.querySelector('#flight-of-stairs');
 const userInputActivityMinutesActive = document.querySelector('#minutes-active');
 const userInputActivitySteps = document.querySelector('#number-of-steps');
+const confirmationText = document.querySelector('#confirmation-text');
+const errorText = document.querySelector('#error-text');
 
 const formatDate = (date) => {
   const formattedDate = date.replaceAll('-', '/');
   return formattedDate;
+}
+
+const toggleConfirmationText = (result) => {
+  result.hidden = !result.hidden;
+}
+
+const checkFetchResult = (result) => {
+  if (result === 'SUCCESS') {
+    toggleConfirmationText(confirmationText);
+    setTimeout(() => {
+      toggleConfirmationText(confirmationText);
+    }, 2000);
+  } else {
+    toggleConfirmationText(errorText);
+    setTimeout(() => {
+      toggleConfirmationText(errorText);
+    }, 2000);
+  }
 }
 
 activityTypeForm.addEventListener('change', () => {
@@ -75,7 +95,8 @@ sleepForm.addEventListener('submit', (event) => {
     sleepQuality: userInputSleepQuality.value
   }
   sleepForm.reset();
-  postData('sleep', userInputSleepData);
+  postData('sleep', userInputSleepData)
+    .then(checkFetchResult);
 });
 
 hydrationForm.addEventListener('submit', (event) => {
@@ -86,7 +107,8 @@ hydrationForm.addEventListener('submit', (event) => {
     numOunces: userInputHydrationOunces.value
   }
   hydrationForm.reset();
-  postData('hydration', userInputHydrationData);
+  postData('hydration', userInputHydrationData)
+    .then(checkFetchResult);
 });
 
 activityForm.addEventListener('submit', (event) => {
@@ -99,7 +121,8 @@ activityForm.addEventListener('submit', (event) => {
     numSteps: userInputActivitySteps.value,
   }
   activityForm.reset();
-  postData('activity', userInputActivityData);
+  postData('activity', userInputActivityData)
+    .then(checkFetchResult);
 });
 
 

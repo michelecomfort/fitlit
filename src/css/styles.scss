@@ -234,6 +234,8 @@ body,
 .bottom-input {
   display: flex;
   margin-top: 20%;
+  width: 136%;
+  margin-right: 20%;
 }
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
@@ -348,6 +350,11 @@ body,
 
 .steps-miles {
   width: 80%;
+}
+
+.submit-button {
+  font-size: 65px;
+  margin-left: 20%;
 }
 
 .input-container {

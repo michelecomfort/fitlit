@@ -75,7 +75,7 @@ button:hover, input[type="submit"]:hover {
 label[for="activity-type"] {
   color: white;
   font-size: 25px;
-  margin-left: 12%;
+  margin-left: 18%;
   font-family: inherit;
 }
 
@@ -87,7 +87,7 @@ label[for="activity-type"] {
 input,select {
   border-radius: 6px;
   margin-top: 12px;
-  line-height: 2em;
+  line-height: 1em;
   padding: 5%;
   font-size: 20px;
 }

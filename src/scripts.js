@@ -51,12 +51,12 @@ const checkFetchResult = (result) => {
     toggleConfirmationText(confirmationText);
     setTimeout(() => {
       toggleConfirmationText(confirmationText);
-    }, 2000);
+    }, 4000);
   } else {
     toggleConfirmationText(errorText);
     setTimeout(() => {
       toggleConfirmationText(errorText);
-    }, 2000);
+    }, 4000);
   }
 }
 

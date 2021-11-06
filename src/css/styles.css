@@ -74,10 +74,14 @@ button:hover, input[type="submit"]:hover {
 
 label[for="activity-type"] {
   color: white;
+  font-size: 25px;
+  margin-left: 12%;
+  font-family: inherit;
 }
 
 .activity-type {
-  width: 50%
+  width: 90%;
+  color: gray;
 }
 
 input,select {
@@ -85,19 +89,13 @@ input,select {
   margin-top: 12px;
   line-height: 2em;
   padding: 5%;
-}
-
-input[type="submit"] {
-  height: 40px;
-  width: 40px;
-  color: white;
-  font-size: 2em;
-  align-self: flex-end;
+  font-size: 20px;
 }
 
 input[type='date'],
 input[type='date'] {
-  font-size: 120%;
+  color: gray;
+  font-family: inherit;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -160,7 +158,6 @@ body,
 }
 
 .sidebar {
-  /* position: -webkit-sticky; */
   position: fixed;
   top: 0;
   height: 90vh;
@@ -198,9 +195,8 @@ body,
 }
 
 .forms {
-  flex-direction: row;
+  flex-direction: column;
   grid-row: span 2;
-  justify-content: space-around;
   font-size: 60%;
 }
 
@@ -216,6 +212,11 @@ body,
 .flights-of-stairs,
 .minutes-active {
   text-align: center;
+}
+
+.bottom-input {
+  display: flex;
+  margin-top: 20%;
 }
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
@@ -300,7 +301,6 @@ body,
 
 .border-right {
   border-right: 2px solid white;
-  /* height: 50%; */
 }
 
 .border-right-half {
@@ -336,17 +336,17 @@ body,
 .input-container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 2%;
 }
 
 .submit-button {
-  margin-right: 30%;
+  margin: 0 0 25% 25%;
 }
 
 @media screen and (min-width: 1990px) {
   .widgets {
     grid-template-columns:  1fr 1fr;
   }
-
 }
 
 @media screen and (max-width: 1200px) {
@@ -359,7 +359,7 @@ body,
 @media screen and (max-width: 600px) {
   .widgets {
     grid-template-columns: 1fr;
-  },
+  }
   .sidebar {
     position: absolute;
     top: -9999px;

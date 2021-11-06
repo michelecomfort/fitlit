@@ -136,30 +136,38 @@
             </div>
 
               <form name="sleep-form" id="sleep-form">
-                <div class="input-container">
-                  <input type="date" id="sleep-date">
-                  <input type="number" placeholder="Hours of Sleep" id="hours-slept">
-                  <input type="number" placeholder="Sleep Quality" id="sleep-quality">
-                  <input type="submit" class='submit-button button' value="+">
-                </div>
+                <section class='bottom-input'>
+                  <div class="input-container">
+                    <input type="date" id="sleep-date">
+                    <input type="number" placeholder="Hours of Sleep" id="hours-slept">
+                    <input type="number" placeholder="Sleep Quality" id="sleep-quality">
+                  </div>
+                  <button type="submit" class='submit-button button' value="+">+</button>
+
+                </section>
               </form>
 
               <form name="hydration-form" id="hydration-form" hidden>
+                <section class='bottom-input'>
                 <div class="input-container">
                   <input type="date" id="hydration-date">
                   <input type="number" placeholder="Ounces Drank" id="num-ounces">
-                  <input type="submit" class='submit-button button' value="+">
                 </div>
+                <button type="submit" class='submit-button button' value="+">+</button>
+                </section>
               </form>
 
               <form name="activity-form" id="activity-form" hidden>
+                <section class='bottom-input'>
                 <div class="input-container">
                   <input type="date" id="activity-date">
                   <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs">
                   <input type="number" placeholder="Minuets Active" id="minutes-active">
                   <input type="number" placeholder="Number of Steps" id="number-of-steps">
-                  <input type="submit" class='submit-button button' value="+">
+
                 </div>
+                <button type="submit" class='submit-button button' value="+">+</button>
+                </section>
               </form>
 
           </section>

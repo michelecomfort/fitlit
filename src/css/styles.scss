@@ -1,3 +1,7 @@
+@use 'reset.scss' as *;
+@use 'variables.scss' as *;
+@use 'mixin.scss' as *;
+
 /* ~~~~~~~~~~~ GLOBAL RULES ~~~~~~~~~~ */
 * {
   border: 0;
@@ -9,8 +13,9 @@ html {
   overflow: auto;
 
 }
+
 body, html {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-size: 24px;
   height: 100%;
 }
@@ -26,11 +31,11 @@ body {
 }
 
 .pink {
-  color: #FC6F7F;
+  color: $pink;
 }
 
 .orange {
-  color: #FF9E2D;
+  color: $orange;
 }
 
 h1 {
@@ -39,18 +44,21 @@ h1 {
 
 h2 {
   font-size: 1.9em;
+  @include font-weight(700);
 }
 
 h3 {
   font-size: 2em;
+  @include font-weight(700);
 }
 
 h4 {
   font-size: 1.5em;
+  @include font-weight(700);
 }
 
 p {
-  color: white;
+  color: $white;
   font-size: 0.9em;
 }
 
@@ -73,7 +81,7 @@ button:hover, input[type="submit"]:hover {
 }
 
 label[for="activity-type"] {
-  color: white;
+  color: $white;
   font-size: 25px;
   margin-left: 18%;
   font-family: inherit;
@@ -92,11 +100,20 @@ input,select {
   font-size: 20px;
 }
 
-input[type='date'],
+
 input[type='date'] {
   color: gray;
   font-family: inherit;
 }
+
+input[type="submit"] {
+  height: 40px;
+  width: 40px;
+  color: $white;
+  font-size: 0.7em;
+  align-self: flex-end;
+}
+
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
 body,
@@ -172,7 +189,7 @@ body,
   grid-column-gap: 5%;
   grid-row-gap: 5%;
   margin-left: 15%;
-  width: 80%;
+  @include width(80%);
 }
 
 .user-info-card {
@@ -226,13 +243,13 @@ body,
 .minutes-active,
 .sleep-data-box,
 .sleep-card {
-  width: 100%;
+  @include width(100%);
 }
 
 .info-type-box,
 .sleep-hours,
 .sleep-quality {
-  width: 50%;
+  @include width(50%);
 }
 
 .sleep-hours,
@@ -242,7 +259,7 @@ body,
 
 .sidebar {
   padding: 2% 0;
-  width: 11%;
+  @include width(11%);
 }
 
 .dashboard-cards {
@@ -300,11 +317,11 @@ body,
 }
 
 .border-right {
-  border-right: 2px solid white;
+  border-right: 2px solid $white;
 }
 
 .border-right-half {
-  border-right: 2px solid white;
+  border-right: 2px solid $white;
   height: 50%;
 }
 
@@ -334,13 +351,8 @@ body,
 }
 
 .input-container {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, flex-start);
   padding-bottom: 2%;
-}
-
-.submit-button {
-  margin: 0 0 25% 25%;
 }
 
 @media screen and (min-width: 1990px) {

@@ -79,9 +79,14 @@ label[for="activity-type"] {
   color: white;
 }
 
+.activity-type {
+  width: 50%
+}
+
 input,select {
-  border-radius: 32px;
+  border-radius: 6px;
   margin-top: 12px;
+  line-height: 2em;
 }
 
 input[type="submit"] {
@@ -98,7 +103,7 @@ body,
 .water,
 .steps,
 .sleep,
-.friends,
+.forms,
 .activity,
 .today-data,
 .user-info-card,
@@ -122,7 +127,7 @@ body,
 .steps,
 .sleep,
 .activity,
-.friends,
+.forms,
 .today-data,
 .user-data,
 .info-type-box,
@@ -138,7 +143,7 @@ body,
 .activity,
 .steps,
 .sleep,
-.friends,
+.forms,
 /* .today-data, */
 .user-info-card,
 .sleep-hours,
@@ -188,7 +193,8 @@ body,
   grid-row: span 3;
 }
 
-.friends {
+.forms {
+  flex-direction: row;
   justify-content: space-around;
 }
 
@@ -324,8 +330,12 @@ body,
 }
 
 .input-container {
-  display: flex; 
+  display: flex;
   flex-direction: column;
+}
+
+.submit-button {
+  margin-right: 30%;
 }
 
 @media screen and (min-width: 1990px) {

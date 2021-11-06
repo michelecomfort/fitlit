@@ -129,8 +129,11 @@ const generateStepsChart = (user) => {
         y: {
           ticks: {
             color: ['#ffffff'],
+            stepSize: 3000
           },
           beginAtZero: true,
+          min: 0,
+          max: 15000,
           grid: {
             color: 'rgba(0, 0, 0, 0)',
             borderColor: 'rgba(0, 0, 0, 0)',
@@ -186,8 +189,12 @@ const generateWaterChart = (user) => {
         },
         x: {
           ticks: {
-            color: ['#ffffff']
+            color: ['#ffffff'],
+            stepSize: 20
           },
+          beginAtZero: true,
+          min: 0,
+          max: 100,
           grid: {
             color: 'rgba(0, 0, 0, 0)',
             borderColor: 'rgba(0, 0, 0, 0)',

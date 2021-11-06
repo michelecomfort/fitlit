@@ -7,7 +7,7 @@ import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
 import './images/Plus.svg';
-import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayActivityInfo, displayFriendsInfo } from './domManipulation';
+import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayActivityInfo, displayFriendsInfo, scroll } from './domManipulation';
 import { fetchData, postData } from './fetch';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';
@@ -15,6 +15,7 @@ import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
 // Query Selectors
+
 const userProfile = document.querySelector('#userProfile');
 // const scrollSleep = document.getElementById('scrollSleep')
 

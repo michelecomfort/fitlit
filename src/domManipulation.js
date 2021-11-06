@@ -12,41 +12,31 @@ const homeButton = document.querySelector('#homeButton');
 const personButton = document.querySelector('#personButton');
 const waterButton = document.querySelector('#waterButton');
 const moonButton = document.querySelector('#moonButton');
-// const friendContainer = document.querySelector('#FriendDisplay');
+const addActivityButton = document.querySelector('#plusButton')
+const userCard = document.querySelector('.user-info-card');
+const sleepCard = document.querySelector('.sleep');
+const waterCard = document.querySelector('.water');
+const stepsCard = document.querySelector('.steps')
+const addActivityCard = document.querySelector('.forms')
 
-const scrollHome = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
+homeButton.onclick = function(event) {
+  userCard.scrollIntoView({behavior: 'smooth'})
+}
+moonButton.onclick = function(event) {
+  sleepCard.scrollIntoView({behavior: 'smooth'})
 }
 
-const scrollSleep = () => {
-  window.scrollTo({
-    top: 1200,
-    behavior: 'smooth'
-  })
+waterButton.onclick = function(event) {
+  waterCard.scrollIntoView({behavior: 'smooth'})
 }
 
-const scrollWater = () => {
-  window.scrollTo({
-    top: 500,
-    behavior: 'smooth'
-  })
+personButton.onclick = function(event) {
+  stepsCard.scrollIntoView({behavior: 'smooth'})
 }
 
-const scrollSteps = () => {
-  window.scrollTo({
-    top: 1000,
-    behavior: 'smooth'
-  })
+addActivityButton.onclick = function(event) {
+  addActivityCard.scrollIntoView({behavior: 'smooth'})
 }
-
-//EventListeners
-homeButton.addEventListener('click', scrollHome);
-moonButton.addEventListener('click', scrollSleep);
-waterButton.addEventListener('click', scrollWater);
-personButton.addEventListener('click', scrollSteps);
 
 const displayProfileInfo = (user) => {
   userProfile.childNodes[3].innerHTML = `
@@ -86,7 +76,6 @@ const displayHydrationInfo = (user) => {
 };
 
 const displayStepInfo = (user, userRepo) => {
-  console.log(stepStats.childNodes);
   stepStats.childNodes[1].innerHTML = `
   <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].numSteps}</h3>
   <p>steps</p>
@@ -126,19 +115,10 @@ const displaySleepInfo = (user) => {
   generateSleepChart(user);
 };
 
-// const displayFriendsInfo = (user) => {
-//   friendContainer.innerHTML = `<img src="./images/Friends.svg" alt='friends icon'>`;
-//   user.friends.forEach(friend => {
-//     friendContainer.innerHTML += `<p>${friend.name}</p>`
-//   });
-//   displayFriendsInfo(user);
-// }
-
 export {
   displayProfileInfo,
   displayActivityInfo,
   displayHydrationInfo,
   displayStepInfo,
   displaySleepInfo,
-  // displayFriendsInfo
 }

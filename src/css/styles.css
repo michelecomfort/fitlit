@@ -21,11 +21,8 @@ body {
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
   background-color: rgb(255, 255, 255, 0.4);
-  /* background-repeat: no-repeat; */
   padding: 3%;
   width: 100%;
-  /* overflow: scroll; */
-
 }
 
 .pink {
@@ -77,19 +74,28 @@ button:hover, input[type="submit"]:hover {
 
 label[for="activity-type"] {
   color: white;
+  font-size: 25px;
+  margin-left: 18%;
+  font-family: inherit;
+}
+
+.activity-type {
+  width: 90%;
+  color: gray;
 }
 
 input,select {
-  border-radius: 32px;
+  border-radius: 6px;
   margin-top: 12px;
+  line-height: 1em;
+  padding: 5%;
+  font-size: 20px;
 }
 
-input[type="submit"] {
-  height: 40px;
-  width: 40px;
-  color: white;
-  font-size: 0.7em;
-  align-self: flex-end;
+input[type='date'],
+input[type='date'] {
+  color: gray;
+  font-family: inherit;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -98,7 +104,7 @@ body,
 .water,
 .steps,
 .sleep,
-.friends,
+.forms,
 .activity,
 .today-data,
 .user-info-card,
@@ -122,7 +128,7 @@ body,
 .steps,
 .sleep,
 .activity,
-.friends,
+.forms,
 .today-data,
 .user-data,
 .info-type-box,
@@ -130,7 +136,6 @@ body,
 .sleep-quality,
 .today-data-sleep {
   flex-direction: column;
-
 }
 
 .sidebar,
@@ -138,8 +143,7 @@ body,
 .activity,
 .steps,
 .sleep,
-.friends,
-/* .today-data, */
+.forms,
 .user-info-card,
 .sleep-hours,
 .sleep-quality,
@@ -154,7 +158,6 @@ body,
 }
 
 .sidebar {
-  /* position: -webkit-sticky; */
   position: fixed;
   top: 0;
   height: 90vh;
@@ -173,23 +176,28 @@ body,
 }
 
 .user-info-card {
-  grid-row: span 2;
+  grid-row: span 1;
 }
 .sleep {
+  grid-row: span 5;
+}
+
+.steps {
   grid-row: span 4;
 }
 
-.activity,
-.steps {
-  grid-row: span 4;
+.activity {
+  grid-row: span 5;
 }
 
 .water {
   grid-row: span 3;
 }
 
-.friends {
-  justify-content: space-around;
+.forms {
+  flex-direction: column;
+  grid-row: span 2;
+  font-size: 60%;
 }
 
 .user-info-card,
@@ -206,7 +214,10 @@ body,
   text-align: center;
 }
 
-
+.bottom-input {
+  display: flex;
+  margin-top: 20%;
+}
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 
@@ -290,7 +301,6 @@ body,
 
 .border-right {
   border-right: 2px solid white;
-  /* height: 50%; */
 }
 
 .border-right-half {
@@ -324,15 +334,19 @@ body,
 }
 
 .input-container {
-  display: flex; 
+  display: flex;
   flex-direction: column;
+  padding-bottom: 2%;
+}
+
+.submit-button {
+  margin: 0 0 25% 25%;
 }
 
 @media screen and (min-width: 1990px) {
   .widgets {
     grid-template-columns:  1fr 1fr;
   }
-
 }
 
 @media screen and (max-width: 1200px) {
@@ -345,7 +359,7 @@ body,
 @media screen and (max-width: 600px) {
   .widgets {
     grid-template-columns: 1fr;
-  },
+  }
   .sidebar {
     position: absolute;
     top: -9999px;

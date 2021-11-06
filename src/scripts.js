@@ -6,6 +6,7 @@ import './images/Water.svg';
 import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
+import './images/Plus.svg';
 import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayActivityInfo, displayFriendsInfo } from './domManipulation';
 import { fetchData, postData } from './fetch';
 import DataManager from './DataManager';
@@ -61,7 +62,7 @@ activityTypeForm.addEventListener('change', () => {
     default:
       console.log('something went wrong');
       break;
-  } 
+  }
 });
 
 sleepForm.addEventListener('submit', (event) => {
@@ -79,8 +80,8 @@ sleepForm.addEventListener('submit', (event) => {
 hydrationForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const userInputHydrationData = {
-    userID: userRepo.activeUser.id, 
-    date: formatDate(userInputHydrationDate.value), 
+    userID: userRepo.activeUser.id,
+    date: formatDate(userInputHydrationDate.value),
     numOunces: userInputHydrationOunces.value
   }
   hydrationForm.reset();
@@ -89,11 +90,11 @@ hydrationForm.addEventListener('submit', (event) => {
 
 activityForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  const userInputActivityData = { 
-    userID: userRepo.activeUser.id, 
-    date: formatDate(userInputActivityDate.value), 
-    flightsOfStairs: userInputActivityStairs.value, 
-    minutesActive: userInputActivityMinutesActive.value, 
+  const userInputActivityData = {
+    userID: userRepo.activeUser.id,
+    date: formatDate(userInputActivityDate.value),
+    flightsOfStairs: userInputActivityStairs.value,
+    minutesActive: userInputActivityMinutesActive.value,
     numSteps: userInputActivitySteps.value,
   }
   activityForm.reset();
@@ -146,9 +147,3 @@ const getRandomIndex = (array) => {
 };
 
 retrieveAllData();
-// postData('sleep', {
-//   userID: 50, 
-//   date: "11/03/2021", 
-//   hoursSlept: 100000, 
-//   sleepQuality: 50.0
-// });

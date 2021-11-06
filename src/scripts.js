@@ -1,5 +1,4 @@
 import './css/styles.scss';
-import './images/Kyra.png';
 import './images/Home.svg';
 import './images/Steps.svg';
 import './images/Water.svg';

@@ -39,7 +39,7 @@ addActivityButton.onclick = function(event) {
 }
 
 const displayProfileInfo = (user) => {
-  userProfile.childNodes[3].innerHTML = `
+  userProfile.childNodes[1].innerHTML = `
   <h2 class="pink">Hi, ${user.returnFirstName()}!</h2>
   <p>${user.address}</p>
   <p class="email">${user.email}</p>
@@ -48,19 +48,19 @@ const displayProfileInfo = (user) => {
 
 const displayActivityInfo = (user, userRepo, dataManager) => {
   minutesActiveStats.childNodes[1].innerHTML += `
-  <h3 class="pink">${user.activityData.activeMinutes('2020/01/21')}</h3>
+  <h3 class="pink">${user.activityData.todayActivity('2020/01/22', 'minutes')}</h3>
   <p class="unit">minutes</p>
   `
   minutesActiveStats.childNodes[3].innerHTML += `
-  <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/21', dataManager.activityData, 'minutes')}</h4>
+  <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/22', dataManager.activityData, 'minutes')}</h4>
   <p class="unit">minutes</p>
   `
   stairStats.childNodes[1].innerHTML += `
-  <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].flightsOfStairs}</h3>
+  <h3 class="pink">${user.activityData.todayActivity('2020/01/22', 'stairs')}</h3>
   <p class="unit">flights of stairs</p>
   `
   stairStats.childNodes[3].innerHTML += `
-  <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/21', dataManager.activityData, 'stairs')}</h4>
+  <h4 class="orange">${userRepo.calculateAllUserAverage('2020/01/22', dataManager.activityData, 'stairs')}</h4>
   <p class="unit">flights of stairs</p>
   `
   generateMinutesActiveChart(user);
@@ -69,7 +69,7 @@ const displayActivityInfo = (user, userRepo, dataManager) => {
 
 const displayHydrationInfo = (user) => {
   waterStats.childNodes[3].innerHTML = `
-  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/21')}</h3>
+  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/22')}</h3>
   <p>oz</p>
   `;
   generateWaterChart(user)
@@ -77,11 +77,11 @@ const displayHydrationInfo = (user) => {
 
 const displayStepInfo = (user, userRepo) => {
   stepStats.childNodes[1].innerHTML = `
-  <h3 class="pink">${user.activityData.activityData[user.activityData.activityData.length - 1].numSteps}</h3>
+  <h3 class="pink">${user.activityData.todayActivity('2020/01/22', 'steps')}</h3>
   <p>steps</p>
   `;
   stepStats.childNodes[3].innerHTML = `
-  <h3 class="pink">${user.activityData.milesWalked('2020/01/21')}</h3>
+  <h3 class="pink">${user.activityData.milesWalked('2020/01/22')}</h3>
   <p>miles</p>
   `;
   stepGoals.childNodes[1].innerHTML += `

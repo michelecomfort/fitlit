@@ -21,11 +21,8 @@ body {
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
   background-color: rgb(255, 255, 255, 0.4);
-  /* background-repeat: no-repeat; */
   padding: 3%;
   width: 100%;
-  /* overflow: scroll; */
-
 }
 
 .pink {
@@ -87,14 +84,20 @@ input,select {
   border-radius: 6px;
   margin-top: 12px;
   line-height: 2em;
+  padding: 5%;
 }
 
 input[type="submit"] {
   height: 40px;
   width: 40px;
   color: white;
-  font-size: 0.7em;
+  font-size: 2em;
   align-self: flex-end;
+}
+
+input[type='date'],
+input[type='date'] {
+  font-size: 120%;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -135,7 +138,6 @@ body,
 .sleep-quality,
 .today-data-sleep {
   flex-direction: column;
-
 }
 
 .sidebar,
@@ -144,7 +146,6 @@ body,
 .steps,
 .sleep,
 .forms,
-/* .today-data, */
 .user-info-card,
 .sleep-hours,
 .sleep-quality,
@@ -178,15 +179,18 @@ body,
 }
 
 .user-info-card {
-  grid-row: span 2;
+  grid-row: span 1;
 }
 .sleep {
+  grid-row: span 5;
+}
+
+.steps {
   grid-row: span 4;
 }
 
-.activity,
-.steps {
-  grid-row: span 4;
+.activity {
+  grid-row: span 5;
 }
 
 .water {
@@ -195,7 +199,9 @@ body,
 
 .forms {
   flex-direction: row;
+  grid-row: span 2;
   justify-content: space-around;
+  font-size: 60%;
 }
 
 .user-info-card,
@@ -211,8 +217,6 @@ body,
 .minutes-active {
   text-align: center;
 }
-
-
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 

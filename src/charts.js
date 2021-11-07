@@ -219,14 +219,14 @@ const generateSleepChart = (user) => {
       datasets: [
         {
           label: 'hours',
-          data: user.sleepData.getWeeklyHoursSlept('2020/01/15'),
+          data: user.getWeeklyStats('2020/01/15', 'sleep', 'hoursSlept'),
           backgroundColor: '#FC6F7F',
           borderColor: '#FC6F7F',
           borderWidth: 2
         },
         {
           label: 'quality',
-          data: user.sleepData.getWeeklySleepQuality('2020/01/15'),
+          data: user.getWeeklyStats('2020/01/15', 'sleep', 'sleepQuality'),
           backgroundColor: '#FF9E2D',
           borderColor: '#FF9E2D',
           borderWidth: 2

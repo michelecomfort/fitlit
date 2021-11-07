@@ -10,6 +10,21 @@ export default class DataManager {
     return this[`${dataset}Data`].filter(user => user.userID === id);
   }
 
+  // getWeeklyStats(date, dataset, info){
+  //   console.log(dataset)
+  //   const week = [];
+  //   const startDate = this[`${dataset}Data`].find(day => day.date === date);
+  //   const dayIndex = this[`${dataset}Data`].indexOf(startDate);
+  //   this[`${dataset}Data`].reduce((acc) => {
+  //     if (acc < 7) {
+  //       week.push(this[`${dataset}Data`][dayIndex + acc][`${info}`]);
+  //       acc++;
+  //     }
+  //     return acc;
+  //   }, 0);
+  //   return week;
+  //   }
+
   setUserData(userData) {
     this.userData = userData;
   }

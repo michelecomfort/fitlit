@@ -11,9 +11,10 @@ export default class User {
     this.strideLength = userData.strideLength;
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
-    this.hydrationDataObj = new Hydration(hydrationData)
-    this.hydrationData = this.hydrationDataObj.hydrationData
-    this.sleepData = new Sleep(sleepData);
+    this.hydrationObj = new Hydration(hydrationData)
+    this.hydrationData = this.hydrationObj.hydrationData
+    this.sleepObj = new Sleep(sleepData);
+    this.sleepData = this.sleepObj.sleepData
     this.activityData = new Activity(activityData, userData.strideLength, userData.dailyStepGoal);
   }
 

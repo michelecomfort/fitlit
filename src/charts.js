@@ -166,7 +166,7 @@ const generateWaterChart = (user) => {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
       datasets: [{
         label: 'oz of water',
-        data: user.hydrationData.getWeeklyDrank('2020/01/15'),
+        data: user.getWeeklyStats('2020/01/15', 'hydration', 'numOunces'),
         backgroundColor: '#FC6F7F',
         borderColor: '#FC6F7F',
         borderWidth: 2

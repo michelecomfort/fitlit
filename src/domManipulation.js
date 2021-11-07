@@ -18,6 +18,12 @@ const sleepCard = document.querySelector('.sleep');
 const waterCard = document.querySelector('.water');
 const stepsCard = document.querySelector('.steps')
 const addActivityCard = document.querySelector('.forms')
+const cardFlip = document.querySelector('.flip-card-inner');
+const submitButton = document.querySelector('.submit-button')
+
+submitButton.addEventListener( 'click', function() {
+  cardFlip.classList.toggle('is-flipped');
+});
 
 homeButton.onclick = function(event) {
   userCard.scrollIntoView({behavior: 'smooth'})
@@ -68,8 +74,9 @@ const displayActivityInfo = (user, userRepo, dataManager) => {
 }
 
 const displayHydrationInfo = (user) => {
+  // console.log(user.dataManager)
   waterStats.childNodes[3].innerHTML = `
-  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/21')}</h3>
+  <h3 class="pink">${user.hydrationDataObj.getOzDrank('2020/01/22')}</h3>
   <p>oz</p>
   `;
   generateWaterChart(user)

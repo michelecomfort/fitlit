@@ -18,12 +18,6 @@ const sleepCard = document.querySelector('.sleep');
 const waterCard = document.querySelector('.water');
 const stepsCard = document.querySelector('.steps')
 const addActivityCard = document.querySelector('.forms')
-const cardFlip = document.querySelector('.flip-card-inner');
-const submitButton = document.querySelector('.submit-button')
-
-submitButton.addEventListener( 'click', function() {
-  cardFlip.classList.toggle('is-flipped');
-});
 
 homeButton.onclick = function(event) {
   userCard.scrollIntoView({behavior: 'smooth'})
@@ -74,9 +68,8 @@ const displayActivityInfo = (user, userRepo, dataManager) => {
 }
 
 const displayHydrationInfo = (user) => {
-  // console.log(user.dataManager)
   waterStats.childNodes[3].innerHTML = `
-  <h3 class="pink">${user.hydrationObj.getOzDrank('2020/01/22')}</h3>
+  <h3 class="pink">${user.hydrationData.getOzDrank('2020/01/22')}</h3>
   <p>oz</p>
   `;
   generateWaterChart(user)
@@ -104,19 +97,19 @@ const displayStepInfo = (user, userRepo) => {
 
 const displaySleepInfo = (user) => {
   sleepHours.childNodes[1].innerHTML = `
-  <h4 class="pink">${user.sleepObj.getHoursSlept('2020/01/22')}</h4>
+  <h4 class="pink">${user.sleepData.getHoursSlept('2020/01/22')}</h4>
   <p>today</p>
   `;
   sleepHours.childNodes[3].innerHTML = `
-  <p class="orange ">${user.sleepObj.getAverageHoursSlept()}</p>
+  <p class="orange ">${user.sleepData.getAverageHoursSlept()}</p>
   <p>avg</p>
   `;
   sleepQuality.childNodes[1].innerHTML = `
-  <h4 class="pink">${user.sleepObj.getQualityOfSleep('2020/01/22')}</h4>
+  <h4 class="pink">${user.sleepData.getQualityOfSleep('2020/01/22')}</h4>
   <p>today</p>
   `;
   sleepQuality.childNodes[3].innerHTML = `
-  <p class="orange">${user.sleepObj.getAverageSleepQuality()}</p>
+  <p class="orange">${user.sleepData.getAverageSleepQuality()}</p>
   <p>avg</p>
   `;
   generateSleepChart(user);

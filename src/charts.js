@@ -166,7 +166,7 @@ const generateWaterChart = (user) => {
       labels: ['M', 'T', 'W', 'Th', 'Fr', 'Sa', 'Su'],
       datasets: [{
         label: 'oz of water',
-        data: user.getWeeklyStats('2020/01/15', 'hydration', 'numOunces'),
+        data: user.hydrationData.getWeeklyDrank('2020/01/15'),
         backgroundColor: '#FC6F7F',
         borderColor: '#FC6F7F',
         borderWidth: 2
@@ -219,14 +219,14 @@ const generateSleepChart = (user) => {
       datasets: [
         {
           label: 'hours',
-          data: user.getWeeklyStats('2020/01/15', 'sleep', 'hoursSlept'),
+          data: user.sleepData.getWeeklyHoursSlept('2020/01/15'),
           backgroundColor: '#FC6F7F',
           borderColor: '#FC6F7F',
           borderWidth: 2
         },
         {
           label: 'quality',
-          data: user.getWeeklyStats('2020/01/15', 'sleep', 'sleepQuality'),
+          data: user.sleepData.getWeeklySleepQuality('2020/01/15'),
           backgroundColor: '#FF9E2D',
           borderColor: '#FF9E2D',
           borderWidth: 2

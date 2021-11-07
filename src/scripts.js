@@ -162,7 +162,7 @@ const displayAllUserInfo = (user, userRepo) => {
   displayProfileInfo(user);
   displayActivityInfo(user, userRepo, dataManager)
   displayStepInfo(user, userRepo);
-  displayHydrationInfo(user, dataManager);
+  displayHydrationInfo(user);
   displaySleepInfo(user);
 }
 

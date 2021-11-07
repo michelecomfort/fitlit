@@ -119,6 +119,20 @@
             </div>
             <canvas id="sleepCanvas" width="250" height="140"></canvas>
           </section>
+
+          <section class='flip-card'>
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <section class="forms dashboard-cards" id="FriendDisplay">
+                  <div>
+                    <form name="activity-type-form" id="activity-type-form">
+                      <label for="activity-type">Add Activity</label>
+                      <select name="activity-type" class='activity-type' id="activity-type">
+                        <option value="sleep">Sleep</option>
+                        <option value="hydration">Hydration</option>
+                        <option value="activity">Activity</option>
+                      </select>
+                      </form>
           <section class="forms dashboard-cards" id="FriendDisplay">
               <form name="activity-type-form" class="activity-type-form" id="activity-type-form">
                 <label for="activity-type">Add Activity</label>
@@ -144,23 +158,48 @@
                     <input type="date" id="hydration-date" required>
                     <input type="number" placeholder="Ounces Drank" id="num-ounces" required>
                   </div>
-                  <button type="submit" class='submit-button button' value="+">+</button>
+                    <form name="sleep-form" id="sleep-form">
+                      <section class='bottom-input'>
+                        <div class="input-container">
+                          <input type="date" id="sleep-date" required>
+                          <input type="number" placeholder="Hours of Sleep" id="hours-slept" required>
+                          <input type="number" placeholder="Sleep Quality" id="sleep-quality" required>
+                        </div>
+                        <button type="submit" class='submit-button button' value="+">+</button>
+                      </section>
+                    </form>
+                    <form name="hydration-form" id="hydration-form" hidden>
+                      <section class='bottom-input'>
+                        <div class="input-container">
+                          <input type="date" id="hydration-date" required>
+                          <input type="number" placeholder="Ounces Drank" id="num-ounces" required>
+                        </div>
+                        <button type="submit" class='submit-button button' value="+">+</button>
+                      </section>
+                    </form>
+                    <form name="activity-form" id="activity-form" hidden>
+                      <section class='bottom-input'>
+                        <div class="input-container">
+                          <input type="date" id="activity-date" required>
+                          <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs" required>
+                          <input type="number" placeholder="Minutes Active" id="minutes-active" required>
+                          <input type="number" placeholder="Number of Steps" id="number-of-steps" required>
+                        </div>
+                        <button type="submit" class='submit-button button' value="+">+</button>
+                      </section>
+                    </form>
+                    <span id="confirmation-text" hidden>Activity Logged Successfully!</span>
+                    <span id="error-text" hidden>There was an issue, please try again!</span>
                 </section>
-              </form>
-              <form name="activity-form" id="activity-form" hidden>
-                <section class='bottom-input'>
-                  <div class="input-container">
-                    <input type="date" id="activity-date" required>
-                    <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs" required>
-                    <input type="number" placeholder="Minutes Active" id="minutes-active" required>
-                    <input type="number" placeholder="Number of Steps" id="number-of-steps" required>
-                  </div>
-                  <button type="submit" class='submit-button button' value="+">+</button>
-                </section>
-              </form>
-              <span id="confirmation-text" hidden>Activity Logged Successfully!</span>
-              <span id="error-text" hidden>There was an issue, please try again!</span>
+              </div>
+              <div class="flip-card-back">
+                <h1 class='confirmation'>Activity Added!</h1>
+              </div>
+
+            </div>
+
           </section>
+
         </section>
       </section>
     <script src="bundle.js"></script>

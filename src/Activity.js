@@ -12,9 +12,17 @@ export default class Activity {
     return milesWalked.toFixed(1);
   }
 
-  activeMinutes(date) {
+  todayActivity(date, activity) {
     const day = this.activityData.find(data => data.date === date);
-    return day.minutesActive;
+    switch (activity) {
+      case 'steps':
+        return day.numSteps;
+      case 'stairs':
+        return day.flightsOfStairs;
+      case 'minutes':
+        return day.minutesActive;
+    }
+
   }
 
   checkStepGoal(date) {

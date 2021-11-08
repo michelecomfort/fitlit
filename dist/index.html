@@ -120,7 +120,7 @@
             <canvas id="sleepCanvas" width="250" height="140"></canvas>
           </section>
           <section class="forms dashboard-cards" id="FriendDisplay">
-              <form name="activity-type-form" class="activity-type-form" id="activity-type-form" role="activity selection">
+              <form name="activity-type-form" class="activity-type-form" id="activity-type-form">
                 <label for="activity-type">Add Activity</label>
                 <select name="activity-type" class='activity-type' id="activity-type">
                   <option value="sleep">Sleep</option>
@@ -132,8 +132,8 @@
                 <section class='bottom-input'>
                   <div class="input-container">
                     <input type="date" id="sleep-date" aria-label="date-selector" required>
-                    <input type="number" placeholder="Hours of Sleep" id="hours-slept" aria-label="hours-of-sleep" required>
-                    <input type="number" placeholder="Sleep Quality" id="sleep-quality" aria-label="sleep-quality" required>
+                    <input type="number" placeholder="Hours of Sleep" id="hours-slept" aria-label="hours-of-sleep" min="1" max="12" required>
+                    <input type="number" placeholder="Sleep Quality" id="sleep-quality" aria-label="sleep-quality" min="1" max="5" required>
                   </div>
                   <button type="submit" class='submit-button button' aria-label="submit-activity" value="+">+</button>
                 </section>
@@ -142,7 +142,7 @@
                 <section class='bottom-input'>
                   <div class="input-container">
                     <input type="date" id="hydration-date" aria-label="date-selector" required>
-                    <input type="number" placeholder="Ounces Drank" id="num-ounces" aria-label="ounces-drank" required>
+                    <input type="number" placeholder="Ounces Drank" id="num-ounces" aria-label="ounces-drank" min="0" max="150" required>
                   </div>
                   <button type="submit" class='submit-button button' aria-label="submit-activity" value="+">+</button>
                 </section>
@@ -151,9 +151,9 @@
                 <section class='bottom-input'>
                   <div class="input-container">
                     <input type="date" id="activity-date" aria-label="date-selector" required>
-                    <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs" aria-label="flights-of-stairs" required>
-                    <input type="number" placeholder="Minutes Active" id="minutes-active" aria-label="active-minutes" required>
-                    <input type="number" placeholder="Number of Steps" id="number-of-steps" aria-label="number-of-steps" required>
+                    <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs" aria-label="flights-of-stairs" min="0" max="100" required>
+                    <input type="number" placeholder="Minutes Active" id="minutes-active" aria-label="active-minutes" min="0" max="1200" required>
+                    <input type="number" placeholder="Number of Steps" id="number-of-steps" aria-label="number-of-steps" min="0" max="25000" required>
                   </div>
                   <button type="submit" class='submit-button button' aria-label="submit-activity" value="+">+</button>
                 </section>

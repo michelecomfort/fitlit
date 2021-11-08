@@ -10,11 +10,11 @@
   <body>
     <nav class="sidebar hidden dashboard-cards" id='sidebarButtons'>
       <h1 class="pink">FitLit</h1>
-      <button type="button" id='homeButton' class="sidebar-button home-button"><img src="./images/Home.svg" alt='home icon'></button>
-      <button type="button" id='personButton' class="sidebar-button person-button"><img src="./images/Steps.svg" alt='walking person icon'></button>
-      <button type="button" id='waterButton' class="sidebar-button water-button"><img src="./images/Water.svg" alt='water droplet icon'></button>
-      <button type="button" id='moonButton' class="sidebar-button moon-button"><img src="./images/Sleep.svg" alt='moon icon'></button>
-      <button type="button" id="plusButton" class="sidebar-button button"><img src="./images/Plus.svg" alt="plus icon"></b  utton>
+      <button type="button" id="homeButton"><img src="./images/Home.svg" alt="home icon"></button>
+      <button type="button" id="personButton"><img src="./images/Steps.svg" alt="walking person icon"></button>
+      <button type="button" id="waterButton"><img src="./images/Water.svg" alt='water droplet icon'></button>
+      <button type="button" id="moonButton"><img src="./images/Sleep.svg" alt='moon icon'></button>
+      <button type="button" id="plusButton"><img src="./images/Plus.svg" alt="plus icon"></b  utton>
     </nav>
       <section class="widgets">
           <section class="user-info-card dashboard-cards" id="userProfile">
@@ -49,7 +49,7 @@
             <canvas id="waterCanvas" width="250" height="90"></canvas>
           </section>
           <section class="steps dashboard-cards">
-            <img src="./images/Steps.svg" alt='walking person icon'>
+            <img src="./images/Steps.svg" alt='walking person icon' id="stepIcon">
             <section class="today-data steps-miles" id="stepStats">
               <section class="today-data">
               </section>
@@ -106,7 +106,7 @@
                     <input type="number" placeholder="Hours of Sleep" id="hours-slept" aria-label="hours-of-sleep" min="1" max="12" required>
                     <input type="number" placeholder="Sleep Quality" id="sleep-quality" aria-label="sleep-quality" min="1" max="5" required>
                   </div>
-                  <button type="submit" id='plusButton' class="submit-button button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
+                  <button type="submit" id='plusButton' class="submit-button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
                 </section>
               </form>
               <form name="hydration-form" id="hydration-form" hidden>
@@ -115,7 +115,7 @@
                     <input type="date" id="hydration-date" aria-label="date-selector" required>
                     <input type="number" placeholder="Ounces Drank" id="num-ounces" aria-label="ounces-drank" min="0" max="150" required>
                   </div>
-                  <button type="submit" id='plusButton' class="submit-button button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
+                  <button type="submit" id='plusButton' class="submit-button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
                 </section>
               </form>
               <form name="activity-form" id="activity-form" hidden>
@@ -126,7 +126,7 @@
                     <input type="number" placeholder="Minutes Active" id="minutes-active" aria-label="active-minutes" min="0" max="1200" required>
                     <input type="number" placeholder="Number of Steps" id="number-of-steps" aria-label="number-of-steps" min="0" max="25000" required>
                   </div>
-                  <button type="submit" id='plusButton' class="submit-button button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
+                  <button type="submit" id='plusButton' class="submit-button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
                 </section>
               </form>
               <span id="confirmation-text" hidden>Activity Logged Successfully!</span>

@@ -21,6 +21,7 @@ body {
   background-blend-mode: color-burn;
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
+  margin: 0 2%;
 }
 
 body,
@@ -60,8 +61,8 @@ h4 {
 
 p {
   color: $white;
-  font-size: 1.2em;
-  @include font-weight(700)
+  font-size: 0.9em;
+  @include font-weight(300)
 }
 
 button {
@@ -193,6 +194,11 @@ body,
     height: 17%;
     padding: 5%;
   }
+
+  #waterIcon,
+  #stepIcon {
+    padding: 1%;
+  }
 }
 
 .dashboard-cards {
@@ -206,6 +212,10 @@ body,
 
   .email {
     font-size: 0.6em;
+  }
+
+  p {
+    padding: 2% 0;
   }
 }
 
@@ -230,6 +240,10 @@ body,
     flex-direction: row;
     justify-content: space-between;
   }
+
+  #stepIcon {
+    height: 20%;
+  }
 }
 
 .activity {
@@ -241,13 +255,10 @@ body,
   justify-content: space-around;
 
   #waterIcon {
-    padding: 1%;
     height: 25%;
   }
 }
 
-
-/* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
 .step-goals,
 .flights-of-stairs,
 .minutes-active,
@@ -271,10 +282,6 @@ body,
   align-items: center;
   height: 20%;
   margin-top: 1%;
-
-  p {
-    font-size: 1.2em;
-  }
 }
 
 .step-goals,
@@ -302,10 +309,6 @@ body,
   padding-right: 13%;
 }
 
-// .space-top {
-//   margin-top: 7%;
-// }
-
 .forms {
   flex-direction: column;
   grid-row: span 2;
@@ -321,7 +324,7 @@ body,
   }
 
   .input-container {
-    margin-top: 15%;
+    margin-top: 7%;
     @include width(90%);
     @include flex(column, flex-start);
     padding-bottom: 2%;
@@ -337,11 +340,6 @@ body,
     font-size: 65px;
     margin-left: 20%;
   }
-
-  // .submit-button {
-  //   font-size: 56px;
-  //   margin-left: 20%;
-  // }
 }
 
 /* ~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~ */

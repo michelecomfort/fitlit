@@ -97,19 +97,19 @@ const displayStepInfo = (user, userRepo) => {
 
 const displaySleepInfo = (user) => {
   sleepHours.childNodes[1].innerHTML = `
-  <h4 class="pink">${user.sleepObj.getHoursSlept('2020/01/22')}</h4>
+  <h3 class="pink">${user.sleepObj.getHoursSlept('2020/01/22')}</h3>
   <p>today</p>
   `;
   sleepHours.childNodes[3].innerHTML = `
-  <p class="orange ">${user.sleepObj.getAverageHoursSlept()}</p>
+  <h4 class="orange ">${user.sleepObj.getAverageHoursSlept()}</h4>
   <p>avg</p>
   `;
   sleepQuality.childNodes[1].innerHTML = `
-  <h4 class="pink">${user.sleepObj.getQualityOfSleep('2020/01/22')}</h4>
+  <h3 class="pink">${user.sleepObj.getQualityOfSleep('2020/01/22')}</h3>
   <p>today</p>
   `;
   sleepQuality.childNodes[3].innerHTML = `
-  <p class="orange">${user.sleepObj.getAverageSleepQuality()}</p>
+  <h4 class="orange">${user.sleepObj.getAverageSleepQuality()}</h4>
   <p>avg</p>
   `;
   generateSleepChart(user);

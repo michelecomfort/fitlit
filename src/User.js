@@ -26,7 +26,7 @@ export default class User {
     this.friends = users.filter(user => this.friends.includes(user.id));
   };
 
-  getWeeklyStats(date, dataset, info){
+  getWeeklyStats(date, dataset, info) {
     const week = [];
     const startDate = this[`${dataset}Data`].find(day => day.date === date);
     const dayIndex = this[`${dataset}Data`].indexOf(startDate);

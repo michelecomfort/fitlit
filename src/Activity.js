@@ -15,6 +15,7 @@ export default class Activity {
   todayActivity(date, activity) {
     const day = this.activityData.find(data => data.date === date);
     switch (activity) {
+
       case 'steps':
         return day.numSteps;
       case 'stairs':
@@ -23,6 +24,7 @@ export default class Activity {
         return day.minutesActive;
     };
   };
+
 
   checkStepGoal(date) {
     const day = this.activityData.find(data => data.date === date);

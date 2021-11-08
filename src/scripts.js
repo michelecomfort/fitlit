@@ -14,11 +14,7 @@ import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
 // Query Selectors
-
 const userProfile = document.querySelector('#userProfile');
-// const scrollSleep = document.getElementById('scrollSleep')
-
-// Form Selectors
 const activityTypeForm = document.querySelector('#activity-type-form');
 const activityOptions = document.querySelector('#activity-type');
 const sleepForm = document.querySelector('#sleep-form');
@@ -123,10 +119,6 @@ activityForm.addEventListener('submit', (event) => {
   postData('activity', userInputActivityData)
     .then(checkFetchResult);
 });
-
-
-// Event Listeners
-// scrollSleep.addEventListener('click', scrollToSleep)
 
 // Global Variables
 const userRepo = new UserRepository();

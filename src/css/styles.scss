@@ -21,6 +21,7 @@ body {
   background-blend-mode: color-burn;
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
+  margin: 0 2%;
 }
 
 body,
@@ -60,8 +61,8 @@ h4 {
 
 p {
   color: $white;
-  font-size: 1.2em;
-  @include font-weight(700)
+  font-size: 0.9em;
+  @include font-weight(300)
 }
 
 button {
@@ -69,37 +70,28 @@ button {
   border-radius: 100%;
   height: 9%;
   margin-top: 17%;
-  width: 55%;
+  @include width(55%);
+
   img {
     height: 50%;
-  max-width: 80%;
+    max-width: 80%;
   }
+
   &:hover {
     background-color: #00BFCF;
-  cursor: pointer;
+    cursor: pointer;
   }
-}
-
-label {
-  border: 1px solid green;
-}
-
-.activity-type-form {
-  padding-top: 2%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .activity-type,
 input {
-  width: 60%;
+  @include width(70%);
   color: gray;
-  font-family: inherit;
+  margin: 2% 0;
 }
 
-input,select {
+input,
+select {
   border-radius: 6px;
   margin-top: 12px;
   line-height: 1em;
@@ -129,7 +121,8 @@ body,
 .sleep-data-box,
 .sleep-card,
 .today-data-sleep,
-.step-miles {
+.step-miles,
+.bottom-input {
   display: flex;
 }
 
@@ -162,55 +155,6 @@ body,
   align-items: center;
 }
 
-.steps-miles {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  height: 90vh;
-  margin-top: 3%;
-}
-
-.widgets {
-  position: relative;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-auto-rows: 200px;
-  grid-column-gap: 5%;
-  grid-row-gap: 5%;
-  margin-left: 15%;
-  @include width(80%);
-}
-
-.user-info-card {
-  grid-row: span 1;
-}
-.sleep {
-  grid-row: span 5;
-}
-
-.steps {
-  grid-row: span 4;
-}
-
-.activity {
-  grid-row: span 5;
-}
-
-.water {
-  grid-row: span 3;
-}
-
-.forms {
-  flex-direction: column;
-  grid-row: span 2;
-  font-size: 60%;
-  padding-bottom: 3em;
-}
-
 .user-info-card,
 .sleep-hours,
 .sleep-quality,
@@ -226,6 +170,94 @@ body,
 }
 
 /* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 90vh;
+  margin-top: 3%;
+  padding: 2% 0;
+  @include width(11%);
+}
+
+.widgets {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 200px;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+  margin-left: 15%;
+  margin-bottom: 9%;
+  @include width(80%);
+
+  img {
+    height: 17%;
+    padding: 5%;
+  }
+
+  #waterIcon,
+  #stepIcon {
+    padding: 1%;
+  }
+}
+
+.dashboard-cards {
+  background-color: rgb(12, 50, 69, 0.75);
+  border-radius: 30px;
+  padding: 2%;
+}
+
+.user-info-card {
+  grid-row: span 1;
+
+  .email {
+    font-size: 0.6em;
+  }
+
+  p {
+    padding: 2% 0;
+  }
+}
+
+.sleep {
+  grid-row: span 5;
+
+  .today-data-sleep {
+    font-size: 1em;
+  }
+  
+  .sleep-card {
+    height: 45%;
+    margin-top: 5%;
+  }
+}
+
+.steps {
+  grid-row: span 4;
+
+  .steps-miles {
+    @include width(80%);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #stepIcon {
+    height: 20%;
+  }
+}
+
+.activity {
+  grid-row: span 5;
+}
+
+.water {
+  grid-row: span 3;
+  justify-content: space-around;
+
+  #waterIcon {
+    height: 25%;
+  }
+}
 
 .step-goals,
 .flights-of-stairs,
@@ -246,49 +278,10 @@ body,
   height: 100%;
 }
 
-.sidebar {
-  padding: 2% 0;
-  @include width(11%);
-}
-
-.dashboard-cards {
-  background-color: rgb(12, 50, 69, 0.75);
-  border-radius: 30px;
-  padding: 2%;
-}
-
-#waterIcon {
-  padding: 1%;
-}
-
-.widgets img {
-  height: 17%;
-  padding: 5%;
-}
-
-.water {
-  justify-content: space-around;
-}
-
 .today-data {
   align-items: center;
-}
-
-.user-data {
-  overflow-wrap: break-word;
-}
-
-.email {
-  font-size: 0.6em;
-}
-
-.today-data {
   height: 20%;
   margin-top: 1%;
-}
-
-.today-data p {
-  font-size: 1.2em;
 }
 
 .step-goals,
@@ -300,6 +293,7 @@ body,
 
 .info-text {
   font-size: 0.7em;
+  margin-bottom: 5% 0;
 }
 
 .border-right {
@@ -311,46 +305,44 @@ body,
   height: 50%;
 }
 
-.today-data-sleep {
-  font-size: 1em;
-}
-
-.sleep-card {
-  height: 45%;
-  margin-top: 5%;
-}
-
-.info-text {
-  margin-bottom: 5% 0;
-}
-
 .space-right {
   padding-right: 13%;
 }
 
-.steps-miles {
-  width: 80%;
+.forms {
+  flex-direction: column;
+  grid-row: span 2;
+  font-size: 60%;
+  padding-bottom: 3em;
+
+  .activity-type-form {
+    padding-top: 3%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-container {
+    margin-top: 7%;
+    @include width(90%);
+    @include flex(column, flex-start);
+    padding-bottom: 2%;
+    align-items: center;
+  }
+
+  .bottom-input {
+    align-items: center;
+    width: 154%;
+  }
+
+  .submit-button {
+    font-size: 65px;
+    margin-left: 20%;
+  }
 }
 
-.submit-button {
-  font-size: 56px;
-  margin-left: 20%;
-}
-
-.input-container {
-  margin-top: 20%;
-  width: 90%;
-  @include flex(column, flex-start);
-  padding-bottom: 2%;
-  align-items: center;
-}
-
-.bottom-input {
-  align-items: center;
-  display: flex;
-  width: 154%;
-}
-
+/* ~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~ */
 @media screen and (min-width: 1990px) {
   .widgets {
     grid-template-columns:  1fr 1fr;
@@ -367,6 +359,7 @@ body,
   .widgets {
     grid-template-columns: 1fr;
   }
+
   .sidebar {
     display: none;
   }

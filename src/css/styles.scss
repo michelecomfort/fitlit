@@ -74,18 +74,12 @@ button {
   }
 }
 
-
-// .activity-type {
-
-//   width: 90%;
-// }
-
 label {
   border: 1px solid green;
 }
 
 .activity-type-form {
-  padding-top: 3%;
+  padding-top: 2%;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -94,7 +88,7 @@ label {
 
 .activity-type,
 input {
-  width: 70%;
+  width: 60%;
   color: gray;
   font-family: inherit;
 }
@@ -105,6 +99,7 @@ input,select {
   line-height: 1em;
   padding: 5%;
   font-size: 20px;
+  width: 100%;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -207,6 +202,7 @@ body,
   flex-direction: column;
   grid-row: span 2;
   font-size: 60%;
+  padding-bottom: 3em;
 }
 
 .user-info-card,
@@ -331,10 +327,10 @@ body,
   width: 80%;
 }
 
-// .submit-button {
-//   font-size: 65px;
-//   margin-left: 20%;
-// }
+.submit-button {
+  font-size: 65px;
+  margin-left: 20%;
+}
 
 .input-container {
   margin-top: 20%;
@@ -367,5 +363,4 @@ body,
   .sidebar {
     display: none;
   }
-
 }

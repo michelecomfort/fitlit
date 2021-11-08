@@ -21,7 +21,12 @@ body {
   background-blend-mode: color-burn;
   background-color: rgb(255, 255, 255, 0.4);
   background-image: url('../images/backgroundimage.jpg');
-  padding: 3%;
+}
+
+body,
+.pink,
+.orange {
+  padding-top: 3%;
 }
 
 .pink {
@@ -31,6 +36,7 @@ body {
 .orange {
   color: $orange;
 }
+
 
 h1,
 label {
@@ -320,10 +326,6 @@ body,
 
 .space-right {
   padding-right: 13%;
-}
-
-.space-top {
-  margin-top: 7%;
 }
 
 .steps-miles {

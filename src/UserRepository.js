@@ -44,15 +44,15 @@ export default class UserRepository {
     const filteredData = this.filterToday(date, data);
     const total = filteredData.reduce((acc, user) => {
       switch (activity) {
-        case 'steps': 
-          acc += user.numSteps;
-          break;
-        case 'stairs':
-          acc += user.flightsOfStairs;
-          break;
-        case 'minutes':
-          acc += user.minutesActive;
-          break;
+      case 'steps': 
+        acc += user.numSteps;
+        break;
+      case 'stairs':
+        acc += user.flightsOfStairs;
+        break;
+      case 'minutes':
+        acc += user.minutesActive;
+        break;
       }
       return acc;
     }, 0)

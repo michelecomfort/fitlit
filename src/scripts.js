@@ -6,8 +6,8 @@ import './images/Sleep.svg';
 import './images/Friends.svg';
 import './images/activity.svg'
 import './images/Plus.svg';
-import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayActivityInfo, displayFriendsInfo, scroll, formListen } from './domManipulation';
-import { fetchData, postData } from './fetch';
+import {displayProfileInfo, displayStepInfo, displayHydrationInfo, displaySleepInfo, displayActivityInfo, formListen, } from './domManipulation';
+import { fetchData, } from './fetch';
 import DataManager from './DataManager';
 import UserRepository from './UserRepository';
 import { Chart, registerables } from 'chart.js';
@@ -17,6 +17,7 @@ Chart.register(...registerables);
 // Global Variables
 const userRepo = new UserRepository();
 const dataManager = new DataManager();
+const userProfile = document.querySelector('#userProfile');
 
 const retrieveAllData = () => {
   Promise.all([fetchData('users'), fetchData('sleep'), fetchData('activity'), fetchData('hydration')]).then(data => {

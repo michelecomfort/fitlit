@@ -86,7 +86,7 @@ button {
 .activity-type,
 input {
   @include width(70%);
-  color: gray;
+  font-family: inherit;
   margin: 2% 0;
 }
 
@@ -98,6 +98,7 @@ select {
   padding: 5%;
   font-size: 20px;
   width: 100%;
+  color: gray;
 }
 
 /* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
@@ -314,6 +315,10 @@ body,
   grid-row: span 2;
   font-size: 60%;
   padding-bottom: 3em;
+
+  .activity-type {
+    color: black;
+  }
 
   .activity-type-form {
     padding-top: 3%;

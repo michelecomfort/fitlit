@@ -19,22 +19,23 @@ const waterCard = document.querySelector('.water');
 const stepsCard = document.querySelector('.steps')
 const addActivityCard = document.querySelector('.forms')
 
-homeButton.onclick = function(event) {
+homeButton.onclick = function() {
   userCard.scrollIntoView({behavior: 'smooth'})
 }
-moonButton.onclick = function(event) {
+
+moonButton.onclick = function() {
   sleepCard.scrollIntoView({behavior: 'smooth'})
 }
 
-waterButton.onclick = function(event) {
+waterButton.onclick = function() {
   waterCard.scrollIntoView({behavior: 'smooth'})
 }
 
-personButton.onclick = function(event) {
+personButton.onclick = function() {
   stepsCard.scrollIntoView({behavior: 'smooth'})
 }
 
-addActivityButton.onclick = function(event) {
+addActivityButton.onclick = function() {
   addActivityCard.scrollIntoView({behavior: 'smooth'})
 }
 

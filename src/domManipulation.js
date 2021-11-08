@@ -1,5 +1,5 @@
 import { generateStairsChart, generateMinutesActiveChart, generateWaterChart, generateSleepChart, generateStepsChart } from './charts';
-import { fetchData, postData } from './fetch';
+import { postData } from './fetch';
 
 const userProfile = document.querySelector('#userProfile');
 const stepStats = document.querySelector('#stepStats');
@@ -139,7 +139,7 @@ const formListen = (userRepo) => {
   activityTypeForm.addEventListener('change', changeFormView);
 };
 
-homeButton.onclick = function(event) {
+homeButton.onclick = function() {
   userCard.scrollIntoView({behavior: 'smooth'})
 }
 

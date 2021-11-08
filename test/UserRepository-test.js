@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import User from '../src/User';
 import UserRepository from '../src/UserRepository';
 import DataManager from '../src/DataManager';
 import { userData, hydrationData, sleepData, activityData } from '../src/sampleData.js'
@@ -8,7 +7,6 @@ describe('User Repository', function() {
   let userRepo;
   let dataManager;
   let user1;
-  let user2;
   
   beforeEach(function() {
     userRepo = new UserRepository();
@@ -22,7 +20,6 @@ describe('User Repository', function() {
     userRepo.buildUserRepo(dataManager, userData);
 
     user1 = userRepo.users[0];
-    user2 = userRepo.users[1];
 
   });
 

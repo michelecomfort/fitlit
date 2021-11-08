@@ -15,12 +15,12 @@ export default class Activity {
   todayActivity(date, activity) {
     const day = this.activityData.find(data => data.date === date);
     switch (activity) {
-      case 'steps':
-        return day.numSteps;
-      case 'stairs':
-        return day.flightsOfStairs;
-      case 'minutes':
-        return day.minutesActive;
+    case 'steps':
+      return day.numSteps;
+    case 'stairs':
+      return day.flightsOfStairs;
+    case 'minutes':
+      return day.minutesActive;
     }
   }
 
@@ -55,15 +55,15 @@ export default class Activity {
     this.activityData.reduce((acc) => {
       if (acc < 7) {
         switch (type) {
-          case 'steps':
-            week.push(this.activityData[dayIndex + acc].numSteps);
-            break;
-          case 'stairs':
-              week.push(this.activityData[dayIndex + acc].flightsOfStairs);
-              break;
-          case 'minutes':
-            week.push(this.activityData[dayIndex + acc].minutesActive);
-            break;
+        case 'steps':
+          week.push(this.activityData[dayIndex + acc].numSteps);
+          break;
+        case 'stairs':
+          week.push(this.activityData[dayIndex + acc].flightsOfStairs);
+          break;
+        case 'minutes':
+          week.push(this.activityData[dayIndex + acc].minutesActive);
+          break;
         }
         acc++;
       }

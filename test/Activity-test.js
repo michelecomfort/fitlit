@@ -71,7 +71,7 @@ describe('Activity', function() {
   });
 
   it('should be instantiated with activity data', function() {
-    assert.deepEqual(activity.userActivityData, userActivityData);
+    assert.deepEqual(activity.activityData, userActivityData);
   });
 
   it('should be instantiated with the users stride length', function() {
@@ -87,7 +87,7 @@ describe('Activity', function() {
   });
 
   it('should return the minutes a user was active on a given date', function() {
-    assert.equal(activity.activeMinutes('2019/06/15'), 140);
+    assert.equal(activity.todayActivity('2019/06/15', 'minutes'), 140);
   });
 
   

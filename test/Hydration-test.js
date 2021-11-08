@@ -36,8 +36,4 @@ describe('Hydration', function() {
     assert.equal(hydration.getOzDrank('2020/01/17'), 31);
   });
 
-  it(' should calculate a user\'s oz consumed each day for a week', function() {
-    assert.deepEqual(hydration.getWeeklyDrank("2020/01/16"), [30, 31, 32, 33, 34, 35, 36]);
-  });
-
 });

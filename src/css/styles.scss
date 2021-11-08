@@ -6,6 +6,7 @@
 * {
   border: 0;
   box-sizing: border-box;
+  margin: 0;
 }
 
 body, html {
@@ -62,12 +63,10 @@ button {
   height: 9%;
   margin-top: 17%;
   width: 55%;
-
   img {
     height: 50%;
   max-width: 80%;
   }
-
   &:hover {
     background-color: #00BFCF;
   cursor: pointer;
@@ -251,10 +250,13 @@ body,
   padding: 2%;
 }
 
+#waterIcon {
+  padding: 1%;
+}
+
 .widgets img {
   height: 17%;
-  padding-bottom: 3%;
-  padding-top: 3%;
+  padding: 5%;
 }
 
 .water {
@@ -328,7 +330,7 @@ body,
 }
 
 .submit-button {
-  font-size: 65px;
+  font-size: 56px;
   margin-left: 20%;
 }
 
@@ -341,7 +343,9 @@ body,
 }
 
 .bottom-input {
+  align-items: center;
   display: flex;
+  width: 154%;
 }
 
 @media screen and (min-width: 1990px) {

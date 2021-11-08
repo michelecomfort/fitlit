@@ -1,0 +1,371 @@
+@use 'reset.scss' as *;
+@use 'variables.scss' as *;
+@use 'mixin.scss' as *;
+
+/* ~~~~~~~~~~~ GLOBAL RULES ~~~~~~~~~~ */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body, html {
+  font-family: $main-font;
+  color: $white;
+  font-size: 26px;
+  height: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  background-blend-mode: color-burn;
+  background-color: rgb(255, 255, 255, 0.4);
+  background-image: url('../images/backgroundimage.jpg');
+  margin: 0 2%;
+}
+
+body,
+.pink,
+.orange {
+  padding-top: 3%;
+}
+
+.pink {
+  color: $pink;
+}
+
+.orange {
+  color: $orange;
+}
+
+
+h1,
+label {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.7em;
+  @include font-weight(700);
+}
+
+h3 {
+  font-size: 2.2em;
+  @include font-weight(700);
+}
+
+h4 {
+  font-size: 1.5em;
+  @include font-weight(700);
+}
+
+p {
+  color: $white;
+  font-size: 0.9em;
+  @include font-weight(300);
+}
+
+button {
+  background-color: #0C3245;
+  border-radius: 100%;
+  height: 9%;
+  margin-top: 17%;
+  @include width(55%);
+
+  img {
+    height: 50%;
+    max-width: 80%;
+  }
+
+  &:hover {
+    background-color: #00BFCF;
+    cursor: pointer;
+  }
+}
+
+.activity-type,
+input {
+  @include width(70%);
+  font-family: inherit;
+  margin: 2% 0;
+}
+
+input,
+select {
+  border-radius: 6px;
+  margin-top: 12px;
+  line-height: 1em;
+  padding: 5%;
+  font-size: 20px;
+  width: 100%;
+  color: gray;
+}
+
+/* ~~~~~~~~~~~ FLEX RULES ~~~~~~~~~~ */
+body,
+.sidebar,
+.water,
+.steps,
+.sleep,
+.forms,
+.activity,
+.today-data,
+.user-info-card,
+.user-data,
+.step-goals,
+.flights-of-stairs,
+.minutes-active,
+.info-type-box,
+.calendar,
+.sleep-hours,
+.sleep-quality,
+.sleep-data-box,
+.sleep-card,
+.today-data-sleep,
+.step-miles,
+.bottom-input {
+  display: flex;
+}
+
+.sidebar,
+.water,
+.steps,
+.sleep,
+.activity,
+.forms,
+.today-data,
+.user-data,
+.info-type-box,
+.sleep-hours,
+.sleep-quality,
+.today-data-sleep {
+  flex-direction: column;
+}
+
+.sidebar,
+.water,
+.activity,
+.steps,
+.sleep,
+.forms,
+.user-info-card,
+.sleep-hours,
+.sleep-quality,
+.sleep-data-box,
+.today-data-sleep {
+  align-items: center;
+}
+
+.user-info-card,
+.sleep-hours,
+.sleep-quality,
+.sleep-data-box {
+  justify-content: space-evenly;
+}
+
+.step-goals,
+.sleep-data-box,
+.flights-of-stairs,
+.minutes-active {
+  text-align: center;
+}
+
+/* ~~~~~~~~~~~ DASHBOARD RULES ~~~~~~~~~~ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 90vh;
+  margin-top: 3%;
+  padding: 2% 0;
+  @include width(11%);
+}
+
+.widgets {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 200px;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+  margin-left: 15%;
+  margin-bottom: 9%;
+  @include width(80%);
+
+  img {
+    height: 17%;
+    padding: 5%;
+  }
+
+  #waterIcon,
+  #stepIcon {
+    padding: 1%;
+  }
+}
+
+.dashboard-cards {
+  background-color: rgb(12, 50, 69, 0.75);
+  border-radius: 30px;
+  padding: 2%;
+}
+
+.user-info-card {
+  grid-row: span 1;
+
+  .email {
+    font-size: 0.6em;
+  }
+
+  p {
+    padding: 2% 0;
+  }
+}
+
+.sleep {
+  grid-row: span 5;
+
+  .today-data-sleep {
+    font-size: 1em;
+  }
+
+  .sleep-card {
+    height: 45%;
+    margin-top: 5%;
+  }
+}
+
+.steps {
+  grid-row: span 4;
+
+  .steps-miles {
+    @include width(80%);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #stepIcon {
+    height: 20%;
+  }
+}
+
+.activity {
+  grid-row: span 5;
+}
+
+.water {
+  grid-row: span 3;
+  justify-content: space-around;
+
+  #waterIcon {
+    height: 25%;
+  }
+}
+
+.step-goals,
+.flights-of-stairs,
+.minutes-active,
+.sleep-data-box,
+.sleep-card {
+  @include width(100%);
+}
+
+.info-type-box,
+.sleep-hours,
+.sleep-quality {
+  @include width(50%);
+}
+
+.sleep-hours,
+.sleep-quality {
+  height: 100%;
+}
+
+.today-data {
+  align-items: center;
+  height: 20%;
+  margin-top: 1%;
+}
+
+.step-goals,
+.flights-of-stairs,
+.minutes-active {
+  height: 40%;
+  padding-top: 12%;
+}
+
+.info-text {
+  font-size: 0.7em;
+  margin-bottom: 5% 0;
+}
+
+.border-right {
+  border-right: 2px solid $white;
+}
+
+.border-right-half {
+  border-right: 2px solid $white;
+  height: 50%;
+}
+
+.space-right {
+  padding-right: 13%;
+}
+
+.forms {
+  flex-direction: column;
+  grid-row: span 2;
+  font-size: 60%;
+  padding-bottom: 3em;
+
+  .activity-type {
+    color: black;
+  }
+
+  .activity-type-form {
+    padding-top: 3%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-container {
+    margin-top: 7%;
+    @include width(90%);
+    @include flex(column, flex-start);
+    padding-bottom: 2%;
+    align-items: center;
+  }
+
+  .bottom-input {
+    align-items: center;
+    width: 154%;
+  }
+
+  .submit-button {
+    font-size: 65px;
+    margin-left: 20%;
+  }
+}
+
+/* ~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~ */
+@media screen and (min-width: 1990px) {
+  .widgets {
+    grid-template-columns:  1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .widgets {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .widgets {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

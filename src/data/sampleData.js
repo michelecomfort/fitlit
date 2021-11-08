@@ -5,7 +5,7 @@ const userData = [
     "address": "123 Main St Wisconsin",
     "email": "markus@email.com",
     "strideLength": 5.1,
-    "dailyStepGoal": 9500,
+    "dailyStepGoal": 10000,
     "friends": [
       2,
       3,
@@ -31,7 +31,7 @@ const userData = [
     "address": "345 Another Street Denver",
     "email": "michele@email.com",
     "strideLength": 4.4,
-    "dailyStepGoal": 2000,
+    "dailyStepGoal": 10000,
     "friends": [
       1,
       2,
@@ -44,7 +44,7 @@ const userData = [
     "address": "456 This Street Denver",
     "email": "cass@email.com",
     "strideLength": 4.8,
-    "dailyStepGoal": 8500,
+    "dailyStepGoal": 10000,
     "friends": [
       1,
       2,
@@ -57,74 +57,53 @@ const hydrationData = [
   {
     "userID": 1,
     "date": "2019/06/15",
-    "numOunces": 38
-  },
-  {
-    "userID": 2,
-    "date": "2019/06/15",
-    "numOunces": 75
-  },
-  {
-    "userID": 3,
-    "date": "2019/06/15",
-    "numOunces": 47
-  },
-  {
-    "userID": 4,
-    "date": "2019/06/15",
-    "numOunces": 85
-  },
-  {
-    "userID": 1,
-    "date": "2020/1/22",
     "numOunces": 37
   },
   {
     "userID": 2,
-    "date": "2019/06/22",
+    "date": "2019/06/15",
     "numOunces": 75
   },
   {
     "userID": 3,
-    "date": "2019/06/16",
+    "date": "2019/06/15",
     "numOunces": 47
   },
   {
     "userID": 4,
-    "date": "2019/06/16",
+    "date": "2019/06/15",
     "numOunces": 85
   }
 ]
 
-const activityData = [
-  {
-    "userID": 1,
-    "date": "2019/06/15",
-    "numSteps": 3577,
-    "minutesActive": 140,
-    "flightsOfStairs": 16
-  },
-  {
-    "userID": 2,
-    "date": "2019/06/15",
-    "numSteps": 4294,
-    "minutesActive": 138,
-    "flightsOfStairs": 10
-  },
-  {
-    "userID": 3,
-    "date": "2019/06/15",
-    "numSteps": 7402,
-    "minutesActive": 116,
-    "flightsOfStairs": 33
-  },
-  {
-    "userID": 4,
-    "date": "2019/06/15",
-    "numSteps": 3486,
-    "minutesActive": 114,
-    "flightsOfStairs": 32
-  }
+const activityData = [{
+  "userID": 1,
+  "date": "2019/06/15",
+  "numSteps": 3577,
+  "minutesActive": 140,
+  "flightsOfStairs": 16
+},
+{
+  "userID": 2,
+  "date": "2019/06/15",
+  "numSteps": 4294,
+  "minutesActive": 138,
+  "flightsOfStairs": 10
+},
+{
+  "userID": 3,
+  "date": "2019/06/15",
+  "numSteps": 7402,
+  "minutesActive": 116,
+  "flightsOfStairs": 33
+},
+{
+  "userID": 4,
+  "date": "2019/06/15",
+  "numSteps": 3486,
+  "minutesActive": 114,
+  "flightsOfStairs": 32
+}
 ]
 
 const sleepData = [

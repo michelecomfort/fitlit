@@ -8,65 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section class="sidebar dashboard-cards">
+    <nav class="sidebar hidden dashboard-cards" id='sidebarButtons'>
       <h1 class="pink">FitLit</h1>
-      <button type="button" class="button"><img src="./images/Home.svg" alt='home icon'></button>
-      <button type="button" class="button"><img src="./images/Steps.svg" alt='walking person icon'></button>
-      <button type="button" class="button"><img src="./images/Water.svg" alt='water droplet icon'></button>
-      <button type="button" class="button"><img src="./images/Sleep.svg" alt='moon icon'></button>
-    </section>
+      <button type="button" id="homeButton"><img src="./images/Home.svg" alt="home icon"></button>
+      <button type="button" id="personButton"><img src="./images/Steps.svg" alt="walking person icon"></button>
+      <button type="button" id="waterButton"><img src="./images/Water.svg" alt='water droplet icon'></button>
+      <button type="button" id="moonButton"><img src="./images/Sleep.svg" alt='moon icon'></button>
+      <button type="button" id="plusButton"><img src="./images/Plus.svg" alt="plus icon"></b  utton>
+    </nav>
       <section class="widgets">
-        <section class="top-half">
           <section class="user-info-card dashboard-cards" id="userProfile">
-            <img src="./images/Kyra.png" alt='person photo'>
             <div class="user-data">
-              <h2></h2>
-              <p></p>
-              <p></p>
             </div>
           </section>
-          <section class="water dashboard-cards large-widget" id="waterStats">
-            <img src="./images/Water.svg" alt='water droplet icon'>
-            <section class="today-data">
-              <h3></h3>
-              <p></p>
-            </section>
-            <canvas id="waterCanvas" width="250" height="90"></canvas>
-          </section>
-        </section>
-        <section class="bottom-half">
-          <section class="steps dashboard-cards small-widget">
-            <img src="./images/Steps.svg" alt='walking person icon'>
-            <section class="today-data" id='stepsToday'>
-              <h3></h3>
-              <p></p>
-            </section>
-            <section class="step-goals" id="stepGoals">
-              <section class="info-type-box border-right">
+          <section class="activity dashboard-cards">
+            <img src="./images/activity.svg" alt='activity timer icon'>
+            <section class="minutes-active" id="activityStats">
+              <section class="info-type-box border-right-half">
                 <p class="info-text">You</p>
-                <h4></h4>
-                <p></p>
               </section>
               <section class="info-type-box">
                 <p class="info-text">Community</p>
-                <h4></h4>
-                <p></p>
               </section>
             </section>
+            <canvas id="minutesCanvas" width="250" height="80"></canvas>
+            <section class="flights-of-stairs" id="stairStats">
+              <section class="info-type-box border-right-half">
+                <p class="info-text">You</p>
+              </section>
+              <section class="info-type-box">
+                <p class="info-text">Community</p>
+              </section>
+            </section>
+            <canvas id="flightsCanvas" width="250" height="80"></canvas>
           </section>
-          <section class="sleep dashboard-cards large-widget">
+          <section class="water dashboard-cards" id="waterStats">
+            <img src="./images/Water.svg" alt='water droplet icon' id='waterIcon'>
+            <section class="today-data">
+            </section>
+            <canvas id="waterCanvas" width="250" height="90"></canvas>
+          </section>
+          <section class="steps dashboard-cards">
+            <img src="./images/Steps.svg" alt='walking person icon' id="stepIcon">
+            <section class="today-data steps-miles" id="stepStats">
+              <section class="today-data">
+              </section>
+              <section class="today-data">
+              </section>
+            </section>
+            <section class="step-goals" id="stepGoals">
+              <section class="info-type-box border-right-half">
+                <p class="info-text">You</p>
+              </section>
+              <section class="info-type-box">
+                <p class="info-text">Community</p>
+              </section>
+            </section>
+            <canvas id="stepsCanvas" width="250" height="100"></canvas>
+          </section>
+          <section class="sleep dashboard-cards ">
             <img src="./images/Sleep.svg" alt='moon icon'>
             <div class="sleep-card" >
               <section class="sleep-hours border-right">
                 <p class="info-text">Hours</p>
                 <div class="sleep-data-box" id='sleepHours'>
                   <section class="today-data-sleep border-right space-right">
-                    <h3></h3>
-                    <p></p>
                   </section>
-                  <section class="today-data-sleep space-top">
-                    <h4></h4>
-                    <p></p>
+                  <section class="today-data-sleep">
                   </section>
                 </div>
               </section>
@@ -74,25 +82,55 @@
                 <p class="info-text">Quality</p>
                 <div class="sleep-data-box" id='sleepQuality'>
                   <section class="today-data-sleep border-right space-right">
-                    <h3></h3>
-                    <p></p>
                   </section>
-                  <section class="today-data-sleep space-top">
-                    <h4></h4>
-                    <p></p>
+                  <section class="today-data-sleep">
                   </section>
                 </div>
               </section>
             </div>
-            <canvas id="sleepCanvas" width="250" height="80"></canvas>
+            <canvas id="sleepCanvas" width="250" height="140"></canvas>
           </section>
-          <section class="friends dashboard-cards small-widget" id="FriendDisplay">
-            <img src="./images/Friends.svg" alt='friends icon'>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </section>
+          <section class="forms dashboard-cards" id="formDisplay">
+              <form name="activity-type-form" class="activity-type-form" id="activity-type-form">
+                <label for="activity-type">Add Activity</label>
+                <select name="activity-type" class='activity-type' id="activity-type">
+                  <option value="sleep">Sleep</option>
+                  <option value="hydration">Hydration</option>
+                  <option value="activity">Activity</option>
+                </select>
+                </form>
+              <form name="sleep-form" id="sleep-form">
+                <section class='bottom-input'>
+                  <div class="input-container">
+                    <input type="date" id="sleep-date" aria-label="date-selector" required>
+                    <input type="number" placeholder="Hours of Sleep" id="hours-slept" aria-label="hours-of-sleep" min="1" max="12" required>
+                    <input type="number" placeholder="Sleep Quality" id="sleep-quality" aria-label="sleep-quality" min="1" max="5" required>
+                  </div>
+                  <button type="submit" id='plusButton' class="submit-button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
+                </section>
+              </form>
+              <form name="hydration-form" id="hydration-form" hidden>
+                <section class='bottom-input'>
+                  <div class="input-container">
+                    <input type="date" id="hydration-date" aria-label="date-selector" required>
+                    <input type="number" placeholder="Ounces Drank" id="num-ounces" aria-label="ounces-drank" min="0" max="150" required>
+                  </div>
+                  <button type="submit" id='plusButton' class="submit-button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
+                </section>
+              </form>
+              <form name="activity-form" id="activity-form" hidden>
+                <section class='bottom-input'>
+                  <div class="input-container">
+                    <input type="date" id="activity-date" aria-label="date-selector" required>
+                    <input type="number" placeholder="Flights of Stairs " id="flight-of-stairs" aria-label="flights-of-stairs" min="0" max="100" required>
+                    <input type="number" placeholder="Minutes Active" id="minutes-active" aria-label="active-minutes" min="0" max="1200" required>
+                    <input type="number" placeholder="Number of Steps" id="number-of-steps" aria-label="number-of-steps" min="0" max="25000" required>
+                  </div>
+                  <button type="submit" id='plusButton' class="submit-button" aria-label="submit-activity"><img src="./images/Plus.svg" alt='plus icon'></button>
+                </section>
+              </form>
+              <span id="confirmation-text" hidden>Activity Logged Successfully!</span>
+              <span id="error-text" hidden>There was an issue, please try again!</span>
           </section>
         </section>
       </section>

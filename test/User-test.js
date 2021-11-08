@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import User from '../src/User';
 import Hydration from '../src/Hydration';
 import Sleep from '../src/Sleep';
-import { userData, hydrationData, sleepData } from '../src/sampleData.js'
+import { userData, hydrationData, sleepData } from '../src/sampleData.js';
 
 describe('User', function() {
   let user1;
@@ -52,10 +52,10 @@ describe('User', function() {
   });
 
   it('should create an instance of hydration with the hydration data passed', () => {
-    assert.deepEqual(user1.hydrationData, hydration1);
+    assert.deepEqual(user1.hydrationObj, hydration1);
   });
 
   it('should create an instance of sleep with the sleep data passed', () => {
-    assert.deepEqual(user1.sleepData, sleep1);
-  })
+    assert.deepEqual(user1.sleepObj, sleep1);
+  });
 });

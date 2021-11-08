@@ -41,10 +41,6 @@ describe('Sleep', function () {
     assert.equal(sleep.getHoursSlept('2020/01/18'), 7.5);
   });
 
-  it('should calculate how many hours slept each day for a week', function() {
-    assert.deepEqual(sleep.getWeeklyHoursSlept('2020/01/16'), [6.1, 7, 7.5, 8.5, 8, 5.9, 6.7]);
-  });
-
   it('should calculate a user\'s average quality of hours slept per day', function() {
     assert.equal(sleep.getAverageSleepQuality(), 3.6);
   });
@@ -52,10 +48,6 @@ describe('Sleep', function () {
   it('should calculate what their quality of sleep was for a specific day identified by date', function() {
     assert.equal(sleep.getQualityOfSleep(today), 2.8);
     assert.equal(sleep.getQualityOfSleep('2020/01/18'), 4.4);
-  });
-
-  it('should calculate the quality of sleep each day for a week', function() {
-    assert.deepEqual(sleep.getWeeklySleepQuality('2020/01/16'), [2.2, 3.3, 4.4, 5.5, 2.6, 4.7, 2.8]);
   });
 
 });

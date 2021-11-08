@@ -22,7 +22,6 @@ export default class Activity {
       case 'minutes':
         return day.minutesActive;
     }
-
   }
 
   checkStepGoal(date) {

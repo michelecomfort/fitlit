@@ -62,7 +62,7 @@ h4 {
 p {
   color: $white;
   font-size: 0.9em;
-  @include font-weight(300)
+  @include font-weight(300);
 }
 
 button {
@@ -226,7 +226,7 @@ body,
   .today-data-sleep {
     font-size: 1em;
   }
-  
+
   .sleep-card {
     height: 45%;
     margin-top: 5%;

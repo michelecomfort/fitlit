@@ -13,6 +13,8 @@ import UserRepository from './UserRepository';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
+// Query Selectors
+const userProfile = document.querySelector('#userProfile');
 
 // Global Variables
 const userRepo = new UserRepository();
@@ -27,7 +29,7 @@ const retrieveAllData = () => {
     userProfile.childNodes[3].innerHTML = `
   <h2>Hi, There seems to be an error! Please refresh the page!</h2>`
     console.log(error);
-  })
+  });
 };
 
 const parseData = (data) => {
@@ -51,8 +53,9 @@ const displayAllUserInfo = (user, userRepo) => {
   displayHydrationInfo(user);
   displaySleepInfo(user);
   formListen(userRepo);
-}
+};
 
+ 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);
 };

@@ -13,12 +13,12 @@ const homeButton = document.querySelector('#homeButton');
 const personButton = document.querySelector('#personButton');
 const waterButton = document.querySelector('#waterButton');
 const moonButton = document.querySelector('#moonButton');
-const addActivityButton = document.querySelector('#plusButton')
+const addActivityButton = document.querySelector('#plusButton');
 const userCard = document.querySelector('.user-info-card');
 const sleepCard = document.querySelector('.sleep');
 const waterCard = document.querySelector('.water');
 const stepsCard = document.querySelector('.steps')
-const addActivityCard = document.querySelector('.forms')
+const addActivityCard = document.querySelector('.forms');
 
 //Form Query Selectors
 const activityTypeForm = document.querySelector('#activity-type-form');
@@ -140,24 +140,24 @@ const formListen = (userRepo) => {
 };
 
 homeButton.onclick = function() {
-  userCard.scrollIntoView({behavior: 'smooth'})
-}
+  userCard.scrollIntoView({behavior: 'smooth'});
+};
 
 moonButton.onclick = function() {
-  sleepCard.scrollIntoView({behavior: 'smooth'})
-}
+  sleepCard.scrollIntoView({behavior: 'smooth'});
+};
 
 waterButton.onclick = function() {
-  waterCard.scrollIntoView({behavior: 'smooth'})
-}
+  waterCard.scrollIntoView({behavior: 'smooth'});
+};
 
 personButton.onclick = function() {
   stepsCard.scrollIntoView({behavior: 'smooth'})
-}
+};
 
 addActivityButton.onclick = function() {
-  addActivityCard.scrollIntoView({behavior: 'smooth'})
-}
+  addActivityCard.scrollIntoView({behavior: 'smooth'});
+};
 
 const displayProfileInfo = (user) => {
   userProfile.childNodes[1].innerHTML = `
@@ -193,7 +193,7 @@ const displayHydrationInfo = (user) => {
   <h3 class="pink">${user.hydrationObj.getOzDrank('2020/01/22')}</h3>
   <p>oz</p>
   `;
-  generateWaterChart(user)
+  generateWaterChart(user);
 };
 
 const displayStepInfo = (user, userRepo) => {
@@ -213,7 +213,7 @@ const displayStepInfo = (user, userRepo) => {
   <h4 class="orange">${userRepo.calculateAverageStepGoal()}</h4>
   <p class="unit">/day</p>
   `;
-  generateStepsChart(user)
+  generateStepsChart(user);
 };
 
 const displaySleepInfo = (user) => {

@@ -1,7 +1,7 @@
 const fetchData = (location) => {
   return fetch(`http://localhost:3001/api/v1/${location}`)
     .then(result => result.json());
-}
+};
 
 const postData = (location, data) => {
   return fetch(`http://localhost:3001/api/v1/${location}`, {

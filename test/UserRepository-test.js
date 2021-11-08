@@ -7,7 +7,7 @@ describe('User Repository', function() {
   let userRepo;
   let dataManager;
   let user1;
-  
+
   beforeEach(function() {
     userRepo = new UserRepository();
     dataManager = new DataManager();
@@ -52,11 +52,10 @@ describe('User Repository', function() {
   });
 
   it('should calculate the average flights of stairs climbed for a specific day across all users', function() {
-    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'stairs'), 23)
-  })
+    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'stairs'), 23);
+  });
 
   it('should calculate the average minutes active for a specific day across all users', function() {
-    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'minutes'), 127)
-  })
-
+    assert.equal(userRepo.calculateAllUserAverage('2019/06/15', activityData, 'minutes'), 127);
+  });
 });

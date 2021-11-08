@@ -1,7 +1,7 @@
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
-const activityCalendar = document.querySelector('#minutesCanvas').getContext('2d')
-const flightsCalendar = document.querySelector('#flightsCanvas').getContext('2d')
+const activityCalendar = document.querySelector('#minutesCanvas').getContext('2d');
+const flightsCalendar = document.querySelector('#flightsCanvas').getContext('2d');
 const waterCalendar = document.querySelector('#waterCanvas').getContext('2d');
 const sleepCalendar = document.querySelector('#sleepCanvas').getContext('2d');
 const stepCalendar = document.querySelector('#stepsCanvas').getContext('2d');

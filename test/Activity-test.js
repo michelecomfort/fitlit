@@ -90,11 +90,11 @@ describe('Activity', function() {
     assert.equal(activity.todayActivity('2019/06/15', 'minutes'), 140);
   });
 
-  
+
   it('should return if user reached their step goal on a given date', function() {
     assert.equal(activity.checkStepGoal('2019/06/15'), false);
   });
-  
+
   it('should return all the days user step goal was met', function() {
     assert.deepEqual(activity.filterAchievedStepGoalDays(), [{
       "userID": 1,
@@ -104,23 +104,23 @@ describe('Activity', function() {
       "flightsOfStairs": 13
     }]);
   });
-  
+
   it('should return the user\'s all time stair climbing record', function() {
     assert.equal(activity.findStairClimbingRecord(), 33);
   });
 
   it('should return a week\'s worth of a user\'s step counts', function() {
     assert.deepEqual(activity.getWeekOfActivityData('2019/06/15', 'steps'), [3577, 4294, 7402, 3486, 11374, 8000, 9000])
-  })
-  
+  });
+
   it('should return a week\'s worth of a user\'s stairs climbed', function() {
     assert.deepEqual(activity.getWeekOfActivityData('2019/06/15', 'stairs'), [16, 10, 33, 32, 13, 13, 13])
-  })
+  });
 
   it('should return a week\'s worth of a user\'s active minutes', function() {
     assert.deepEqual(activity.getWeekOfActivityData('2019/06/15', 'minutes'), [140, 138, 116, 114, 213, 213, 213])
-  })
-  
+  });
+
   it('should return the average active minutes for a given week', function() {
     assert.equal(activity.getWeeklyAverageActiveMinutes('2019/06/15'), 164);
   });

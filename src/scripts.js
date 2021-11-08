@@ -100,7 +100,7 @@ hydrationForm.addEventListener('submit', (event) => {
     userID: userRepo.activeUser.id,
     date: formatDate(userInputHydrationDate.value),
     numOunces: userInputHydrationOunces.value
-  }
+  };
   hydrationForm.reset();
   postData('hydration', userInputHydrationData)
     .then(checkFetchResult);
@@ -132,7 +132,7 @@ const retrieveAllData = () => {
     userProfile.childNodes[3].innerHTML = `
   <h2>Hi, There seems to be an error! Please refresh the page!</h2>`
     console.log(error);
-  })
+  });
 };
 
 const parseData = (data) => {
@@ -151,11 +151,11 @@ const renderDOM = (dataManager) => {
 
 const displayAllUserInfo = (user, userRepo) => {
   displayProfileInfo(user);
-  displayActivityInfo(user, userRepo, dataManager)
+  displayActivityInfo(user, userRepo, dataManager);
   displayStepInfo(user, userRepo);
   displayHydrationInfo(user);
   displaySleepInfo(user);
-}
+};
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length + 1);

@@ -1,4 +1,5 @@
 import { generateStairsChart, generateMinutesActiveChart, generateWaterChart, generateSleepChart, generateStepsChart } from './charts';
+import { fetchData, postData } from './fetch';
 
 const userProfile = document.querySelector('#userProfile');
 const stepStats = document.querySelector('#stepStats');
@@ -19,7 +20,126 @@ const waterCard = document.querySelector('.water');
 const stepsCard = document.querySelector('.steps')
 const addActivityCard = document.querySelector('.forms')
 
-homeButton.onclick = function() {
+//Form Query Selectors
+const activityTypeForm = document.querySelector('#activity-type-form');
+const activityOptions = document.querySelector('#activity-type');
+const sleepForm = document.querySelector('#sleep-form');
+const hydrationForm = document.querySelector('#hydration-form');
+const activityForm = document.querySelector('#activity-form');
+const userInputHoursSlept = document.querySelector('#hours-slept');
+const userInputSleepDate = document.querySelector('#sleep-date');
+const userInputSleepQuality = document.querySelector('#sleep-quality');
+const userInputHydrationDate = document.querySelector('#hydration-date');
+const userInputHydrationOunces = document.querySelector('#num-ounces');
+const userInputActivityDate = document.querySelector('#activity-date');
+const userInputActivityStairs = document.querySelector('#flight-of-stairs');
+const userInputActivityMinutesActive = document.querySelector('#minutes-active');
+const userInputActivitySteps = document.querySelector('#number-of-steps');
+const confirmationText = document.querySelector('#confirmation-text');
+const errorText = document.querySelector('#error-text');
+
+const formatDate = (date) => {
+  const formattedDate = date.replaceAll('-', '/');
+  return formattedDate;
+};
+
+const toggleConfirmationText = (result) => {
+  result.hidden = !result.hidden;
+};
+
+const checkFetchResult = (result) => {
+  if (result === 'SUCCESS') {
+    toggleConfirmationText(confirmationText);
+    setTimeout(() => {
+      toggleConfirmationText(confirmationText);
+    }, 4000);
+  } else {
+    toggleConfirmationText(errorText);
+    setTimeout(() => {
+      toggleConfirmationText(errorText);
+    }, 4000);
+  }
+};
+
+const changeFormView = () => {
+  switch (activityOptions.value) {
+  case 'sleep':
+    hydrationForm.hidden = true;
+    activityForm.hidden = true;
+    sleepForm.hidden = false;
+    break;
+
+  case 'hydration':
+    sleepForm.hidden = true;
+    activityForm.hidden = true;
+    hydrationForm.hidden = false;
+    break;
+
+  case 'activity':
+    sleepForm.hidden = true;
+    hydrationForm.hidden = true;
+    activityForm.hidden = false;
+    break;
+
+  default:
+    console.log('something went wrong');
+    break;
+  }
+};
+
+const handleSleepForm = (event, userRepo) => {
+  event.preventDefault();
+  const userInputSleepData = {
+    userID: userRepo.activeUser.id,
+    date: formatDate(userInputSleepDate.value),
+    hoursSlept: userInputHoursSlept.value,
+    sleepQuality: userInputSleepQuality.value
+  }
+  sleepForm.reset();
+  postData('sleep', userInputSleepData)
+    .then(checkFetchResult);
+};
+
+const handleHydrationForm = (event, userRepo) => {
+  event.preventDefault();
+  const userInputHydrationData = {
+    userID: userRepo.activeUser.id,
+    date: formatDate(userInputHydrationDate.value),
+    numOunces: userInputHydrationOunces.value
+  }
+  hydrationForm.reset();
+  postData('hydration', userInputHydrationData)
+    .then(checkFetchResult);
+};
+
+const handleActivityForm = (event, userRepo) => {
+  event.preventDefault();
+  const userInputActivityData = {
+    userID: userRepo.activeUser.id,
+    date: formatDate(userInputActivityDate.value),
+    flightsOfStairs: userInputActivityStairs.value,
+    minutesActive: userInputActivityMinutesActive.value,
+    numSteps: userInputActivitySteps.value,
+  }
+  activityForm.reset();
+  postData('activity', userInputActivityData)
+    .then(checkFetchResult);
+};
+
+const formListen = (userRepo) => {
+  sleepForm.addEventListener('submit', (event) => {
+    handleSleepForm(event, userRepo);
+  });
+  activityForm.addEventListener('submit', (event) => {
+    handleActivityForm(event, userRepo);
+  });
+  hydrationForm.addEventListener('submit', (event) => {
+    handleHydrationForm(event, userRepo);
+  });
+  activityTypeForm.addEventListener('change', changeFormView);
+};
+
+homeButton.onclick = function(event) {
   userCard.scrollIntoView({behavior: 'smooth'})
 }
 
@@ -122,4 +242,5 @@ export {
   displayHydrationInfo,
   displayStepInfo,
   displaySleepInfo,
+  formListen,
 }

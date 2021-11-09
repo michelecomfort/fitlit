@@ -19,7 +19,6 @@ const userProfile = document.querySelector('#userProfile');
 // Global Variables
 const userRepo = new UserRepository();
 const dataManager = new DataManager();
-const userProfile = document.querySelector('#userProfile');
 
 const retrieveAllData = () => {
   Promise.all([fetchData('users'), fetchData('sleep'), fetchData('activity'), fetchData('hydration')]).then(data => {

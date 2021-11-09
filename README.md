@@ -24,11 +24,12 @@ Javascript, HTML, CSS, Webpack, Chart.js, Github
 
 ## Install & Setup
 1. Clone down the local API server and follow install instructions [here](https://github.com/turingschool-examples/fitlit-api) 
-2. Clone down this repo
-3. `cd` into the directory
-4. Run `npm install`
-5. Run `npm start` to open the local server
-6. Head to `localhost:8080` in your browser
+2. Open a new terminal window and run the local server that holds the api `npm start` both servers need to be running
+3. Clone down this repo
+4. `cd` into the directory
+5. Run `npm install`
+6. Run `npm start` to open the local server
+7. Head to `localhost:8080` in your browser
 
 ## Web App Attributes
 1. On load, users see their dashboard. Featured prominently is their profile information.

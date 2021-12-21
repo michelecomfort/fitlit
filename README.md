@@ -7,6 +7,15 @@ Turing School of Software & Design
 ## Abstract
 Fitlit is a web app that presents user's with a number of helpful health metrics- daily step count, daily water consumption, daily sleep hours and quality -on a single dashboard with widgets. Line graphs display hydration and sleep each day for the last week.
 
+### Page Navigation
+![fitlit-buttons](https://user-images.githubusercontent.com/48008726/140832015-63fdc435-a17e-41ef-8c9c-9bc01eba8a1b.gif)
+
+### User Input 
+![fitlit-user-input-form](https://user-images.githubusercontent.com/48008726/140832416-82470f52-478d-4537-84c7-0fa2650c20ec.gif)
+
+### Dynamic Screen Size
+![fitlit-screen-size](https://user-images.githubusercontent.com/48008726/140833766-0191ad93-20c8-4003-8deb-1d72b34f09f1.gif)
+
 ## Languages/Technology
 Javascript, HTML, CSS, Webpack, Chart.js, Github
 
@@ -40,14 +49,6 @@ Javascript, HTML, CSS, Webpack, Chart.js, Github
 6. A widget allowing users to input activity data to be submited to the local server.
 7. Screen layout changes with screen size.
 
-### Page Navigation
-![fitlit-buttons](https://user-images.githubusercontent.com/48008726/140832015-63fdc435-a17e-41ef-8c9c-9bc01eba8a1b.gif)
-
-### User Input 
-![fitlit-user-input-form](https://user-images.githubusercontent.com/48008726/140832416-82470f52-478d-4537-84c7-0fa2650c20ec.gif)
-
-### Dynamic Screen Size
-![fitlit-screen-size](https://user-images.githubusercontent.com/48008726/140833766-0191ad93-20c8-4003-8deb-1d72b34f09f1.gif)
 
 ## Future Improvements
 1. Build out profile photo generation and display. 

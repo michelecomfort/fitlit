@@ -1,4 +1,4 @@
-# FitLit 
+# 💧FitLit 
 
 Turing School of Software & Design
 
